@@ -13,3 +13,6 @@ C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\ePubIntegratorSolution\ePubIntegratorC
 C:\Users\Toshiba\Dropbox\IS_PIRES\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe.config
 C:\Users\Toshiba\Dropbox\IS_PIRES\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.exe
 C:\Users\Toshiba\Dropbox\IS_PIRES\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.pdb
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe.config
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.exe
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.pdb
