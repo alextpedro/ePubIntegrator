@@ -1,4 +1,4 @@
-Requisitos MÍNIMOS
+Requisitos MÃNIMOS
 Mark [ ] as [x] when completed! :D
 
 /////////////////////////////
@@ -7,31 +7,31 @@ Mark [ ] as [x] when completed! :D
 [ ] > Login
 [ ] > Registar Utilizador no webService
 [ ] > Permitir modificar: (epubConfigurations.xml)
-[ ]	- Localização dos livros
-[ ]	- Localização URL do webservice
+[ ]	- LocalizaÃ§Ã£o dos livros
+[ ]	- LocalizaÃ§Ã£o URL do webservice
 [X] > Data do ultimo login (epubConfigurations.xml)
-[ ] > Guardar título, autor, assunto e capítulos (ebooks.xml)
-[ ] > Indicar ultimo livro e capítulo consultados
+[ ] > Guardar tÃ­tulo, autor, assunto e capÃ­tulos (ebooks.xml)
+[ ] > Indicar ultimo livro e capÃ­tulo consultados
     > Registar bookmarks para: (intPagina)
 [ ]	- livro
-[ ]	- capítulo
+[ ]	- capÃ­tulo
     > Registar favorito para: (boolean)
 [ ]	- livro
-[ ]	- capítulo
+[ ]	- capÃ­tulo
 [ ] > Validar XMLs com ficheiros Schema XSD
 [ ] > Mostrar ebooks depois de iniciar login
-[ ] > Mostrar dados do ebook (título, autor, editora ,(etc)) antes de visualizar
+[ ] > Mostrar dados do ebook (tÃ­tulo, autor, editora ,(etc)) antes de visualizar
     > Visualizar ebook por:
 [ ]	- livro inteiro, pagina a pagina
-[ ]	- capítulo
-[ ] > Enviar bookmarks/favoritos (bookfav.xml) e dados estatísticos (statistics.xml) para o webService em XML
+[ ]	- capÃ­tulo
+[ ] > Enviar bookmarks/favoritos (bookfav.xml) e dados estatÃ­sticos (statistics.xml) para o webService em XML
 [ ] > Consultar bookmarks e favoritos
-[ ] > Consultar dados estatísticos
-[ ]	- dd/mm/aa em que a aplicação foi mais acedida
-[ ]	- ebooks/capítulos mais consultados
+[ ] > Consultar dados estatÃ­sticos
+[ ]	- dd/mm/aa em que a aplicaÃ§Ã£o foi mais acedida
+[ ]	- ebooks/capÃ­tulos mais consultados
 [ ]	- ebooks com mais boormarks
 [ ]	- top 5 favoritos
-[ ] > Exportar para ficheiro Excel os dados estatísticos
+[ ] > Exportar para ficheiro Excel os dados estatÃ­sticos
 -------------------------------------------------------------
 [ ] > EXTRAS (exemplos)
 [ ]	- Definir notas para os livros
@@ -43,7 +43,8 @@ Mark [ ] as [x] when completed! :D
 ////////////////////////////////
 [ ] > Registar Utilizadores
     > Receber: (por cliente registado)
-[ ]	- dados estatísticos
-[ ] > 
+[ ]	- dados estatÃ­sticos
+[ ] > Registar favoritos
+[ ] > Registar bookmarks
 
 !CONTINUA!
