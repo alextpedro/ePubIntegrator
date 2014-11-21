@@ -72,7 +72,7 @@
             this.listBooks.FormattingEnabled = true;
             this.listBooks.Location = new System.Drawing.Point(9, 71);
             this.listBooks.Name = "listBooks";
-            this.listBooks.Size = new System.Drawing.Size(187, 186);
+            this.listBooks.Size = new System.Drawing.Size(187, 199);
             this.listBooks.TabIndex = 6;
             // 
             // panel1
