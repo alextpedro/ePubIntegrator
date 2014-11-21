@@ -14,8 +14,6 @@ namespace ePubIntegratorClient
 {
     public partial class ClientForm : Form
     {
-
-        private String user;
         public ClientForm(String user)
         {
             InitializeComponent();
@@ -25,22 +23,11 @@ namespace ePubIntegratorClient
             epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text);
 
 
-            Epub[] bookList;
+            List<Epub> bookList = new List<Epub>();
             foreach (string epubfile in epubList)
             {
-
-                bookList = new Epub(epubfile);
-
-                Epub ep = new Epub(epubfile);
-                if (ep != null)
-                {
-                    string title = "unknown";
-                    if (ep.Title.Count > 0)
-                    {
-                        title = ep.Title[0];
-                    }
-                    listBooks.Items.Add(epubfile);
-                }
+                bookList.Add(new Epub(epubfile));
+                listBooks.Items.Add(new Epub(epubfile).Title[0]);
             }
         }
 
