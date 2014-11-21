@@ -1,0 +1,16 @@
+<setting>
+	login
+	webservice ip
+	data de etrada no sistema
+	caminho para os livros
+<bookfav>
+	livro
+	paginas(int)
+	ultimaPagConsultada(int)
+	favurito(bool)
+	bookmark(int)
+	ultimofavorito(data)
+	ultimobookmark(data)
+	
+	
+

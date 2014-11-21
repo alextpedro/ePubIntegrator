@@ -1,0 +1,7 @@
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\bin\Debug\ficha4.exe.config
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\bin\Debug\ficha4.exe
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\bin\Debug\ficha4.pdb
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\bin\Debug\EntityFramework.dll
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\bin\Debug\EntityFramework.xml
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\obj\Debug\ficha4.exe
+c:\users\go0rum\documents\visual studio 2012\Projects\ficha4\ficha4\obj\Debug\ficha4.pdb

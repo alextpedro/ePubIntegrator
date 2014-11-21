@@ -1,0 +1,49 @@
+Requisitos MÍNIMOS
+Mark [ ] as [x] when completed! :D
+
+/////////////////////////////
+//ePubIntegrator (cliente)//
+///////////////////////////
+[ ] > Login
+[ ] > Registar Utilizador no webService
+[ ] > Permitir modificar: (epubConfigurations.xml)
+[ ]	- Localização dos livros
+[ ]	- Localização URL do webservice
+[X] > Data do ultimo login (epubConfigurations.xml)
+[ ] > Guardar título, autor, assunto e capítulos (ebooks.xml)
+[ ] > Indicar ultimo livro e capítulo consultados
+    > Registar bookmarks para: (intPagina)
+[ ]	- livro
+[ ]	- capítulo
+    > Registar favorito para: (boolean)
+[ ]	- livro
+[ ]	- capítulo
+[ ] > Validar XMLs com ficheiros Schema XSD
+[ ] > Mostrar ebooks depois de iniciar login
+[ ] > Mostrar dados do ebook (título, autor, editora ,(etc)) antes de visualizar
+    > Visualizar ebook por:
+[ ]	- livro inteiro, pagina a pagina
+[ ]	- capítulo
+[ ] > Enviar bookmarks/favoritos (bookfav.xml) e dados estatísticos (statistics.xml) para o webService em XML
+[ ] > Consultar bookmarks e favoritos
+[ ] > Consultar dados estatísticos
+[ ]	- dd/mm/aa em que a aplicação foi mais acedida
+[ ]	- ebooks/capítulos mais consultados
+[ ]	- ebooks com mais boormarks
+[ ]	- top 5 favoritos
+[ ] > Exportar para ficheiro Excel os dados estatísticos
+-------------------------------------------------------------
+[ ] > EXTRAS (exemplos)
+[ ]	- Definir notas para os livros
+[ ]	- Pesquisa
+[ ]	- Integrar com redes sociais
+
+//////////////////////////////////
+//ServiceePubCloud (WebService)//
+////////////////////////////////
+[ ] > Registar Utilizadores
+    > Receber: (por cliente registado)
+[ ]	- dados estatísticos
+[ ] > 
+
+!CONTINUA!

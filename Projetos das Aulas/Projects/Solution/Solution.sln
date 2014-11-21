@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrarySoftwareOrganizationOOP", "ClassLibrarySoftwareOrganizationOOP\ClassLibrarySoftwareOrganizationOOP.csproj", "{EEF8A78B-F656-46EB-9B9E-F3A1665BA8A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplicationOOP", "ConsoleApplicationOOP\ConsoleApplicationOOP.csproj", "{DAF999DA-9B2A-4A87-880D-EDC74CEACB1B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEF8A78B-F656-46EB-9B9E-F3A1665BA8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF8A78B-F656-46EB-9B9E-F3A1665BA8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF8A78B-F656-46EB-9B9E-F3A1665BA8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF8A78B-F656-46EB-9B9E-F3A1665BA8A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAF999DA-9B2A-4A87-880D-EDC74CEACB1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAF999DA-9B2A-4A87-880D-EDC74CEACB1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAF999DA-9B2A-4A87-880D-EDC74CEACB1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAF999DA-9B2A-4A87-880D-EDC74CEACB1B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

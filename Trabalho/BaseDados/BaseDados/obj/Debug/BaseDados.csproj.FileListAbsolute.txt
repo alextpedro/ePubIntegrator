@@ -1,0 +1,11 @@
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\bin\Debug\BaseDados.exe.config
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\bin\Debug\BaseDados.exe
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\bin\Debug\BaseDados.pdb
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\bin\Debug\EntityFramework.dll
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\bin\Debug\EntityFramework.xml
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.csprojResolveAssemblyReference.cache
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.Form1.resources
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.Properties.Resources.resources
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.csproj.GenerateResource.Cache
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.exe
+C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.pdb

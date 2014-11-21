@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServer", "WcfServer\WcfServer.csproj", "{D1C0E022-1250-40B6-8606-6E0032ED78FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cliente", "Cliente\Cliente.csproj", "{4AB64300-3F10-4B82-B23A-00575C72743E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D1C0E022-1250-40B6-8606-6E0032ED78FA} = {D1C0E022-1250-40B6-8606-6E0032ED78FA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1C0E022-1250-40B6-8606-6E0032ED78FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1C0E022-1250-40B6-8606-6E0032ED78FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1C0E022-1250-40B6-8606-6E0032ED78FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1C0E022-1250-40B6-8606-6E0032ED78FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB64300-3F10-4B82-B23A-00575C72743E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB64300-3F10-4B82-B23A-00575C72743E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB64300-3F10-4B82-B23A-00575C72743E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB64300-3F10-4B82-B23A-00575C72743E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
