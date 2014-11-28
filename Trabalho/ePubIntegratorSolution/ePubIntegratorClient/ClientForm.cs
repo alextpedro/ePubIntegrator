@@ -14,20 +14,23 @@ namespace ePubIntegratorClient
 {
     public partial class ClientForm : Form
     {
+        List<Epub> bookList;
         public ClientForm(String user)
         {
             InitializeComponent();
             labelUser.Text = user;
 
             string[] epubList;
-            epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text);
+            epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text,"*.epub");
 
-
-            List<Epub> bookList = new List<Epub>();
-            foreach (string epubfile in epubList)
+            if (epubList != null)
             {
-                bookList.Add(new Epub(epubfile));
-                listBooks.Items.Add(new Epub(epubfile).Title[0]);
+                bookList = new List<Epub>();
+                foreach (string epubfile in epubList)
+                {
+                    bookList.Add(new Epub(epubfile));
+                    listBooks.Items.Add(new Epub(epubfile).Title[0]);
+                }
             }
         }
 
