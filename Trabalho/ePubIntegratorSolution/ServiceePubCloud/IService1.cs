@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Xml;
 
 namespace ServiceePubCloud
 {
@@ -12,8 +13,44 @@ namespace ServiceePubCloud
     [ServiceContract]
     public interface IService1
     {
+        //Returns XML Document with saved user statistics.
+        [OperationContract]
+        XmlDocument GetUserStatistics(int userID);
 
-       
+        ////Returns XML Document with all statistics.
+        [OperationContract]
+        XmlDocument GetGlobalStatistics();
+
+        //Receives a user id and a XML Document with the user's statistics.
+        [OperationContract]
+        void AddUserStatistics(int user, XmlDocument statistics);
+
+        //TODO: Database only available to webservice, needs to receive fields.
+        [OperationContract]
+        void RegistereBook(XmlDocument newebook);
+
+        [OperationContract]
+        void RegisterUser(User user);
+
+        [OperationContract]
+        void AddBookmark(Bookmark bookmark);
+
+        [OperationContract]
+        void AddFavorite(Favorite favorite);
+
+        [OperationContract]
+        XmlDocument GetBookmarks(int userID, int eBookID);
+
+        [OperationContract]
+        XmlDocument GetFavorites(int userID, int eBookID);
+
+        [OperationContract]
+        XmlDocument GeteBookIDbyTitle(string title);
+
+        [OperationContract]
+        XmlDocument GeteBookIDbyAuthor(string author);
+
+        
         
     }
 
