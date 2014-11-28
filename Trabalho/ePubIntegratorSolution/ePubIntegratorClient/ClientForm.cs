@@ -19,9 +19,16 @@ namespace ePubIntegratorClient
         {
             InitializeComponent();
             labelUser.Text = user;
-
             string[] epubList;
-            epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text,"*.epub");
+
+            try
+            {
+                epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text, "*.epub");
+            }
+            catch (Exception)
+            {
+                epubList = null;
+            }
 
             if (epubList != null)
             {
