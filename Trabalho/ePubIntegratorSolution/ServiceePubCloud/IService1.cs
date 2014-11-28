@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Xml;
+using eBdb.EpubReader;
 
 namespace ServiceePubCloud
 {
@@ -27,16 +28,16 @@ namespace ServiceePubCloud
 
         //TODO: Database only available to webservice, needs to receive fields.
         [OperationContract]
-        void RegistereBook(XmlDocument newebook);
+        void RegistereBook(Epub newebook);
 
         [OperationContract]
-        void RegisterUser(User user);
+        void RegisterUser(string username, string password);
 
         [OperationContract]
-        void AddBookmark(Bookmark bookmark);
+        void AddBookmark(int ebookID, int chapterID);
 
         [OperationContract]
-        void AddFavorite(Favorite favorite);
+        void AddFavorite(int ebookID, int chapterID);
 
         [OperationContract]
         XmlDocument GetBookmarks(int userID, int eBookID);
