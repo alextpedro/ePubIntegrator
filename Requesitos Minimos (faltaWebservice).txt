@@ -1,4 +1,4 @@
-Requisitos MÍNIMOS
+﻿Requisitos MÍNIMOS
 Mark [ ] as [x] when completed! :D
 
 /////////////////////////////
@@ -6,10 +6,10 @@ Mark [ ] as [x] when completed! :D
 ///////////////////////////
 [ ] > Login
 [ ] > Registar Utilizador no webService
-[ ] > Permitir modificar: (epubConfigurations.xml)
+[ ] > Permitir modificar: (config.xml)
 [ ]	- Localização dos livros
 [ ]	- Localização URL do webservice
-[X] > Data do ultimo login (epubConfigurations.xml)
+[X] > Data do ultimo login (config.xml)
 [ ] > Guardar título, autor, assunto e capítulos (ebooks.xml)
 [ ] > Indicar ultimo livro e capítulo consultados
     > Registar bookmarks para: (intPagina)

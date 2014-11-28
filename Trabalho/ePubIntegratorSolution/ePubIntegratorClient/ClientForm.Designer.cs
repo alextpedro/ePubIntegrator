@@ -35,13 +35,15 @@
             this.listBooks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBookPath = new System.Windows.Forms.TextBox();
             this.buttonBookPath = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.buttonRead = new System.Windows.Forms.Button();
+            this.buttonChapters = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +80,7 @@
             this.listBooks.Name = "listBooks";
             this.listBooks.Size = new System.Drawing.Size(187, 225);
             this.listBooks.TabIndex = 6;
+            this.listBooks.SelectedIndexChanged += new System.EventHandler(this.listBooks_SelectedIndexChanged);
             // 
             // panel1
             // 
@@ -95,19 +98,14 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.buttonChapters);
+            this.panel2.Controls.Add(this.buttonRead);
+            this.panel2.Controls.Add(this.labelTitle);
+            this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(199, 9);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(366, 267);
             this.panel2.TabIndex = 9;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 31);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
@@ -137,6 +135,42 @@
             this.buttonBookPath.UseVisualStyleBackColor = true;
             this.buttonBookPath.Click += new System.EventHandler(this.buttonBookPath_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Title:";
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Location = new System.Drawing.Point(39, 48);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(16, 13);
+            this.labelTitle.TabIndex = 2;
+            this.labelTitle.Text = "...";
+            // 
+            // buttonRead
+            // 
+            this.buttonRead.Image = ((System.Drawing.Image)(resources.GetObject("buttonRead.Image")));
+            this.buttonRead.Location = new System.Drawing.Point(3, 3);
+            this.buttonRead.Name = "buttonRead";
+            this.buttonRead.Size = new System.Drawing.Size(42, 42);
+            this.buttonRead.TabIndex = 3;
+            this.buttonRead.UseVisualStyleBackColor = true;
+            // 
+            // buttonChapters
+            // 
+            this.buttonChapters.Image = ((System.Drawing.Image)(resources.GetObject("buttonChapters.Image")));
+            this.buttonChapters.Location = new System.Drawing.Point(51, 3);
+            this.buttonChapters.Name = "buttonChapters";
+            this.buttonChapters.Size = new System.Drawing.Size(42, 42);
+            this.buttonChapters.TabIndex = 4;
+            this.buttonChapters.UseVisualStyleBackColor = true;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,7 +187,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,6 +204,9 @@
         private System.Windows.Forms.Button buttonBookPath;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button buttonChapters;
+        private System.Windows.Forms.Button buttonRead;
     }
 }

@@ -33,11 +33,13 @@ namespace ePubIntegratorClient
             if (epubList != null)
             {
                 bookList = new List<Epub>();
+                
                 foreach (string epubfile in epubList)
                 {
                     bookList.Add(new Epub(epubfile));
                     listBooks.Items.Add(new Epub(epubfile).Title[0]);
                 }
+                listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
             }
         }
 
@@ -49,6 +51,14 @@ namespace ePubIntegratorClient
         private void ClientForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Epub selectedBook = bookList[listBooks.SelectedIndex];
+            labelTitle.Text = selectedBook.Title[0];
+            System.Diagnostics.Debug.WriteLine("title " + selectedBook.Title[0]);
+            if (!(selectedBook.Contributer.Count == 0)) System.Diagnostics.Debug.WriteLine("contributer " + selectedBook.Contributer[0]);
         }
     }
 }
