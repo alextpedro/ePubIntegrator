@@ -9,3 +9,6 @@ C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDado
 C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.csproj.GenerateResource.Cache
 C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.exe
 C:\Users\Go0rum\Dropbox\IS_PIRES\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.pdb
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\BaseDados\BaseDados\bin\Debug\BaseDados.exe.config
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.exe
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\BaseDados\BaseDados\obj\Debug\BaseDados.pdb

@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Namespace="ServiceePubModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="ServiceePubModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ServiceePubModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ServiceePubModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserSet" EntityType="ServiceePubModel.User" />
+          <EntitySet Name="LoginSet" EntityType="ServiceePubModel.Login" />
+          <AssociationSet Name="UserLogin" Association="ServiceePubModel.UserLogin">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="Login" EntitySet="LoginSet" />
+          </AssociationSet>
+          <EntitySet Name="eBookSet" EntityType="ServiceePubModel.eBook" />
+          <EntitySet Name="BookmarkSet" EntityType="ServiceePubModel.Bookmark" />
+          <AssociationSet Name="BookmarkeBook" Association="ServiceePubModel.BookmarkeBook">
+            <End Role="Bookmark" EntitySet="BookmarkSet" />
+            <End Role="eBook" EntitySet="eBookSet" />
+          </AssociationSet>
+          <EntitySet Name="ChapterSet" EntityType="ServiceePubModel.Chapter" />
+          <AssociationSet Name="ChaptereBook" Association="ServiceePubModel.ChaptereBook">
+            <End Role="Chapter" EntitySet="ChapterSet" />
+            <End Role="eBook" EntitySet="eBookSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Login" Relationship="ServiceePubModel.UserLogin" FromRole="User" ToRole="Login" />
+        </EntityType>
+        <EntityType Name="Login">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Username" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="ServiceePubModel.UserLogin" FromRole="Login" ToRole="User" />
+        </EntityType>
+        <Association Name="UserLogin">
+          <End Type="ServiceePubModel.User" Role="User" Multiplicity="1" />
+          <End Type="ServiceePubModel.Login" Role="Login" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Login">
+              <PropertyRef Name="Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="eBook">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Language" Nullable="false" />
+          <Property Type="String" Name="ISBN" Nullable="false" />
+          <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.BookmarkeBook" FromRole="eBook" ToRole="Bookmark" />
+          <NavigationProperty Name="Chapter" Relationship="ServiceePubModel.ChaptereBook" FromRole="eBook" ToRole="Chapter" />
+        </EntityType>
+        <EntityType Name="Bookmark">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="eBook" Relationship="ServiceePubModel.BookmarkeBook" FromRole="Bookmark" ToRole="eBook" />
+        </EntityType>
+        <Association Name="BookmarkeBook">
+          <End Type="ServiceePubModel.Bookmark" Role="Bookmark" Multiplicity="1" />
+          <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
+        </Association>
+        <EntityType Name="Chapter">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <NavigationProperty Name="eBook" Relationship="ServiceePubModel.ChaptereBook" FromRole="Chapter" ToRole="eBook" />
+        </EntityType>
+        <Association Name="ChaptereBook">
+          <End Type="ServiceePubModel.Chapter" Role="Chapter" Multiplicity="*" />
+          <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="ServiceePubModel" />
+        <Alias Key="Target" Value="ServiceePubModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="ServiceePubModelContainer" StorageEntityContainer="ServiceePubModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
