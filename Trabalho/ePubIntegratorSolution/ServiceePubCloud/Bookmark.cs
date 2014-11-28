@@ -15,7 +15,11 @@ namespace ServiceePubCloud
     public partial class Bookmark
     {
         public int Id { get; set; }
+        public string Book { get; set; }
+        public string Chapter { get; set; }
     
         public virtual eBook eBook { get; set; }
+        public virtual Chapter Chapter1 { get; set; }
+        public virtual User User { get; set; }
     }
 }

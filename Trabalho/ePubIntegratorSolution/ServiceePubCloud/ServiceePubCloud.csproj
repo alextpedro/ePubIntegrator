@@ -78,6 +78,15 @@
     <Compile Include="eBook.cs">
       <DependentUpon>ServiceePubModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="eBookAuthors.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="eBookTitles.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Favorite.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <DependentUpon>ServiceePubModel.tt</DependentUpon>
     </Compile>
