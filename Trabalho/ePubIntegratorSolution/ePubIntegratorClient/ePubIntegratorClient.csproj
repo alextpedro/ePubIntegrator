@@ -89,9 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="config.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Resources\settings.png" />
     <Content Include="Resources\stats.png" />
   </ItemGroup>
