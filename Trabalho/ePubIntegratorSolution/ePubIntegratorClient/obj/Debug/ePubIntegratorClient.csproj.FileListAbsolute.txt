@@ -16,3 +16,6 @@ C:\Users\Toshiba\Dropbox\IS_PIRES\Trabalho\ePubIntegratorSolution\ePubIntegrator
 C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe.config
 C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.exe
 C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.pdb
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe.config
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.exe
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.pdb

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8c45be9b78f4ae5abee5c70c73b3ab8" Name="Diagram1" >
+        <EntityTypeShape EntityType="ServiceePubModel.User" Width="1.5" PointX="1.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ServiceePubModel.Login" Width="1.5" PointX="4.625" PointY="0.5" />
+        <AssociationConnector Association="ServiceePubModel.UserLogin" />
+        <EntityTypeShape EntityType="ServiceePubModel.eBook" Width="1.5" PointX="4.625" PointY="3.5" />
+        <EntityTypeShape EntityType="ServiceePubModel.Bookmark" Width="1.5" PointX="0.75" PointY="3.5" />
+        <AssociationConnector Association="ServiceePubModel.BookmarkeBook" />
+        <EntityTypeShape EntityType="ServiceePubModel.Chapter" Width="1.5" PointX="7.5" PointY="2.75" />
+        <AssociationConnector Association="ServiceePubModel.ChaptereBook" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

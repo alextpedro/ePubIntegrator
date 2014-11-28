@@ -39,7 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -63,22 +69,73 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bookmark.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Chapter.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="eBook.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceePubModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceePubModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceePubModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceePubModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ServiceePubModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>ServiceePubModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <EntityDeploy Include="ServiceePubModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ServiceePubModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="packages.config" />
+    <Content Include="ServiceePubModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServiceePubModel.edmx</DependentUpon>
+      <LastGenOutput>ServiceePubModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ServiceePubModel.edmx.diagram">
+      <DependentUpon>ServiceePubModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="ServiceePubModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ServiceePubModel.edmx</DependentUpon>
+      <LastGenOutput>ServiceePubModel.cs</LastGenOutput>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
