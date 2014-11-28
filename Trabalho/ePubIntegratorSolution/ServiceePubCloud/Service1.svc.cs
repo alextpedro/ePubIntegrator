@@ -12,22 +12,60 @@ namespace ServiceePubCloud
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class Service1 : IService1
     {
-        public string GetData(int value)
+
+        public System.Xml.XmlDocument GetUserStatistics(int userID)
         {
-            return string.Format("You entered: {0}", value);
+            throw new NotImplementedException();
         }
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public System.Xml.XmlDocument GetGlobalStatistics()
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            throw new NotImplementedException();
+        }
+
+        public void AddUserStatistics(int user, System.Xml.XmlDocument statistics)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegistereBook(eBdb.EpubReader.Epub newebook)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegisterUser(string username, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddBookmark(int ebookID, int chapterID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddFavorite(int ebookID, int chapterID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public System.Xml.XmlDocument GetBookmarks(int userID, int eBookID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public System.Xml.XmlDocument GetFavorites(int userID, int eBookID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public System.Xml.XmlDocument GeteBookIDbyTitle(string title)
+        {
+            throw new NotImplementedException();
+        }
+
+        public System.Xml.XmlDocument GeteBookIDbyAuthor(string author)
+        {
+            throw new NotImplementedException();
         }
     }
 }
