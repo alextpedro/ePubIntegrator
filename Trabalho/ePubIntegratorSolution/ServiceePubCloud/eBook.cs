@@ -17,14 +17,18 @@ namespace ServiceePubCloud
         public eBook()
         {
             this.Chapter = new HashSet<Chapter>();
+            this.eBookTitles = new HashSet<eBookTitles>();
+            this.eBookAuthors = new HashSet<eBookAuthors>();
         }
     
         public int Id { get; set; }
-        public string Title { get; set; }
         public string Language { get; set; }
-        public string ISBN { get; set; }
+        public string Author { get; set; }
     
         public virtual Bookmark Bookmark { get; set; }
         public virtual ICollection<Chapter> Chapter { get; set; }
+        public virtual Favorite Favorite { get; set; }
+        public virtual ICollection<eBookTitles> eBookTitles { get; set; }
+        public virtual ICollection<eBookAuthors> eBookAuthors { get; set; }
     }
 }

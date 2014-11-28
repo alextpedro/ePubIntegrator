@@ -30,5 +30,8 @@ namespace ServiceePubCloud
         public DbSet<eBook> eBookSet { get; set; }
         public DbSet<Bookmark> BookmarkSet { get; set; }
         public DbSet<Chapter> ChapterSet { get; set; }
+        public DbSet<Favorite> FavoriteSet { get; set; }
+        public DbSet<eBookTitles> eBookTitlesSet { get; set; }
+        public DbSet<eBookAuthors> eBookAuthorsSet { get; set; }
     }
 }

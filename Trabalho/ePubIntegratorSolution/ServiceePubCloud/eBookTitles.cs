@@ -12,13 +12,11 @@ namespace ServiceePubCloud
     using System;
     using System.Collections.Generic;
     
-    public partial class Chapter
+    public partial class eBookTitles
     {
+        public int Title { get; set; }
         public int Id { get; set; }
-        public string Title { get; set; }
     
         public virtual eBook eBook { get; set; }
-        public virtual Bookmark Bookmark { get; set; }
-        public virtual Favorite Favorite { get; set; }
     }
 }
