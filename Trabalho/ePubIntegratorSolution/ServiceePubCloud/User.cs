@@ -14,8 +14,14 @@ namespace ServiceePubCloud
     
     public partial class User
     {
+        public User()
+        {
+            this.Bookmark = new HashSet<Bookmark>();
+        }
+    
         public int Id { get; set; }
     
         public virtual Login Login { get; set; }
+        public virtual ICollection<Bookmark> Bookmark { get; set; }
     }
 }
