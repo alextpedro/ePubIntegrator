@@ -5,3 +5,5 @@ C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csprojResolveAssemblyReference.cache
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.dll
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.pdb
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.Properties.Resources.resources
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csproj.GenerateResource.Cache

@@ -34,16 +34,31 @@
             this.buttonStats = new System.Windows.Forms.Button();
             this.listBooks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonChapters = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.buttonRead = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBookPath = new System.Windows.Forms.TextBox();
             this.buttonBookPath = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.buttonRead = new System.Windows.Forms.Button();
-            this.buttonChapters = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelPublisher = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.labelLanguage = new System.Windows.Forms.Label();
+            this.labelCreator = new System.Windows.Forms.Label();
+            this.labelSubject = new System.Windows.Forms.Label();
+            this.labelDesc = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -67,7 +82,7 @@
             // buttonStats
             // 
             this.buttonStats.Image = ((System.Drawing.Image)(resources.GetObject("buttonStats.Image")));
-            this.buttonStats.Location = new System.Drawing.Point(635, 12);
+            this.buttonStats.Location = new System.Drawing.Point(496, 9);
             this.buttonStats.Name = "buttonStats";
             this.buttonStats.Size = new System.Drawing.Size(40, 40);
             this.buttonStats.TabIndex = 5;
@@ -85,27 +100,95 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonChapters);
             this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.buttonRead);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxBookPath);
             this.panel1.Controls.Add(this.buttonBookPath);
             this.panel1.Controls.Add(this.listBooks);
             this.panel1.Location = new System.Drawing.Point(15, 58);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(660, 286);
+            this.panel1.Size = new System.Drawing.Size(521, 286);
             this.panel1.TabIndex = 7;
+            // 
+            // buttonChapters
+            // 
+            this.buttonChapters.Image = ((System.Drawing.Image)(resources.GetObject("buttonChapters.Image")));
+            this.buttonChapters.Location = new System.Drawing.Point(247, 3);
+            this.buttonChapters.Name = "buttonChapters";
+            this.buttonChapters.Size = new System.Drawing.Size(42, 42);
+            this.buttonChapters.TabIndex = 4;
+            this.buttonChapters.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.buttonChapters);
-            this.panel2.Controls.Add(this.buttonRead);
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.labelDesc);
+            this.panel2.Controls.Add(this.labelSubject);
+            this.panel2.Controls.Add(this.labelCreator);
+            this.panel2.Controls.Add(this.labelLanguage);
+            this.panel2.Controls.Add(this.labelDate);
+            this.panel2.Controls.Add(this.labelPublisher);
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(199, 9);
+            this.panel2.Location = new System.Drawing.Point(199, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(366, 267);
+            this.panel2.Size = new System.Drawing.Size(313, 225);
             this.panel2.TabIndex = 9;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(284, -1);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Location = new System.Drawing.Point(36, 9);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(10, 13);
+            this.labelTitle.TabIndex = 2;
+            this.labelTitle.Text = "-";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Publisher:";
+            // 
+            // buttonRead
+            // 
+            this.buttonRead.Image = ((System.Drawing.Image)(resources.GetObject("buttonRead.Image")));
+            this.buttonRead.Location = new System.Drawing.Point(199, 3);
+            this.buttonRead.Name = "buttonRead";
+            this.buttonRead.Size = new System.Drawing.Size(42, 42);
+            this.buttonRead.TabIndex = 3;
+            this.buttonRead.UseVisualStyleBackColor = true;
+            this.buttonRead.Click += new System.EventHandler(this.buttonRead_Click);
             // 
             // label2
             // 
@@ -126,7 +209,6 @@
             // 
             // buttonBookPath
             // 
-            this.buttonBookPath.Enabled = false;
             this.buttonBookPath.Location = new System.Drawing.Point(163, 25);
             this.buttonBookPath.Name = "buttonBookPath";
             this.buttonBookPath.Size = new System.Drawing.Size(30, 20);
@@ -135,47 +217,110 @@
             this.buttonBookPath.UseVisualStyleBackColor = true;
             this.buttonBookPath.Click += new System.EventHandler(this.buttonBookPath_Click);
             // 
-            // label4
+            // label3
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Title:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 65);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(33, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Date:";
             // 
-            // labelTitle
+            // label5
             // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(39, 48);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(16, 13);
-            this.labelTitle.TabIndex = 2;
-            this.labelTitle.Text = "...";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 52);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Language:";
             // 
-            // buttonRead
+            // label6
             // 
-            this.buttonRead.Image = ((System.Drawing.Image)(resources.GetObject("buttonRead.Image")));
-            this.buttonRead.Location = new System.Drawing.Point(3, 3);
-            this.buttonRead.Name = "buttonRead";
-            this.buttonRead.Size = new System.Drawing.Size(42, 42);
-            this.buttonRead.TabIndex = 3;
-            this.buttonRead.UseVisualStyleBackColor = true;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 39);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Creator:";
             // 
-            // buttonChapters
+            // label7
             // 
-            this.buttonChapters.Image = ((System.Drawing.Image)(resources.GetObject("buttonChapters.Image")));
-            this.buttonChapters.Location = new System.Drawing.Point(51, 3);
-            this.buttonChapters.Name = "buttonChapters";
-            this.buttonChapters.Size = new System.Drawing.Size(42, 42);
-            this.buttonChapters.TabIndex = 4;
-            this.buttonChapters.UseVisualStyleBackColor = true;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 91);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Subject:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 104);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "Description:";
+            // 
+            // labelPublisher
+            // 
+            this.labelPublisher.AutoSize = true;
+            this.labelPublisher.Location = new System.Drawing.Point(62, 78);
+            this.labelPublisher.Name = "labelPublisher";
+            this.labelPublisher.Size = new System.Drawing.Size(10, 13);
+            this.labelPublisher.TabIndex = 10;
+            this.labelPublisher.Text = "-";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(42, 65);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(10, 13);
+            this.labelDate.TabIndex = 11;
+            this.labelDate.Text = "-";
+            // 
+            // labelLanguage
+            // 
+            this.labelLanguage.AutoSize = true;
+            this.labelLanguage.Location = new System.Drawing.Point(67, 52);
+            this.labelLanguage.Name = "labelLanguage";
+            this.labelLanguage.Size = new System.Drawing.Size(10, 13);
+            this.labelLanguage.TabIndex = 8;
+            this.labelLanguage.Text = "-";
+            // 
+            // labelCreator
+            // 
+            this.labelCreator.AutoSize = true;
+            this.labelCreator.Location = new System.Drawing.Point(53, 39);
+            this.labelCreator.Name = "labelCreator";
+            this.labelCreator.Size = new System.Drawing.Size(10, 13);
+            this.labelCreator.TabIndex = 12;
+            this.labelCreator.Text = "-";
+            // 
+            // labelSubject
+            // 
+            this.labelSubject.AutoSize = true;
+            this.labelSubject.Location = new System.Drawing.Point(55, 91);
+            this.labelSubject.Name = "labelSubject";
+            this.labelSubject.Size = new System.Drawing.Size(10, 13);
+            this.labelSubject.TabIndex = 13;
+            this.labelSubject.Text = "-";
+            // 
+            // labelDesc
+            // 
+            this.labelDesc.AutoSize = true;
+            this.labelDesc.Location = new System.Drawing.Point(72, 104);
+            this.labelDesc.Name = "labelDesc";
+            this.labelDesc.Size = new System.Drawing.Size(10, 13);
+            this.labelDesc.TabIndex = 14;
+            this.labelDesc.Text = "-";
             // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(687, 357);
+            this.ClientSize = new System.Drawing.Size(549, 357);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonStats);
             this.Controls.Add(this.labelUser);
@@ -183,11 +328,12 @@
             this.MaximizeBox = false;
             this.Name = "ClientForm";
             this.Text = "ePubIntegrator";
-            this.Load += new System.EventHandler(this.ClientForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,5 +354,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button buttonChapters;
         private System.Windows.Forms.Button buttonRead;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelDesc;
+        private System.Windows.Forms.Label labelSubject;
+        private System.Windows.Forms.Label labelCreator;
+        private System.Windows.Forms.Label labelLanguage;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.Label labelPublisher;
     }
 }

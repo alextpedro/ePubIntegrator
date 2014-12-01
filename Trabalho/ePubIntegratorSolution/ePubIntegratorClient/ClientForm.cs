@@ -16,12 +16,49 @@ namespace ePubIntegratorClient
     public partial class ClientForm : Form
     {
         List<Epub> bookList;
+        Book selectedBook;
+
         public ClientForm(String user)
         {
             InitializeComponent();
             labelUser.Text = user;
-            string[] epubList;
+            reloadBooks();
+        }
 
+        private void buttonBookPath_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
+            DialogResult result = folderBrowserDialog1.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                textBoxBookPath.Text = folderBrowserDialog1.SelectedPath;
+                listBooks.Items.Clear();
+                reloadBooks();
+            }
+        }
+
+        private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Epub selectedEpub = bookList[listBooks.SelectedIndex];
+            selectedBook = new Book(selectedEpub);
+            labelTitle.Text = selectedBook.Title;
+            labelPublisher.Text = selectedBook.Publisher;
+            labelDate.Text = selectedBook.Date;
+            labelLanguage.Text = selectedBook.Language;
+            labelCreator.Text = selectedBook.Creator;
+            labelSubject.Text = selectedBook.Subject;
+            labelDesc.Text = selectedBook.Description;
+        }
+
+        private void buttonRead_Click(object sender, EventArgs e)
+        {
+            ReadForm readForm = new ReadForm(selectedBook);
+            readForm.ShowDialog();
+        }
+
+        private void reloadBooks()
+        {
+            string[] epubList;
             try
             {
                 epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text, "*.epub");
@@ -31,40 +68,26 @@ namespace ePubIntegratorClient
                 epubList = null;
             }
 
-            if (epubList != null)
+            try
             {
-                bookList = new List<Epub>();
-                
-                foreach (string epubfile in epubList)
+                if (epubList != null)
                 {
-                    bookList.Add(new Epub(epubfile));
-                    listBooks.Items.Add(new Epub(epubfile).Title[0]);
+                    bookList = new List<Epub>();
+
+                    foreach (string epubfile in epubList)
+                    {
+                        bookList.Add(new Epub(epubfile));
+                        listBooks.Items.Add(new Epub(epubfile).Title[0]);
+                    }
+                    
                 }
-                listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
             }
-        }
-
-        private void buttonBookPath_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ClientForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            Epub selectedBook = bookList[listBooks.SelectedIndex];
-            Book book = new Book(selectedBook);
-            //labelTitle.Text = book.Date;
-            if (!(selectedBook.Date.Count == 0))labelTitle.Text = (selectedBook.Date[0]).ToString();
-            //labelTitle.Text = selectedBook.Title[0];
-            //System.Diagnostics.Debug.WriteLine("title " + selectedBook.Title[0]);
-            //if (!(selectedBook.Contributer.Count == 0)) System.Diagnostics.Debug.WriteLine("contributer " + selectedBook.Contributer[0]);
-
-
+            catch (Exception)
+            {
+                //DEU ERRO A LER ALGUM LIVRO ESTUPIDO
+                throw;
+            }
+            if (listBooks.Items.Count != 0) listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
         }
     }
 }
