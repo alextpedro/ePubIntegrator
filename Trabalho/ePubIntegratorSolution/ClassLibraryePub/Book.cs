@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ClassLibraryePub
 {
-    class Book
+    public class Book
     {
         private Epub _epub;
 
@@ -16,15 +16,27 @@ namespace ClassLibraryePub
             _epub = epub;
         }
 
-        //String Title
-        //{
-        //        get { return _epub.Title; }
-        //        set { this = value; }
-        //}
+        public String Title
+        {
+            get { return ListToString(_epub.Title); }
+            set { Title = value; }
+        }
+
+        public String Contributer
+        {
+            get { return ListToString(_epub.Contributer); }
+            set { Contributer = value; }
+        }
+
+        public String Coverage
+        {
+            get { return ListToString(_epub.Coverage); }
+            set { Coverage = value; }
+        }
 
         private String ListToString(List<string> list)
         {
-            if (list.Count == 0)
+            if (list.Count != 0)
             {
                 String convert = "";
                 Boolean isFirst = true;

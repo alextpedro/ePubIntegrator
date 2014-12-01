@@ -1,0 +1,7 @@
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\ClassLibraryePub.dll
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\ClassLibraryePub.pdb
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\eBdb.EpubReader.dll
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\Ionic.Zip.dll
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csprojResolveAssemblyReference.cache
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.dll
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.pdb

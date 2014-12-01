@@ -6,8 +6,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceePubCloud", "ServiceePubCloud\ServiceePubCloud.csproj", "{C7276289-B8A3-4944-B271-79E71C321B13}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryePub", "ClassLibraryePub\ClassLibraryePub.csproj", "{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryePub", "ClassLibraryePub\ClassLibraryePub.csproj", "{11F5E953-5AA2-4949-84B0-43F867C9A7D1}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryePub", "ClassLibraryePub\ClassLibraryePub.csproj", "{0A8BF953-8639-4A96-990F-F30714844E8F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,14 +25,6 @@ Global
 		{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11F5E953-5AA2-4949-84B0-43F867C9A7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11F5E953-5AA2-4949-84B0-43F867C9A7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11F5E953-5AA2-4949-84B0-43F867C9A7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11F5E953-5AA2-4949-84B0-43F867C9A7D1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0A8BF953-8639-4A96-990F-F30714844E8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0A8BF953-8639-4A96-990F-F30714844E8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0A8BF953-8639-4A96-990F-F30714844E8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0A8BF953-8639-4A96-990F-F30714844E8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

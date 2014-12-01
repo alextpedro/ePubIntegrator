@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using eBdb.EpubReader;
+using ClassLibraryePub;
 
 namespace ePubIntegratorClient
 {
@@ -56,9 +57,13 @@ namespace ePubIntegratorClient
         private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
         {
             Epub selectedBook = bookList[listBooks.SelectedIndex];
-            labelTitle.Text = selectedBook.Title[0];
-            System.Diagnostics.Debug.WriteLine("title " + selectedBook.Title[0]);
-            if (!(selectedBook.Contributer.Count == 0)) System.Diagnostics.Debug.WriteLine("contributer " + selectedBook.Contributer[0]);
+            Book book = new Book(selectedBook);
+            labelTitle.Text = book.Coverage;
+            //labelTitle.Text = selectedBook.Title[0];
+            //System.Diagnostics.Debug.WriteLine("title " + selectedBook.Title[0]);
+            //if (!(selectedBook.Contributer.Count == 0)) System.Diagnostics.Debug.WriteLine("contributer " + selectedBook.Contributer[0]);
+
+
         }
     }
 }

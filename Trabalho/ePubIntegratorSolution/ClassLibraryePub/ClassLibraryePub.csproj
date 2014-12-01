@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}</ProjectGuid>
     <ProjectGuid>{11F5E953-5AA2-4949-84B0-43F867C9A7D1}</ProjectGuid>
-    <ProjectGuid>{0A8BF953-8639-4A96-990F-F30714844E8F}</ProjectGuid>
+    <ProjectGuid>{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ClassLibraryePub</RootNamespace>
