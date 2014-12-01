@@ -58,7 +58,8 @@ namespace ePubIntegratorClient
         {
             Epub selectedBook = bookList[listBooks.SelectedIndex];
             Book book = new Book(selectedBook);
-            labelTitle.Text = book.Coverage;
+            //labelTitle.Text = book.Date;
+            if (!(selectedBook.Date.Count == 0))labelTitle.Text = (selectedBook.Date[0]).ToString();
             //labelTitle.Text = selectedBook.Title[0];
             //System.Diagnostics.Debug.WriteLine("title " + selectedBook.Title[0]);
             //if (!(selectedBook.Contributer.Count == 0)) System.Diagnostics.Debug.WriteLine("contributer " + selectedBook.Contributer[0]);
