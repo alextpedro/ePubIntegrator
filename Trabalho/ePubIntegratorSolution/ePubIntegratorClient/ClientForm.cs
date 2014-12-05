@@ -33,7 +33,6 @@ namespace ePubIntegratorClient
             if (result == DialogResult.OK)
             {
                 textBoxBookPath.Text = folderBrowserDialog1.SelectedPath;
-                clearBook();
                 reloadBooks();
             }
         }
@@ -70,6 +69,7 @@ namespace ePubIntegratorClient
         private void reloadBooks()
         {
             string[] epubList;
+            clearBook();
             try
             {
                 epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text, "*.epub");
@@ -115,6 +115,11 @@ namespace ePubIntegratorClient
         {
             ReadForm readForm = new ReadForm(selectedEpub);
             readForm.ShowDialog();
+        }
+
+        private void buttonRefresh_Click_1(object sender, EventArgs e)
+        {
+            reloadBooks();
         }
     }
 }

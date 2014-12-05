@@ -34,6 +34,7 @@
             this.buttonStats = new System.Windows.Forms.Button();
             this.listBooks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             this.buttonChapters = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.labelDesc = new System.Windows.Forms.Label();
@@ -93,13 +94,14 @@
             this.listBooks.FormattingEnabled = true;
             this.listBooks.Location = new System.Drawing.Point(6, 51);
             this.listBooks.Name = "listBooks";
-            this.listBooks.Size = new System.Drawing.Size(187, 225);
+            this.listBooks.Size = new System.Drawing.Size(205, 225);
             this.listBooks.TabIndex = 6;
             this.listBooks.SelectedIndexChanged += new System.EventHandler(this.listBooks_SelectedIndexChanged);
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonRefresh);
             this.panel1.Controls.Add(this.buttonChapters);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.buttonRead);
@@ -112,10 +114,20 @@
             this.panel1.Size = new System.Drawing.Size(521, 286);
             this.panel1.TabIndex = 7;
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
+            this.buttonRefresh.Location = new System.Drawing.Point(179, 13);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(32, 32);
+            this.buttonRefresh.TabIndex = 10;
+            this.buttonRefresh.UseVisualStyleBackColor = true;
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click_1);
+            // 
             // buttonChapters
             // 
             this.buttonChapters.Image = ((System.Drawing.Image)(resources.GetObject("buttonChapters.Image")));
-            this.buttonChapters.Location = new System.Drawing.Point(247, 3);
+            this.buttonChapters.Location = new System.Drawing.Point(265, 3);
             this.buttonChapters.Name = "buttonChapters";
             this.buttonChapters.Size = new System.Drawing.Size(42, 42);
             this.buttonChapters.TabIndex = 4;
@@ -140,9 +152,9 @@
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(199, 51);
+            this.panel2.Location = new System.Drawing.Point(217, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(313, 225);
+            this.panel2.Size = new System.Drawing.Size(295, 225);
             this.panel2.TabIndex = 9;
             // 
             // labelDesc
@@ -247,7 +259,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(284, -1);
+            this.pictureBox2.Location = new System.Drawing.Point(266, -1);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(24, 24);
             this.pictureBox2.TabIndex = 4;
@@ -283,7 +295,7 @@
             // buttonRead
             // 
             this.buttonRead.Image = ((System.Drawing.Image)(resources.GetObject("buttonRead.Image")));
-            this.buttonRead.Location = new System.Drawing.Point(199, 3);
+            this.buttonRead.Location = new System.Drawing.Point(217, 3);
             this.buttonRead.Name = "buttonRead";
             this.buttonRead.Size = new System.Drawing.Size(42, 42);
             this.buttonRead.TabIndex = 3;
@@ -303,17 +315,17 @@
             // 
             this.textBoxBookPath.Location = new System.Drawing.Point(6, 25);
             this.textBoxBookPath.Name = "textBoxBookPath";
-            this.textBoxBookPath.Size = new System.Drawing.Size(151, 20);
+            this.textBoxBookPath.Size = new System.Drawing.Size(129, 20);
             this.textBoxBookPath.TabIndex = 8;
             this.textBoxBookPath.Text = "C:\\Users\\Go0rum\\Documents\\Books";
             // 
             // buttonBookPath
             // 
-            this.buttonBookPath.Location = new System.Drawing.Point(163, 25);
+            this.buttonBookPath.Image = ((System.Drawing.Image)(resources.GetObject("buttonBookPath.Image")));
+            this.buttonBookPath.Location = new System.Drawing.Point(141, 13);
             this.buttonBookPath.Name = "buttonBookPath";
-            this.buttonBookPath.Size = new System.Drawing.Size(30, 20);
+            this.buttonBookPath.Size = new System.Drawing.Size(32, 32);
             this.buttonBookPath.TabIndex = 7;
-            this.buttonBookPath.Text = "...";
             this.buttonBookPath.UseVisualStyleBackColor = true;
             this.buttonBookPath.Click += new System.EventHandler(this.buttonBookPath_Click);
             // 
@@ -321,7 +333,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 357);
+            this.ClientSize = new System.Drawing.Size(556, 357);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonStats);
             this.Controls.Add(this.labelUser);
@@ -368,5 +380,6 @@
         private System.Windows.Forms.Label labelLanguage;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelPublisher;
+        private System.Windows.Forms.Button buttonRefresh;
     }
 }
