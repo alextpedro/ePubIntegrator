@@ -35,3 +35,16 @@ C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.pdb
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ReadForm.resources
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ChapterForm.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.pdb
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.dll
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\eBdb.EpubReader.dll
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\Ionic.Zip.dll
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.pdb
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.csprojResolveAssemblyReference.cache
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ChapterForm.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ClientForm.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.LoginForm.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.Properties.Resources.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ReadForm.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.csproj.GenerateResource.Cache

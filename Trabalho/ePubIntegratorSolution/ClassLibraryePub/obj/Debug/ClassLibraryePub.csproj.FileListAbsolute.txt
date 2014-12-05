@@ -7,3 +7,10 @@ C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.pdb
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.Properties.Resources.resources
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csproj.GenerateResource.Cache
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\ClassLibraryePub.dll
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\ClassLibraryePub.pdb
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csprojResolveAssemblyReference.cache
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.Properties.Resources.resources
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csproj.GenerateResource.Cache
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.dll
+C:\Users\Toshiba\Desktop\IPL\AD\Projecto\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.pdb

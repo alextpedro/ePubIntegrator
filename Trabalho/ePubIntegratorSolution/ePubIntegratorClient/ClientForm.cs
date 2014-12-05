@@ -92,10 +92,10 @@ namespace ePubIntegratorClient
                     
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //DEU ERRO A LER ALGUM LIVRO ESTUPIDO
-                throw;
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
             }
             if (listBooks.Items.Count != 0)
             {
