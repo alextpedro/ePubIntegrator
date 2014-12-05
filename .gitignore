@@ -232,3 +232,4 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+*.exe
