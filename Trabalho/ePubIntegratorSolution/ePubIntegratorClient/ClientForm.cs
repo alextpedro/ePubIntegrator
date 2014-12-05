@@ -32,7 +32,7 @@ namespace ePubIntegratorClient
             if (result == DialogResult.OK)
             {
                 textBoxBookPath.Text = folderBrowserDialog1.SelectedPath;
-                listBooks.Items.Clear();
+                clearBook();
                 reloadBooks();
             }
         }
@@ -48,6 +48,18 @@ namespace ePubIntegratorClient
             labelCreator.Text = selectedBook.Creator;
             labelSubject.Text = selectedBook.Subject;
             labelDesc.Text = selectedBook.Description;
+        }
+
+        private void clearBook()
+        {
+            listBooks.Items.Clear();
+            labelTitle.Text = "";
+            labelPublisher.Text = "";
+            labelDate.Text = "";
+            labelLanguage.Text = "";
+            labelCreator.Text = "";
+            labelSubject.Text = "";
+            labelDesc.Text = "";
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
