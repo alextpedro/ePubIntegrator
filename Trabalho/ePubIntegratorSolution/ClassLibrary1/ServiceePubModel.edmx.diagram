@@ -22,6 +22,8 @@
         <AssociationConnector Association="ServiceePubModel.eBookeBookTitles" />
         <EntityTypeShape EntityType="ServiceePubModel.eBookAuthors" Width="1.5" PointX="10.25" PointY="5.25" />
         <AssociationConnector Association="ServiceePubModel.eBookeBookAuthors" />
+        <EntityTypeShape EntityType="ServiceePubModel.eBookPublisher" Width="1.5" PointX="10.25" PointY="6.875" />
+        <AssociationConnector Association="ServiceePubModel.eBookPublishereBook" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -34,3 +34,18 @@ C:\Users\Toshiba\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\e
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.dll
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.pdb
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ReadForm.resources
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe.config
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.exe
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.pdb
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.exe
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ePubIntegratorClient.pdb
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.dll
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\eBdb.EpubReader.dll
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\Ionic.Zip.dll
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.pdb
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.csprojResolveAssemblyReference.cache
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ClientForm.resources
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ReadForm.resources
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.LoginForm.resources
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.Properties.Resources.resources
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.csproj.GenerateResource.Cache

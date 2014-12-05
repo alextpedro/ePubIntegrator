@@ -19,6 +19,7 @@ namespace ServiceePubCloud
             this.Chapter = new HashSet<Chapter>();
             this.eBookTitles = new HashSet<eBookTitles>();
             this.eBookAuthors = new HashSet<eBookAuthors>();
+            this.eBookPublisher = new HashSet<eBookPublisher>();
         }
     
         public int Id { get; set; }
@@ -30,5 +31,6 @@ namespace ServiceePubCloud
         public virtual Favorite Favorite { get; set; }
         public virtual ICollection<eBookTitles> eBookTitles { get; set; }
         public virtual ICollection<eBookAuthors> eBookAuthors { get; set; }
+        public virtual ICollection<eBookPublisher> eBookPublisher { get; set; }
     }
 }

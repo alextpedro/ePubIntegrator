@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ServiceePubModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="ServiceePubModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="UserSet" EntityType="ServiceePubModel.User" />
+    <EntitySet Name="LoginSet" EntityType="ServiceePubModel.Login" />
+    <AssociationSet Name="UserLogin" Association="ServiceePubModel.UserLogin">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Login" EntitySet="LoginSet" />
+    </AssociationSet>
+    <EntitySet Name="eBookSet" EntityType="ServiceePubModel.eBook" />
+    <EntitySet Name="BookmarkSet" EntityType="ServiceePubModel.Bookmark" />
+    <AssociationSet Name="BookmarkeBook" Association="ServiceePubModel.BookmarkeBook">
+      <End Role="Bookmark" EntitySet="BookmarkSet" />
+      <End Role="eBook" EntitySet="eBookSet" />
+    </AssociationSet>
+    <EntitySet Name="ChapterSet" EntityType="ServiceePubModel.Chapter" />
+    <AssociationSet Name="ChaptereBook" Association="ServiceePubModel.ChaptereBook">
+      <End Role="Chapter" EntitySet="ChapterSet" />
+      <End Role="eBook" EntitySet="eBookSet" />
+    </AssociationSet>
+    <EntitySet Name="FavoriteSet" EntityType="ServiceePubModel.Favorite" />
+    <AssociationSet Name="BookmarkChapter" Association="ServiceePubModel.BookmarkChapter">
+      <End Role="Bookmark" EntitySet="BookmarkSet" />
+      <End Role="Chapter" EntitySet="ChapterSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserBookmark" Association="ServiceePubModel.UserBookmark">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Bookmark" EntitySet="BookmarkSet" />
+    </AssociationSet>
+    <AssociationSet Name="FavoriteeBook" Association="ServiceePubModel.FavoriteeBook">
+      <End Role="Favorite" EntitySet="FavoriteSet" />
+      <End Role="eBook" EntitySet="eBookSet" />
+    </AssociationSet>
+    <AssociationSet Name="FavoriteChapter" Association="ServiceePubModel.FavoriteChapter">
+      <End Role="Favorite" EntitySet="FavoriteSet" />
+      <End Role="Chapter" EntitySet="ChapterSet" />
+    </AssociationSet>
+    <EntitySet Name="eBookTitlesSet" EntityType="ServiceePubModel.eBookTitles" />
+    <AssociationSet Name="eBookeBookTitles" Association="ServiceePubModel.eBookeBookTitles">
+      <End Role="eBook" EntitySet="eBookSet" />
+      <End Role="eBookTitles" EntitySet="eBookTitlesSet" />
+    </AssociationSet>
+    <EntitySet Name="eBookAuthorsSet" EntityType="ServiceePubModel.eBookAuthors" />
+    <AssociationSet Name="eBookeBookAuthors" Association="ServiceePubModel.eBookeBookAuthors">
+      <End Role="eBook" EntitySet="eBookSet" />
+      <End Role="eBookAuthors" EntitySet="eBookAuthorsSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="Login" Relationship="ServiceePubModel.UserLogin" FromRole="User" ToRole="Login" />
+    <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.UserBookmark" FromRole="User" ToRole="Bookmark" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Username" Nullable="false" />
+    <Property Type="String" Name="Password" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="ServiceePubModel.UserLogin" FromRole="Login" ToRole="User" />
+  </EntityType>
+  <Association Name="UserLogin">
+    <End Type="ServiceePubModel.User" Role="User" Multiplicity="1" />
+    <End Type="ServiceePubModel.Login" Role="Login" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="eBook">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Language" Nullable="false" />
+    <Property Type="String" Name="Author" Nullable="false" />
+    <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.BookmarkeBook" FromRole="eBook" ToRole="Bookmark" />
+    <NavigationProperty Name="Chapter" Relationship="ServiceePubModel.ChaptereBook" FromRole="eBook" ToRole="Chapter" />
+    <NavigationProperty Name="Favorite" Relationship="ServiceePubModel.FavoriteeBook" FromRole="eBook" ToRole="Favorite" />
+    <NavigationProperty Name="eBookTitles" Relationship="ServiceePubModel.eBookeBookTitles" FromRole="eBook" ToRole="eBookTitles" />
+    <NavigationProperty Name="eBookAuthors" Relationship="ServiceePubModel.eBookeBookAuthors" FromRole="eBook" ToRole="eBookAuthors" />
+  </EntityType>
+  <EntityType Name="Bookmark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="eBook" Relationship="ServiceePubModel.BookmarkeBook" FromRole="Bookmark" ToRole="eBook" />
+    <Property Type="String" Name="Book" Nullable="false" />
+    <Property Type="String" Name="Chapter" Nullable="false" />
+    <NavigationProperty Name="Chapter1" Relationship="ServiceePubModel.BookmarkChapter" FromRole="Bookmark" ToRole="Chapter" />
+    <NavigationProperty Name="User" Relationship="ServiceePubModel.UserBookmark" FromRole="Bookmark" ToRole="User" />
+  </EntityType>
+  <Association Name="BookmarkeBook">
+    <End Type="ServiceePubModel.Bookmark" Role="Bookmark" Multiplicity="0..1" />
+    <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="Chapter">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" />
+    <NavigationProperty Name="eBook" Relationship="ServiceePubModel.ChaptereBook" FromRole="Chapter" ToRole="eBook" />
+    <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.BookmarkChapter" FromRole="Chapter" ToRole="Bookmark" />
+    <NavigationProperty Name="Favorite" Relationship="ServiceePubModel.FavoriteChapter" FromRole="Chapter" ToRole="Favorite" />
+  </EntityType>
+  <Association Name="ChaptereBook">
+    <End Type="ServiceePubModel.Chapter" Role="Chapter" Multiplicity="*" />
+    <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
+  </Association>
+  <EntityType Name="Favorite">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Book" Nullable="false" />
+    <Property Type="String" Name="Chapter" Nullable="false" />
+    <NavigationProperty Name="eBook" Relationship="ServiceePubModel.FavoriteeBook" FromRole="Favorite" ToRole="eBook" />
+    <NavigationProperty Name="Chapter1" Relationship="ServiceePubModel.FavoriteChapter" FromRole="Favorite" ToRole="Chapter" />
+  </EntityType>
+  <Association Name="BookmarkChapter">
+    <End Type="ServiceePubModel.Bookmark" Role="Bookmark" Multiplicity="0..1" />
+    <End Type="ServiceePubModel.Chapter" Role="Chapter" Multiplicity="0..1" />
+  </Association>
+  <Association Name="UserBookmark">
+    <End Type="ServiceePubModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="ServiceePubModel.Bookmark" Role="Bookmark" Multiplicity="*" />
+  </Association>
+  <Association Name="FavoriteeBook">
+    <End Type="ServiceePubModel.Favorite" Role="Favorite" Multiplicity="0..1" />
+    <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="0..1" />
+  </Association>
+  <Association Name="FavoriteChapter">
+    <End Type="ServiceePubModel.Favorite" Role="Favorite" Multiplicity="0..1" />
+    <End Type="ServiceePubModel.Chapter" Role="Chapter" Multiplicity="0..1" />
+  </Association>
+  <EntityType Name="eBookTitles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Title" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="eBook" Relationship="ServiceePubModel.eBookeBookTitles" FromRole="eBookTitles" ToRole="eBook" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+  </EntityType>
+  <Association Name="eBookeBookTitles">
+    <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
+    <End Type="ServiceePubModel.eBookTitles" Role="eBookTitles" Multiplicity="*" />
+  </Association>
+  <EntityType Name="eBookAuthors">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="eBook" Relationship="ServiceePubModel.eBookeBookAuthors" FromRole="eBookAuthors" ToRole="eBook" />
+    <Property Type="Int32" Name="Id" Nullable="false" />
+  </EntityType>
+  <Association Name="eBookeBookAuthors">
+    <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
+    <End Type="ServiceePubModel.eBookAuthors" Role="eBookAuthors" Multiplicity="*" />
+  </Association>
+</Schema>

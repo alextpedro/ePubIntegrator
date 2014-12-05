@@ -12,7 +12,7 @@ namespace ServiceePubCloud
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IePubCloud
     {
         //Returns XML Document with saved user statistics.
         [OperationContract]
@@ -28,7 +28,7 @@ namespace ServiceePubCloud
 
         //TODO: Database only available to webservice, needs to receive fields.
         [OperationContract]
-        void RegistereBook(Epub newebook);
+        void RegistereBook(XmlDocument bookinfo);
 
         [OperationContract]
         void RegisterUser(string username, string password);
@@ -38,20 +38,6 @@ namespace ServiceePubCloud
 
         [OperationContract]
         void AddFavorite(int ebookID, int chapterID);
-
-        [OperationContract]
-        XmlDocument GetBookmarks(int userID, int eBookID);
-
-        [OperationContract]
-        XmlDocument GetFavorites(int userID, int eBookID);
-
-        [OperationContract]
-        XmlDocument GeteBookIDbyTitle(string title);
-
-        [OperationContract]
-        XmlDocument GeteBookIDbyAuthor(string author);
-
-        
         
     }
 

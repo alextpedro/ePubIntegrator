@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 11/28/2014 17:46:24
--- Generated from EDMX file: C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ServiceePubCloud\ServiceePubModel.edmx
+-- Date Created: 12/05/2014 17:26:43
+-- Generated from EDMX file: C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [ServiceepubDB];
+USE [ePubIntegratorDB];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -17,11 +17,68 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_UserLogin]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LoginSet] DROP CONSTRAINT [FK_UserLogin];
+GO
+IF OBJECT_ID(N'[dbo].[FK_BookmarkeBook]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[eBookSet] DROP CONSTRAINT [FK_BookmarkeBook];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ChaptereBook]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ChapterSet] DROP CONSTRAINT [FK_ChaptereBook];
+GO
+IF OBJECT_ID(N'[dbo].[FK_BookmarkChapter]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ChapterSet] DROP CONSTRAINT [FK_BookmarkChapter];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserBookmark]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[BookmarkSet] DROP CONSTRAINT [FK_UserBookmark];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FavoriteeBook]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[eBookSet] DROP CONSTRAINT [FK_FavoriteeBook];
+GO
+IF OBJECT_ID(N'[dbo].[FK_FavoriteChapter]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ChapterSet] DROP CONSTRAINT [FK_FavoriteChapter];
+GO
+IF OBJECT_ID(N'[dbo].[FK_eBookeBookTitles]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[eBookTitlesSet] DROP CONSTRAINT [FK_eBookeBookTitles];
+GO
+IF OBJECT_ID(N'[dbo].[FK_eBookeBookAuthors]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[eBookAuthorsSet] DROP CONSTRAINT [FK_eBookeBookAuthors];
+GO
+IF OBJECT_ID(N'[dbo].[FK_eBookPublishereBook]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[eBookPublisherSet] DROP CONSTRAINT [FK_eBookPublishereBook];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserSet];
+GO
+IF OBJECT_ID(N'[dbo].[LoginSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[LoginSet];
+GO
+IF OBJECT_ID(N'[dbo].[eBookSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[eBookSet];
+GO
+IF OBJECT_ID(N'[dbo].[BookmarkSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[BookmarkSet];
+GO
+IF OBJECT_ID(N'[dbo].[ChapterSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ChapterSet];
+GO
+IF OBJECT_ID(N'[dbo].[FavoriteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FavoriteSet];
+GO
+IF OBJECT_ID(N'[dbo].[eBookTitlesSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[eBookTitlesSet];
+GO
+IF OBJECT_ID(N'[dbo].[eBookAuthorsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[eBookAuthorsSet];
+GO
+IF OBJECT_ID(N'[dbo].[eBookPublisherSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[eBookPublisherSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -56,7 +113,7 @@ CREATE TABLE [dbo].[BookmarkSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Book] nvarchar(max)  NOT NULL,
     [Chapter] nvarchar(max)  NOT NULL,
-    [User_Id] int  NULL
+    [User_Id] int  NOT NULL
 );
 GO
 
@@ -88,6 +145,14 @@ GO
 
 -- Creating table 'eBookAuthorsSet'
 CREATE TABLE [dbo].[eBookAuthorsSet] (
+    [Name] int IDENTITY(1,1) NOT NULL,
+    [Id] int  NOT NULL,
+    [eBook_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'eBookPublisherSet'
+CREATE TABLE [dbo].[eBookPublisherSet] (
     [Name] int IDENTITY(1,1) NOT NULL,
     [Id] int  NOT NULL,
     [eBook_Id] int  NOT NULL
@@ -143,6 +208,12 @@ GO
 -- Creating primary key on [Id] in table 'eBookAuthorsSet'
 ALTER TABLE [dbo].[eBookAuthorsSet]
 ADD CONSTRAINT [PK_eBookAuthorsSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'eBookPublisherSet'
+ALTER TABLE [dbo].[eBookPublisherSet]
+ADD CONSTRAINT [PK_eBookPublisherSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -268,6 +339,20 @@ ADD CONSTRAINT [FK_eBookeBookAuthors]
 -- Creating non-clustered index for FOREIGN KEY 'FK_eBookeBookAuthors'
 CREATE INDEX [IX_FK_eBookeBookAuthors]
 ON [dbo].[eBookAuthorsSet]
+    ([eBook_Id]);
+GO
+
+-- Creating foreign key on [eBook_Id] in table 'eBookPublisherSet'
+ALTER TABLE [dbo].[eBookPublisherSet]
+ADD CONSTRAINT [FK_eBookPublishereBook]
+    FOREIGN KEY ([eBook_Id])
+    REFERENCES [dbo].[eBookSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_eBookPublishereBook'
+CREATE INDEX [IX_FK_eBookPublishereBook]
+ON [dbo].[eBookPublisherSet]
     ([eBook_Id]);
 GO
 

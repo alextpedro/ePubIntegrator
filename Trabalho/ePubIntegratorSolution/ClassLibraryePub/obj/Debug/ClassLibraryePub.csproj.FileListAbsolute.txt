@@ -7,3 +7,10 @@ C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.pdb
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.Properties.Resources.resources
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csproj.GenerateResource.Cache
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\ClassLibraryePub.dll
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\bin\Debug\ClassLibraryePub.pdb
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csprojResolveAssemblyReference.cache
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.Properties.Resources.resources
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.csproj.GenerateResource.Cache
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.dll
+C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibraryePub\obj\Debug\ClassLibraryePub.pdb
