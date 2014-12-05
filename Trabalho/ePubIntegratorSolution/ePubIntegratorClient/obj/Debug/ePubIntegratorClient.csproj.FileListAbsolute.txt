@@ -34,3 +34,4 @@ C:\Users\Toshiba\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\e
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.dll
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\bin\Debug\ClassLibraryePub.pdb
 C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ReadForm.resources
+C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ePubIntegratorClient\obj\Debug\ePubIntegratorClient.ChapterForm.resources

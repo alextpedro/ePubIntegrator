@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ePub>
+  <user username="pires123">
+    <ebook category="Children">
+      <titles>
+        <title>Harry Potter</title>
+        <title>Hogwarts</title>
+      </titles>
+      <authors>
+        <author>JKR</author>
+        <author>ABC</author>
+      </authors>
+      <publishers>
+        <publisher>eReading</publisher>
+        <publisher>WeReadE</publisher>
+      </publishers>
+      <subject>An Unforgetable Story</subject>
+      <rate>5</rate>
+      <favourite>
+        <date>02-10-2014</date>
+      </favourite>
+      <bookmark>
+        <date>10-12-2015</date>
+      </bookmark>
+      <chapters>
+        <chapter>Chapter 1</chapter>
+          <favourite>
+            <date>05/09/2014</date>
+          </favourite>
+          <bookmark>
+            <date>13-11-2015</date>
+          </bookmark>
+        <chapter>Chapter 2</chapter>
+      </chapters>
+    </ebook>
+  </user>
+</ePub>
