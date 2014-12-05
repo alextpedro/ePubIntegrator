@@ -6,7 +6,7 @@
     <xs:sequence>
       <xs:element name="user" type="myUser"/>
     </xs:sequence>
-    <xs:attribute name="version" type="xs:dateTime" use="required" />
+    <xs:attribute name="xmlversion" type="xs:dateTime" use="required" />
   </xs:complexType>
 
   <xs:complexType name="myUser">
