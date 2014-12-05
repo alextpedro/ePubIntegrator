@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServiceePubCloud
+namespace ePubCloudDatabaseLibrary
 {
     using System;
     using System.Data.Entity;
