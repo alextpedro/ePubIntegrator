@@ -17,6 +17,7 @@ namespace ePubIntegratorClient
     {
         List<Epub> bookList;
         Book selectedBook;
+        Epub selectedEpub;
 
         public ClientForm(String user)
         {
@@ -32,14 +33,13 @@ namespace ePubIntegratorClient
             if (result == DialogResult.OK)
             {
                 textBoxBookPath.Text = folderBrowserDialog1.SelectedPath;
-                clearBook();
                 reloadBooks();
             }
         }
 
         private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Epub selectedEpub = bookList[listBooks.SelectedIndex];
+            selectedEpub = bookList[listBooks.SelectedIndex];
             selectedBook = new Book(selectedEpub);
             labelTitle.Text = selectedBook.Title;
             labelPublisher.Text = selectedBook.Publisher;
@@ -52,6 +52,8 @@ namespace ePubIntegratorClient
 
         private void clearBook()
         {
+            buttonRead.Enabled = false;
+            buttonChapters.Enabled = false;
             listBooks.Items.Clear();
             labelTitle.Text = "";
             labelPublisher.Text = "";
@@ -62,15 +64,12 @@ namespace ePubIntegratorClient
             labelDesc.Text = "";
         }
 
-        private void buttonRead_Click(object sender, EventArgs e)
-        {
-            ReadForm readForm = new ReadForm(selectedBook);
-            readForm.ShowDialog();
-        }
+
 
         private void reloadBooks()
         {
             string[] epubList;
+            clearBook();
             try
             {
                 epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text, "*.epub");
@@ -79,7 +78,6 @@ namespace ePubIntegratorClient
             {
                 epubList = null;
             }
-
             try
             {
                 if (epubList != null)
@@ -94,12 +92,34 @@ namespace ePubIntegratorClient
                     
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 //DEU ERRO A LER ALGUM LIVRO ESTUPIDO
-                throw;
+                System.Diagnostics.Debug.WriteLine(ex.ToString());
             }
-            if (listBooks.Items.Count != 0) listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
+            if (listBooks.Items.Count != 0)
+            {
+                listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
+                buttonRead.Enabled = true;
+                buttonChapters.Enabled = true;
+            }
+        }
+
+        private void buttonChapters_Click(object sender, EventArgs e)
+        {
+            ChapterForm chapterForm = new ChapterForm(selectedEpub);
+            chapterForm.ShowDialog();
+        }
+
+        private void buttonRead_Click(object sender, EventArgs e)
+        {
+            ReadForm readForm = new ReadForm(selectedEpub);
+            readForm.ShowDialog();
+        }
+
+        private void buttonRefresh_Click_1(object sender, EventArgs e)
+        {
+            reloadBooks();
         }
     }
 }

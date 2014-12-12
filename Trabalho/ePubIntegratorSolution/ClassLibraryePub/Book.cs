@@ -95,7 +95,7 @@ namespace ClassLibraryePub
                     else convert = convert + ", " + str;
                 }
                 return convert;
-            } return "unknown";
+            } return "Unknown";
         }
         private String ListToString(List<DateData> list)
         {
@@ -113,7 +113,7 @@ namespace ClassLibraryePub
                     else convert = convert + ", " + str.ToString();
                 }
                 return convert;
-            } return "unknown";
+            } return "Unknown";
         }
     }
 }
