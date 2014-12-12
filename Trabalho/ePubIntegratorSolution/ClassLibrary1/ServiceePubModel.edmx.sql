@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 12/05/2014 17:26:43
+-- Date Created: 12/12/2014 15:18:28
 -- Generated from EDMX file: C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
 -- --------------------------------------------------
 
@@ -86,7 +86,10 @@ GO
 
 -- Creating table 'UserSet'
 CREATE TABLE [dbo].[UserSet] (
-    [Id] int IDENTITY(1,1) NOT NULL
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Email] nvarchar(max)  NOT NULL,
+    [DateOfBirth] datetime  NOT NULL,
+    [Address] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -103,6 +106,7 @@ CREATE TABLE [dbo].[eBookSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Language] nvarchar(max)  NOT NULL,
     [Author] nvarchar(max)  NOT NULL,
+    [Category] nvarchar(max)  NOT NULL,
     [Bookmark_Id] int  NULL,
     [Favorite_Id] int  NULL
 );
