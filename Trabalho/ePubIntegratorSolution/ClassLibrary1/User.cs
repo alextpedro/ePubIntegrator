@@ -20,6 +20,9 @@ namespace ePubCloudDatabaseLibrary
         }
     
         public int Id { get; set; }
+        public string Email { get; set; }
+        public System.DateTime DateOfBirth { get; set; }
+        public string Address { get; set; }
     
         public virtual Login Login { get; set; }
         public virtual ICollection<Bookmark> Bookmark { get; set; }

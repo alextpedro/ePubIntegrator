@@ -25,6 +25,7 @@ namespace ePubCloudDatabaseLibrary
         public int Id { get; set; }
         public string Language { get; set; }
         public string Author { get; set; }
+        public string Category { get; set; }
     
         public virtual Bookmark Bookmark { get; set; }
         public virtual ICollection<Chapter> Chapter { get; set; }
