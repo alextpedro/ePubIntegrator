@@ -24,6 +24,12 @@ namespace ePubIntegratorClient
             InitializeComponent();
             labelUser.Text = user;
             reloadBooks();
+            //testar funcionalidades aqui
+            MyXmlHandler h = new MyXmlHandler(Application.StartupPath + "/bookfav.xml");
+            
+            /////////////////////////////
+
+
         }
 
         private void buttonBookPath_Click(object sender, EventArgs e)
@@ -120,6 +126,11 @@ namespace ePubIntegratorClient
         private void buttonRefresh_Click_1(object sender, EventArgs e)
         {
             reloadBooks();
+        }
+
+        private void buttonFavorite_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
