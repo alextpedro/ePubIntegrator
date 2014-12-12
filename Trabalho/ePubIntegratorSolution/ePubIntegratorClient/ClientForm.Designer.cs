@@ -58,6 +58,7 @@
             this.buttonBookPath = new System.Windows.Forms.Button();
             this.buttonBookmark = new System.Windows.Forms.Button();
             this.buttonFavorite = new System.Windows.Forms.Button();
+            this.checkBoxFav = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -103,6 +104,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.checkBoxFav);
             this.panel1.Controls.Add(this.buttonBookmark);
             this.panel1.Controls.Add(this.buttonFavorite);
             this.panel1.Controls.Add(this.buttonRefresh);
@@ -354,6 +356,18 @@
             this.buttonFavorite.UseVisualStyleBackColor = true;
             this.buttonFavorite.Click += new System.EventHandler(this.buttonFavorite_Click);
             // 
+            // checkBoxFav
+            // 
+            this.checkBoxFav.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxFav.AutoSize = true;
+            this.checkBoxFav.Image = ((System.Drawing.Image)(resources.GetObject("checkBoxFav.Image")));
+            this.checkBoxFav.Location = new System.Drawing.Point(409, 22);
+            this.checkBoxFav.Name = "checkBoxFav";
+            this.checkBoxFav.Size = new System.Drawing.Size(71, 38);
+            this.checkBoxFav.TabIndex = 13;
+            this.checkBoxFav.Text = "checkBox1";
+            this.checkBoxFav.UseVisualStyleBackColor = true;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +422,6 @@
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.Button buttonBookmark;
         private System.Windows.Forms.Button buttonFavorite;
+        private System.Windows.Forms.CheckBox checkBoxFav;
     }
 }
