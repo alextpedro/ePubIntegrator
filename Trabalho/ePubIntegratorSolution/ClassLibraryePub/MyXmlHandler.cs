@@ -8,7 +8,7 @@ using System.Xml.Schema;
 
 namespace ClassLibraryePub
 {
-    class MyXmlHandler
+    public class MyXmlHandler
     {
         String _xmlPath;
         String _xsdPath;
@@ -22,22 +22,10 @@ namespace ClassLibraryePub
             _xsdPath = xsdPath;
         }
 
-        /*
-        public MyXmlHandler(String xmlPath)
+        public MyXmlHandler(String _xmlPath)
         {
             _xmlPath = xmlPath;
         }
-        */
-        /*
-        public XmlDocument openXml()
-        {
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(_xmlPath);
-            return xmlDoc;
-        } 
-         */
-
-        //properties
 
         public String ValidateMessage
         {
@@ -47,7 +35,6 @@ namespace ClassLibraryePub
             }
         }
 
-        //so é chamada se houver algum erro com os ficheiros
         public bool ValidateXML()
         {
             _isvalid = true;
@@ -80,12 +67,6 @@ namespace ClassLibraryePub
                     break;
             }
         }
-
-        public void saveXML()
-        {
-
-        }
-
 
         private void createXmlDoc() {
 
@@ -165,5 +146,19 @@ namespace ClassLibraryePub
             xmldoc.Save("C:\\Users\\Files\\document.xml");
         }
 
+        //Actualizar favorito do livro
+        public void updateFavorite(String user, String[] titles, String[] authors, String[] publishers, Boolean favorite)
+        {
+            XmlDocument xmldoc = new XmlDocument();
+            DateTime now = System.DateTime.Now;
+            //verificar data antes do update
+            //percorrer xml 
+        }
+
+        //Actualizar favorito do capítulo do livro
+        public void updateFavorite(String user, String[] titles, String[] authors, String[] publishers, Boolean favorite, String chapter)
+        {
+
+        }
     }
 }

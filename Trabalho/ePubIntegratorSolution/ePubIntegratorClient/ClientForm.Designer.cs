@@ -49,17 +49,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxFav = new System.Windows.Forms.PictureBox();
             this.labelTitle = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonRead = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBookPath = new System.Windows.Forms.TextBox();
             this.buttonBookPath = new System.Windows.Forms.Button();
+            this.buttonBookmark = new System.Windows.Forms.Button();
+            this.buttonFavorite = new System.Windows.Forms.Button();
+            this.checkBoxFav = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFav)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,6 +104,9 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.checkBoxFav);
+            this.panel1.Controls.Add(this.buttonBookmark);
+            this.panel1.Controls.Add(this.buttonFavorite);
             this.panel1.Controls.Add(this.buttonRefresh);
             this.panel1.Controls.Add(this.buttonChapters);
             this.panel1.Controls.Add(this.panel2);
@@ -149,7 +155,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBoxFav);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(217, 51);
@@ -258,26 +264,28 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(266, -1);
+            this.pictureBox2.Location = new System.Drawing.Point(38, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(24, 24);
+            this.pictureBox2.Size = new System.Drawing.Size(29, 29);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxFav
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxFav.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBoxFav.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxFav.Image")));
+            this.pictureBoxFav.Location = new System.Drawing.Point(3, 3);
+            this.pictureBoxFav.Name = "pictureBoxFav";
+            this.pictureBoxFav.Size = new System.Drawing.Size(29, 29);
+            this.pictureBoxFav.TabIndex = 3;
+            this.pictureBoxFav.TabStop = false;
             // 
             // labelTitle
             // 
             this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(36, 9);
+            this.labelTitle.Location = new System.Drawing.Point(69, 10);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(10, 13);
             this.labelTitle.TabIndex = 2;
@@ -329,6 +337,37 @@
             this.buttonBookPath.UseVisualStyleBackColor = true;
             this.buttonBookPath.Click += new System.EventHandler(this.buttonBookPath_Click);
             // 
+            // buttonBookmark
+            // 
+            this.buttonBookmark.Image = ((System.Drawing.Image)(resources.GetObject("buttonBookmark.Image")));
+            this.buttonBookmark.Location = new System.Drawing.Point(361, 3);
+            this.buttonBookmark.Name = "buttonBookmark";
+            this.buttonBookmark.Size = new System.Drawing.Size(42, 42);
+            this.buttonBookmark.TabIndex = 12;
+            this.buttonBookmark.UseVisualStyleBackColor = true;
+            // 
+            // buttonFavorite
+            // 
+            this.buttonFavorite.Image = ((System.Drawing.Image)(resources.GetObject("buttonFavorite.Image")));
+            this.buttonFavorite.Location = new System.Drawing.Point(313, 3);
+            this.buttonFavorite.Name = "buttonFavorite";
+            this.buttonFavorite.Size = new System.Drawing.Size(42, 42);
+            this.buttonFavorite.TabIndex = 11;
+            this.buttonFavorite.UseVisualStyleBackColor = true;
+            this.buttonFavorite.Click += new System.EventHandler(this.buttonFavorite_Click);
+            // 
+            // checkBoxFav
+            // 
+            this.checkBoxFav.Appearance = System.Windows.Forms.Appearance.Button;
+            this.checkBoxFav.AutoSize = true;
+            this.checkBoxFav.Image = ((System.Drawing.Image)(resources.GetObject("checkBoxFav.Image")));
+            this.checkBoxFav.Location = new System.Drawing.Point(409, 22);
+            this.checkBoxFav.Name = "checkBoxFav";
+            this.checkBoxFav.Size = new System.Drawing.Size(71, 38);
+            this.checkBoxFav.TabIndex = 13;
+            this.checkBoxFav.Text = "checkBox1";
+            this.checkBoxFav.UseVisualStyleBackColor = true;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,7 +385,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFav)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +407,7 @@
         private System.Windows.Forms.Button buttonChapters;
         private System.Windows.Forms.Button buttonRead;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxFav;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -381,5 +420,8 @@
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelPublisher;
         private System.Windows.Forms.Button buttonRefresh;
+        private System.Windows.Forms.Button buttonBookmark;
+        private System.Windows.Forms.Button buttonFavorite;
+        private System.Windows.Forms.CheckBox checkBoxFav;
     }
 }
