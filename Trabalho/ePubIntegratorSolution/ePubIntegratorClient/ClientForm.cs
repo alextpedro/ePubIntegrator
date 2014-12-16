@@ -18,17 +18,15 @@ namespace ePubIntegratorClient
         List<Epub> bookList;
         Book selectedBook;
         Epub selectedEpub;
+        String user;
+        BookFavHandler bfHandler = new BookFavHandler(Application.StartupPath);
 
         public ClientForm(String user)
         {
             InitializeComponent();
+            this.user = user;
             labelUser.Text = user;
             reloadBooks();
-            //testar funcionalidades aqui
-            MyXmlHandler h = new MyXmlHandler(Application.StartupPath + "/bookfav.xml");
-            
-            /////////////////////////////
-
 
         }
 
@@ -47,6 +45,8 @@ namespace ePubIntegratorClient
         {
             selectedEpub = bookList[listBooks.SelectedIndex];
             selectedBook = new Book(selectedEpub);
+            checkBoxFav.Checked = bfHandler.getFavValue(user, selectedBook);
+
             labelTitle.Text = selectedBook.Title;
             labelPublisher.Text = selectedBook.Publisher;
             labelDate.Text = selectedBook.Date;
@@ -56,10 +56,12 @@ namespace ePubIntegratorClient
             labelDesc.Text = selectedBook.Description;
         }
 
-        private void clearBook()
+        private void clearBooks()
         {
             buttonRead.Enabled = false;
             buttonChapters.Enabled = false;
+            checkBoxFav.Enabled = false;
+            checkBoxBkmrk.Enabled = false;
             listBooks.Items.Clear();
             labelTitle.Text = "";
             labelPublisher.Text = "";
@@ -69,13 +71,11 @@ namespace ePubIntegratorClient
             labelSubject.Text = "";
             labelDesc.Text = "";
         }
-
-
-
+        
         private void reloadBooks()
         {
             string[] epubList;
-            clearBook();
+            clearBooks();
             try
             {
                 epubList = System.IO.Directory.GetFiles(@textBoxBookPath.Text, "*.epub");
@@ -108,6 +108,7 @@ namespace ePubIntegratorClient
                 listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
                 buttonRead.Enabled = true;
                 buttonChapters.Enabled = true;
+                checkBoxFav.Enabled = true;
             }
         }
 
@@ -128,9 +129,9 @@ namespace ePubIntegratorClient
             reloadBooks();
         }
 
-        private void buttonFavorite_Click(object sender, EventArgs e)
+        private void checkBoxFav_CheckedChanged(object sender, EventArgs e)
         {
-
+            bfHandler.updateFavorite(user, selectedBook, checkBoxFav.Checked);
         }
     }
 }

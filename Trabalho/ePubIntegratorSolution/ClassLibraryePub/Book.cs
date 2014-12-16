@@ -12,6 +12,7 @@ namespace ClassLibraryePub
         private Epub _epub;
         private Boolean _Favorite;
         private Boolean _Bookmark;
+        private int _Hash;
 
 
         public Book(Epub epub)
@@ -20,6 +21,7 @@ namespace ClassLibraryePub
             //Por default favorito e bookmarks estão OFF
             _Favorite = false;
             _Bookmark = false;
+            _Hash = (Title + Creator + Publisher + Language).GetHashCode();
         }
 
         public String Title //Títulos
@@ -77,6 +79,11 @@ namespace ClassLibraryePub
         {
             get { return _Bookmark; }
             set { _Bookmark = value; }
+        }
+
+        public int Hash
+        {
+            get { return _Hash; }
         }
 
         private String ListToString(List<String> list)

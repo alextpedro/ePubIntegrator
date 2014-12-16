@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookFavHandler.cs" />
     <Compile Include="ChapterForm.cs">
       <SubType>Form</SubType>
     </Compile>

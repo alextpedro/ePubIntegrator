@@ -22,7 +22,7 @@ namespace ClassLibraryePub
             _xsdPath = xsdPath;
         }
 
-        public MyXmlHandler(String _xmlPath)
+        public MyXmlHandler(String xmlPath)
         {
             _xmlPath = xmlPath;
         }
@@ -147,18 +147,27 @@ namespace ClassLibraryePub
         }
 
         //Actualizar favorito do livro
-        public void updateFavorite(String user, String[] titles, String[] authors, String[] publishers, Boolean favorite)
+        public void updateFavorite(String user, Book book, Boolean favorite)
         {
+            //Carregar xmlfile
             XmlDocument xmldoc = new XmlDocument();
-            DateTime now = System.DateTime.Now;
+            xmldoc.Load(_xmlPath);
+            //////////////
+
             //verificar data antes do update
-            //percorrer xml 
-        }
-
-        //Actualizar favorito do capítulo do livro
-        public void updateFavorite(String user, String[] titles, String[] authors, String[] publishers, Boolean favorite, String chapter)
-        {
-
+            DateTime timeNow = System.DateTime.Now; //recolher data do momento
+            DateTime timeXML = Convert.ToDateTime(xmldoc.SelectSingleNode("/ePub/@updated").Value); //recolher data do XML
+            if (timeNow >= timeXML) //verificar se vale a pena fazer update caso desactualizado
+            {
+                //verificar se o utilizador existe
+                //verificar se o livro/favorito existe
+                //xmldoc.SelectSingleNode("/ePub/user[@username='" + user + "']/ebook[@hash='" + hash + "']").
+                //percorrer xml
+                
+                //System.Diagnostics.Debug.WriteLine("[DEBUG] An update called to favourites...");
+                //xmldoc.SelectSingleNode("/ePub/user[@username='" + user + "']/ebook[@hash='" + hash + "']/favourite/@global").Value = favorite.ToString();
+                //xmldoc.Save(_xmlPath);
+            }
         }
     }
 }
