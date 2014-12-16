@@ -8,7 +8,7 @@ namespace ePubCloudDatabaseLibrary
 {
     public class DatabaseHandler
     {
-        public void addUserWLogin(string username, string password)
+        public void AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
         {
             ServiceePubModelContainer context = new ServiceePubModelContainer();
 
@@ -18,7 +18,10 @@ namespace ePubCloudDatabaseLibrary
                 if (l == null)
                 {
                     User newUser = new User();
-                    //newUser = context.UserSet.where(
+                    newUser.Email = email;
+                    newUser.Address = address;
+                    newUser.DateOfBirth = birthdate;
+                    
 
                     Login newLogin = new Login();
                     newLogin.Username = username;
@@ -33,8 +36,11 @@ namespace ePubCloudDatabaseLibrary
             catch (Exception ex)
             {
 
-                throw new TaskCanceledException("An unknown error occurred.");
+                throw ex;
             }
         }
+
+        
+
     }
 }
