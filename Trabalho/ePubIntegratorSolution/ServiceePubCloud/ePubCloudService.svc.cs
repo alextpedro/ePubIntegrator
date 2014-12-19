@@ -41,9 +41,7 @@ namespace ServiceePubCloud
         public void RegistereBook(eBdb.EpubReader.Epub newebook)
         {
             //Remove this once done. It causes the warnings.
-            throw new NotImplementedException();
-
-
+            //throw new NotImplementedException();
 
             DatabaseHandler.RegistereBook(newebook);
         }
