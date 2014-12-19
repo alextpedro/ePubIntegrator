@@ -40,15 +40,12 @@ namespace ServiceePubCloud
 
         public void RegistereBook(eBdb.EpubReader.Epub newebook)
         {
-            //Remove this once done. It causes the warnings.
-            //throw new NotImplementedException();
-
             DatabaseHandler.RegistereBook(newebook);
         }
 
-        public void RegisterUser(string username, string password)
+        public void RegisterUser(string username, string password, string email, string address, DateTime birthdate)
         {
-            throw new NotImplementedException();
+            DatabaseHandler.AddUserWLogin(username, password, email, address, birthdate);
         }
 
         public void AddBookmark(int ebookID, int chapterID)
@@ -67,11 +64,6 @@ namespace ServiceePubCloud
         }
 
         public System.Xml.XmlDocument GetFavorites(int userID, int eBookID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RegistereBook(System.Xml.XmlDocument bookinfo)
         {
             throw new NotImplementedException();
         }
