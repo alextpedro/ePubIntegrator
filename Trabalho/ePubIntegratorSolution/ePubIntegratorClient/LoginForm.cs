@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
+using System.IO;
 
 namespace ePubIntegratorClient
 {
@@ -22,7 +23,7 @@ namespace ePubIntegratorClient
         {
             InitializeComponent();
             xmlDoc = new XmlDocument();
-            xmlPath = Application.StartupPath + "/config.xml";
+            xmlPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "/config.xml";
             xmlDoc.Load(xmlPath);
 
             textBoxLogin.Text = xmlDoc.SelectSingleNode("/config/lastlogin").InnerText;
