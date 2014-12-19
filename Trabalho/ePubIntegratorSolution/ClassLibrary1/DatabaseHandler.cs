@@ -9,9 +9,9 @@ namespace ePubCloudDatabaseLibrary
 {
     public static class DatabaseHandler
     {
-        ServiceePubModelContainer context = new ServiceePubModelContainer();
+        static ServiceePubModelContainer context = new ServiceePubModelContainer();
 
-        public void AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
+        public static void AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
         {
 
             try
@@ -29,6 +29,12 @@ namespace ePubCloudDatabaseLibrary
                     newLogin.Username = username;
                     newLogin.Password = password;
                     newLogin.User = newUser;
+
+                    newUser.Login = newLogin;
+
+                    context.UserSet.Add(newUser);
+                    context.LoginSet.Add(newLogin);
+                    context.SaveChanges();
                 }
                 else
                 {
@@ -43,12 +49,12 @@ namespace ePubCloudDatabaseLibrary
         }
 
 
-        public void GetUserStatistics(int userID)
+        public static void GetUserStatistics(int userID)
         {
             throw new NotImplementedException();
         }
 
-        public void RegistereBook(Epub neweBook)
+        public static void RegistereBook(Epub neweBook)
         {
             //throw new NotImplementedException();
             eBook ebook = new eBook();
