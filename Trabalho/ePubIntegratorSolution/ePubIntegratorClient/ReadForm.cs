@@ -1,4 +1,4 @@
-﻿using ClassLibraryePub;
+﻿using ePubIntegratorClient;
 using eBdb.EpubReader;
 using System;
 using System.Collections.Generic;

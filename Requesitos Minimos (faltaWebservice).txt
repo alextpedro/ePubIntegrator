@@ -10,13 +10,13 @@ Mark [ ] as [x] when completed! :D
 [X]	- Localização dos livros
 [X]	- Localização URL do webservice
 [X] > Data do ultimo login (config.xml)
-[ ] > Guardar título, autor, assunto e capítulos (ebooks.xml)
+[ ] > Guardar título, autor, publisher (ebooks.xml)
 [ ] > Indicar ultimo livro e capítulo consultados
-    > Registar bookmarks para: (intPagina)
+    > Registar bookmarks para:
 [ ]	- livro
 [ ]	- capítulo
-    > Registar favorito para: (boolean)
-[ ]	- livro
+    > Registar favorito para:
+[X]	- livro
 [ ]	- capítulo
 [ ] > Validar XMLs com ficheiros Schema XSD
 [X] > Mostrar ebooks depois de iniciar login
@@ -24,7 +24,7 @@ Mark [ ] as [x] when completed! :D
     > Visualizar ebook por:
 [X]	- livro inteiro, pagina a pagina
 [X]	- capítulo
-[ ] > Enviar bookmarks/favoritos (bookfav.xml) e dados estatísticos (statistics.xml) para o webService em XML
+[ ] > Enviar bookmarks/favoritos (bookfav.xml) e receber dados estatísticos (statistics.xml) do webService em XML
 [ ] > Consultar bookmarks e favoritos
 [ ] > Consultar dados estatísticos
 [ ]	- dd/mm/aa em que a aplicação foi mais acedida

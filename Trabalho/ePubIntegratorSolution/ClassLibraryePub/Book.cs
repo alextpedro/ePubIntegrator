@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibraryePub
+namespace ePubIntegratorClient
 {
     public class Book
     {

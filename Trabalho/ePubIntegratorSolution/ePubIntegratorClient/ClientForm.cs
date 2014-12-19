@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using eBdb.EpubReader;
-using ClassLibraryePub;
+using ePubIntegratorClient;
 
 namespace ePubIntegratorClient
 {

@@ -9,7 +9,7 @@
     <ProjectGuid>{6B00FE33-2BD6-485F-B5CD-14FCEF20A5AA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibraryePub</RootNamespace>
+    <RootNamespace>ePubIntegratorClient</RootNamespace>
     <AssemblyName>ClassLibraryePub</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

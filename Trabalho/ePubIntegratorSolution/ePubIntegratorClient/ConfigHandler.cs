@@ -7,22 +7,55 @@ using System.Xml;
 
 namespace ePubIntegratorClient
 {
-    public class BookFavHandler
+    public class ConfigHandler
     {
 
         private String _xmlPath;
         private XmlDocument _xmldoc;
-        private const string FILE = "/bookfav.xml";
-        private const string ROOTNODE = "/ePub/";
+        private const string FILE = "/userconfig.xml";
+        private const string ROOTNODE = "/config/";
 
 
-        public BookFavHandler(String xmlPath)
+        public ConfigHandler(String xmlPath)
         {
             _xmlPath = xmlPath + FILE;
             _xmldoc = new XmlDocument();
             _xmldoc.Load(_xmlPath);
         }
 
+        public void loginUser(String user, string server)
+        {
+            if (!(isUserValid(user))) createUser(user, server); //se o utilizador não existir criar novo user no XML.
+            //NAO ESKECER ADICIONAR LASTUSER E SAVE
+        }
+
+        //Cria um utilizador user no XML asseguir ao ePub
+        private void createUser(String user, String server)
+        {
+            XmlElement root = _xmldoc.DocumentElement;
+            XmlNode userNode = _xmldoc.CreateElement("user");
+            XmlNode serverNode = _xmldoc.CreateElement("server");
+            XmlNode lastloginNode = _xmldoc.CreateElement("lastlogin");
+            XmlAttribute attUsername = _xmldoc.CreateAttribute("username");
+            attUsername.Value = user;
+            serverNode.Value = server;
+            lastloginNode.Value = DateTime.Now.ToString();
+            userNode.Attributes.Append(attUsername);
+            userNode.AppendChild(serverNode);
+            userNode.AppendChild(lastloginNode);
+            root.AppendChild(userNode);
+            saveXML();
+        }
+
+        public String[] getLastUserInfo()
+        {
+            String user = _xmldoc.SelectSingleNode(ROOTNODE + "[@lastuser]").Value;
+            String[] info = null;
+            info[0] = user;
+            info[1] = _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/server").Value; ;
+            info[2] = _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/lastlogin").Value; ;
+            return info;
+        }
 
         public void updateFavorite(String user, Book book, Boolean favorite)
         {
@@ -31,7 +64,7 @@ namespace ePubIntegratorClient
             DateTime timeXML = Convert.ToDateTime(_xmldoc.SelectSingleNode(ROOTNODE + "@updated").Value); //recolher data do XML
             if (timeNow >= timeXML) //verificar se vale a pena fazer update caso desactualizado
             {
-                if (!(isUserValid(user))) createUser(user); //se o utilizador não existir criar novo user no XML.
+               // if (!(isUserValid(user))) createUser(user); //se o utilizador não existir criar novo user no XML.
                 if (!(isBookListed(user, book))) createBook(user, book); //se o livro não existir criar novo
                 if (!(bookHasFavNode(user, book))) createFavNode(user, book); //se não existir favorito no livro do utilizador criar novo
 
@@ -61,7 +94,7 @@ namespace ePubIntegratorClient
         //verifica se existe o node para os favoritos
         private bool bookHasFavNode(string user, Book book)
         {
-            if (_xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/favourite[@global]") != null) return true;
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "[@lastuser='" + user + "']/ebook[@hash='" + book.Hash + "']/favourite[@global]") != null) return true;
             else return false;
         }
 
@@ -92,17 +125,7 @@ namespace ePubIntegratorClient
         }
 
 
-        //Cria um utilizador user no XML asseguir ao ePub
-        private void createUser(String user)
-        {
-            XmlElement root = _xmldoc.DocumentElement;
-            XmlNode userNode = _xmldoc.CreateElement("user");
-            XmlAttribute attUsername = _xmldoc.CreateAttribute("username");
-            attUsername.Value = user;
-            userNode.Attributes.Append(attUsername);
-            root.AppendChild(userNode);
-            saveXML();
-        }
+
 
         private void saveXML()
         {

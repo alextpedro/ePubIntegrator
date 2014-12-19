@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ePubIntegratorClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,6 +39,13 @@ namespace ePubIntegratorClient
             xmlDoc.SelectSingleNode("/config/lastserver").InnerText = textBoxServer.Text;
             xmlDoc.SelectSingleNode("/config/lasttime").InnerText = DateTime.Now.ToString();
             xmlDoc.Save(xmlPath);
+
+            //Login teste
+            ConfigHandler ch = new ConfigHandler(textBoxLogin.Text, textBoxServer.Text);
+
+
+            ///////////
+
 
             ClientForm clientForm = new ClientForm(textBoxLogin.Text);
             //Esconde o formulario de login
