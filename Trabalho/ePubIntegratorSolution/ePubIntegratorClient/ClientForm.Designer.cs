@@ -318,9 +318,9 @@
             // 
             this.textBoxBookPath.Location = new System.Drawing.Point(6, 25);
             this.textBoxBookPath.Name = "textBoxBookPath";
+            this.textBoxBookPath.ReadOnly = true;
             this.textBoxBookPath.Size = new System.Drawing.Size(129, 20);
             this.textBoxBookPath.TabIndex = 8;
-            this.textBoxBookPath.Text = "C:\\Users\\Go0rum\\Documents\\Books";
             // 
             // buttonBookPath
             // 

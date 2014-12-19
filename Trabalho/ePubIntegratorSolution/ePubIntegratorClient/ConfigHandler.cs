@@ -13,7 +13,7 @@ namespace ePubIntegratorClient
         private String _xmlPath;
         private XmlDocument _xmldoc;
         private const string FILE = "/userconfig.xml";
-        private const string ROOTNODE = "/config/";
+        private const string ROOTNODE = "/config";
 
 
         public ConfigHandler(String xmlPath)
@@ -26,7 +26,8 @@ namespace ePubIntegratorClient
         public void loginUser(String user, String server)
         {
             if (!(isUserValid(user))) createUser(user, server); //se o utilizador não existir criar novo user no XML.
-            //NAO ESKECER ADICIONAR LASTUSER E SAVE
+            _xmldoc.SelectSingleNode(ROOTNODE + "[@lastuser]").Attributes[0].Value = user;
+            saveXML();
         }
 
         //Cria um utilizador user no XML asseguir ao ePub
@@ -49,18 +50,20 @@ namespace ePubIntegratorClient
 
         public String[] getLastUserInfo()
         {
-            String user = _xmldoc.SelectSingleNode(ROOTNODE + "[@lastuser]").Value;
+            String user = _xmldoc.SelectSingleNode(ROOTNODE + "/[@lastuser]").Value;
             String[] info = null;
             info[0] = user;
-            info[1] = _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/server").Value; ;
-            info[2] = _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/lastlogin").Value;
+            info[1] = _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/server").Value; ;
+            info[2] = _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastlogin").Value;
             return info;
         }
+
+
 
         //Verifica se o utilizador ja está registado no XML
         private Boolean isUserValid(String user)
         {
-            if (_xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']") != null) return true;
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']") != null) return true;
             else return false;
         }
 
@@ -68,6 +71,32 @@ namespace ePubIntegratorClient
         {
             //NÃO ESQUECER - FALTA VALIDAR XML E MARCAR UPDATE-TIME
             _xmldoc.Save(_xmlPath);
+        }
+
+        public String getUserBookPath(String user)
+        {
+            try
+            {
+                return _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/bookpath").InnerText;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+
+
+        internal void setBookPath(string user, string path)
+        {
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/bookpath") == null)
+            {
+                XmlNode bookpathNode = _xmldoc.CreateElement("bookpath");
+                bookpathNode.InnerText = path;
+                _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']").AppendChild(bookpathNode);
+                saveXML();
+            } else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/bookpath").InnerText = path;
+            saveXML();
         }
     }
 }
