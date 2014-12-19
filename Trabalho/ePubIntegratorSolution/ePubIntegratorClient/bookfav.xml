@@ -14,7 +14,7 @@
         <publisher>Publisher 1</publisher>
         <publisher>Publisher 2</publisher>
       </publishers>
-      <favourite updated="19/12/2014 15:27:59" global="True">
+      <favourite updated="19/12/2014 16:26:30" global="False">
         <chapter>Chapter 1</chapter>
         <chapter>Chapter 2</chapter>
       </favourite>
@@ -27,13 +27,13 @@
       <favourite updated="15/12/2014 23:32:04" global="False" />
     </ebook>
     <ebook hash="-269754146">
-      <favourite updated="19/12/2014 13:46:38" global="True" />
+      <favourite updated="19/12/2014 16:26:23" global="False" />
     </ebook>
     <ebook hash="-939113191">
       <favourite updated="19/12/2014 13:46:37" global="True" />
     </ebook>
     <ebook hash="1430659934">
-      <favourite updated="19/12/2014 13:46:37" global="False" />
+      <favourite updated="19/12/2014 16:25:28" global="False" />
     </ebook>
     <ebook hash="-579620749">
       <favourite updated="19/12/2014 13:46:39" global="False" />
@@ -42,7 +42,7 @@
       <favourite updated="16/12/2014 00:23:34" global="False" />
     </ebook>
     <ebook hash="-854820960">
-      <favourite updated="19/12/2014 13:46:30" global="True" />
+      <favourite updated="19/12/2014 16:26:27" global="False" />
     </ebook>
   </user>
   <user username="pires">
