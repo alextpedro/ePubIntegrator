@@ -48,13 +48,14 @@ namespace ePubIntegratorClient
             saveXML();
         }
 
-        public String[] getLastUserInfo()
+        public List<String> getLastUserInfo()
         {
-            String user = _xmldoc.SelectSingleNode(ROOTNODE + "/[@lastuser]").Value;
-            String[] info = null;
-            info[0] = user;
-            info[1] = _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/server").Value; ;
-            info[2] = _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastlogin").Value;
+            String user = _xmldoc.SelectSingleNode(ROOTNODE + "[@lastuser]").Attributes[0].InnerText;
+            List<String> info = new List<String>();
+            info.Add(user);
+            info.Add(_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/server").InnerText);
+            info.Add(_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastlogin").InnerText);
+
             return info;
         }
 

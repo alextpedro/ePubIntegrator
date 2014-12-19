@@ -19,18 +19,26 @@ namespace ePubIntegratorClient
         private XmlDocument xmlDoc;
         private String xmlPath;
         private String rootPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+        ConfigHandler ch;
 
         public LoginForm()
         {
             InitializeComponent();
+            
+            ch = new ConfigHandler(rootPath);
+            
             xmlDoc = new XmlDocument();
             xmlPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "/config.xml";
             xmlDoc.Load(xmlPath);
 
-            textBoxLogin.Text = xmlDoc.SelectSingleNode("/config/lastlogin").InnerText;
+            //textBoxLogin.Text = xmlDoc.SelectSingleNode("/config/lastlogin").InnerText;
             textBoxServer.Text = xmlDoc.SelectSingleNode("/config/lastserver").InnerText;
             labelStatus.Text = "Last Login: " + xmlDoc.SelectSingleNode("/config/lasttime").InnerText;
 
+            List<String> infolist = ch.getLastUserInfo();
+            textBoxLogin.Text = infolist[0];
+            textBoxServer.Text = infolist[1];
+            labelStatus.Text = "Last Login: " + infolist[2];
             button1.TabIndex = 0;
         }
 
