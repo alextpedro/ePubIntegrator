@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using eBdb.EpubReader;
 using ePubIntegratorClient;
+using System.IO;
 
 namespace ePubIntegratorClient
 {
@@ -20,14 +21,15 @@ namespace ePubIntegratorClient
         Epub selectedEpub;
         String user;
         BookFavHandler bfHandler = new BookFavHandler(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+        ConfigHandler configHandler = new ConfigHandler(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
 
         public ClientForm(String user)
         {
             InitializeComponent();
             this.user = user;
             labelUser.Text = user;
+            textBoxBookPath.Text = configHandler.getUserBookPath(user);
             reloadBooks();
-
         }
 
         private void buttonBookPath_Click(object sender, EventArgs e)
@@ -37,8 +39,10 @@ namespace ePubIntegratorClient
             if (result == DialogResult.OK)
             {
                 textBoxBookPath.Text = folderBrowserDialog1.SelectedPath;
+                configHandler.setBookPath(user, folderBrowserDialog1.SelectedPath);
                 reloadBooks();
             }
+            
         }
 
         private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
