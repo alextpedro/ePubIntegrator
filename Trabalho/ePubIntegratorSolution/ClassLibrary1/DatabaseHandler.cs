@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using eBdb.EpubReader;
 
 namespace ePubCloudDatabaseLibrary
 {
-    public class DatabaseHandler
+    public static class DatabaseHandler
     {
+        ServiceePubModelContainer context = new ServiceePubModelContainer();
+
         public void AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
         {
-            ServiceePubModelContainer context = new ServiceePubModelContainer();
 
             try
             {
@@ -40,7 +42,50 @@ namespace ePubCloudDatabaseLibrary
             }
         }
 
-        
 
+        public void GetUserStatistics(int userID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegistereBook(Epub neweBook)
+        {
+            //throw new NotImplementedException();
+            eBook ebook = new eBook();
+            ebook.Language = neweBook.Language.ToString(); //Maybe the database needs to handle multiple languages?
+            ebook.Category = neweBook.Subject.ToString(); //Maybe several categories
+
+            foreach (string title in neweBook.Title)
+	        {
+		        eBookTitles newTitle = new eBookTitles();
+                newTitle.Title = title;
+                context.eBookTitlesSet.Add(newTitle);
+
+                ebook.eBookTitles.Add(newTitle);
+	        }
+            
+            foreach (string author in neweBook.Contributer)
+            {
+                eBookAuthors newAuthor = new eBookAuthors();
+                newAuthor.Name = author;
+                context.eBookAuthorsSet.Add(newAuthor);
+
+                ebook.eBookAuthors.Add(newAuthor);
+
+            }
+
+            foreach (string publisher in neweBook.Publisher)
+            {
+                eBookPublisher newPublisher = new eBookPublisher();
+                newPublisher.Name = publisher;
+                context.eBookPublisherSet.Add(newPublisher);
+
+                ebook.eBookPublisher.Add(newPublisher);
+            }
+
+
+            context.eBookSet.Add(ebook);
+            context.SaveChanges();
+        }
     }
 }

@@ -14,7 +14,7 @@ namespace ePubCloudDatabaseLibrary
     
     public partial class eBookAuthors
     {
-        public int Name { get; set; }
+        public string Name { get; set; }
         public int Id { get; set; }
     
         public virtual eBook eBook { get; set; }

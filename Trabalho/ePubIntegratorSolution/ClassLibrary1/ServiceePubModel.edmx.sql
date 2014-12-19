@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 12/19/2014 13:58:21
+-- Date Created: 12/19/2014 16:04:39
 -- Generated from EDMX file: C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
 -- --------------------------------------------------
 
@@ -141,7 +141,7 @@ GO
 
 -- Creating table 'eBookTitlesSet'
 CREATE TABLE [dbo].[eBookTitlesSet] (
-    [Title] int IDENTITY(1,1) NOT NULL,
+    [Title] nvarchar(max)  NOT NULL,
     [Id] int  NOT NULL,
     [eBook_Id] int  NOT NULL
 );
@@ -160,6 +160,13 @@ CREATE TABLE [dbo].[eBookPublisherSet] (
     [Name] int IDENTITY(1,1) NOT NULL,
     [Id] int  NOT NULL,
     [eBook_Id] int  NOT NULL
+);
+GO
+
+-- Creating table 'StatisticsSet'
+CREATE TABLE [dbo].[StatisticsSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [User_Id] int  NOT NULL
 );
 GO
 
@@ -218,6 +225,12 @@ GO
 -- Creating primary key on [Id] in table 'eBookPublisherSet'
 ALTER TABLE [dbo].[eBookPublisherSet]
 ADD CONSTRAINT [PK_eBookPublisherSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'StatisticsSet'
+ALTER TABLE [dbo].[StatisticsSet]
+ADD CONSTRAINT [PK_StatisticsSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -358,6 +371,20 @@ ADD CONSTRAINT [FK_eBookPublishereBook]
 CREATE INDEX [IX_FK_eBookPublishereBook]
 ON [dbo].[eBookPublisherSet]
     ([eBook_Id]);
+GO
+
+-- Creating foreign key on [User_Id] in table 'StatisticsSet'
+ALTER TABLE [dbo].[StatisticsSet]
+ADD CONSTRAINT [FK_StatisticsUser]
+    FOREIGN KEY ([User_Id])
+    REFERENCES [dbo].[UserSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_StatisticsUser'
+CREATE INDEX [IX_FK_StatisticsUser]
+ON [dbo].[StatisticsSet]
+    ([User_Id]);
 GO
 
 -- --------------------------------------------------

@@ -26,5 +26,6 @@ namespace ePubCloudDatabaseLibrary
     
         public virtual Login Login { get; set; }
         public virtual ICollection<Bookmark> Bookmark { get; set; }
+        public virtual Statistics Statistics { get; set; }
     }
 }

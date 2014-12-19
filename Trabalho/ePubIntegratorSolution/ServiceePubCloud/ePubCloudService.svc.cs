@@ -5,6 +5,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using ePubCloudDatabaseLibrary;
+using System.Xml;
 
 namespace ServiceePubCloud
 {
@@ -15,7 +17,15 @@ namespace ServiceePubCloud
 
         public System.Xml.XmlDocument GetUserStatistics(int userID)
         {
+            //Remove this once done. It causes the warnings.
             throw new NotImplementedException();
+
+            //TODO: All of it.
+            //Create new XML document
+            XmlDocument statistics = new XmlDocument();
+
+            //Access the database
+            DatabaseHandler.GetUserStatistics(userID);
         }
 
         public System.Xml.XmlDocument GetGlobalStatistics()
@@ -30,7 +40,12 @@ namespace ServiceePubCloud
 
         public void RegistereBook(eBdb.EpubReader.Epub newebook)
         {
+            //Remove this once done. It causes the warnings.
             throw new NotImplementedException();
+
+
+
+            DatabaseHandler.RegistereBook(newebook);
         }
 
         public void RegisterUser(string username, string password)
