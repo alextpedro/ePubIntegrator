@@ -42,8 +42,8 @@ namespace ePubIntegratorClient
             xmlDoc.Save(xmlPath);
 
             //Login teste
-            ConfigHandler ch = new ConfigHandler(textBoxLogin.Text, textBoxServer.Text);
-
+            ConfigHandler ch = new ConfigHandler(Application.StartupPath);
+            ch.loginUser(textBoxLogin.Text, textBoxServer.Text);
 
             ///////////
 
