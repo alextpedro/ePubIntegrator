@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ePub updated="12/12/2014 22:12:38">
+  <user username="user123">
+    <ebook hash="-1351160594">
+      <titles>
+        <title>Title 1</title>
+        <title>Title 2</title>
+      </titles>
+      <authors>
+        <author>Author 1</author>
+        <author>Author 2</author>
+      </authors>
+      <publishers>
+        <publisher>Publisher 1</publisher>
+        <publisher>Publisher 2</publisher>
+      </publishers>
+      <favourite updated="19/12/2014 13:46:34" global="True">
+        <chapter>Chapter 1</chapter>
+        <chapter>Chapter 2</chapter>
+      </favourite>
+      <bookmark updated="12/12/2014 22:12:38" global="True">
+        <chapter>Chapter 1</chapter>
+        <chapter>Chapter 2</chapter>
+      </bookmark>
+    </ebook>
+    <ebook hash="-1351160594">
+      <favourite updated="15/12/2014 23:32:04" global="False" />
+    </ebook>
+    <ebook hash="-269754146">
+      <favourite updated="19/12/2014 13:46:38" global="True" />
+    </ebook>
+    <ebook hash="-939113191">
+      <favourite updated="19/12/2014 13:46:37" global="True" />
+    </ebook>
+    <ebook hash="1430659934">
+      <favourite updated="19/12/2014 13:46:37" global="False" />
+    </ebook>
+    <ebook hash="-579620749">
+      <favourite updated="19/12/2014 13:46:39" global="False" />
+    </ebook>
+    <ebook hash="1136980949">
+      <favourite updated="16/12/2014 00:23:34" global="False" />
+    </ebook>
+    <ebook hash="-854820960">
+      <favourite updated="19/12/2014 13:46:30" global="True" />
+    </ebook>
+  </user>
+  <user username="pires">
+    <ebook hash="-1351160594">
+      <favourite updated="19/12/2014 13:45:52" global="True" />
+    </ebook>
+    <ebook hash="-269754146">
+      <favourite updated="19/12/2014 13:46:01" global="True" />
+    </ebook>
+  </user>
+  <user username="pires2">
+    <ebook hash="-1351160594">
+      <favourite updated="19/12/2014 14:04:14" global="True" />
+    </ebook>
+  </user>
+  <user username="goorum">
+    <ebook hash="-939113191">
+      <favourite updated="19/12/2014 14:11:30" global="True" />
+    </ebook>
+    <ebook hash="-1351160594">
+      <favourite updated="19/12/2014 14:13:32" global="True" />
+    </ebook>
+  </user>
+</ePub>

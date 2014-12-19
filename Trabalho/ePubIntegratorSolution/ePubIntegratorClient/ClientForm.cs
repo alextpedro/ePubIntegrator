@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using eBdb.EpubReader;
 using ePubIntegratorClient;
 
@@ -19,7 +19,7 @@ namespace ePubIntegratorClient
         Book selectedBook;
         Epub selectedEpub;
         String user;
-        BookFavHandler bfHandler = new BookFavHandler(Application.StartupPath);
+        BookFavHandler bfHandler = new BookFavHandler(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
 
         public ClientForm(String user)
         {

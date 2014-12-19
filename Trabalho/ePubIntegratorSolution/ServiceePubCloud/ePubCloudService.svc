@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="ServiceePubCloud.Service1" CodeBehind="ePubCloudService.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="ServiceePubCloud.ServiceePubCloud" CodeBehind="ePubCloudService.svc.cs" %>

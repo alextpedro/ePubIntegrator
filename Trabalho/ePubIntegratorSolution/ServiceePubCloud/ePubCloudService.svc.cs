@@ -10,7 +10,7 @@ namespace ServiceePubCloud
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
-    public class Service1 : IePubCloud
+    public class ServiceePubCloud : IePubCloud
     {
 
         public System.Xml.XmlDocument GetUserStatistics(int userID)
@@ -58,19 +58,9 @@ namespace ServiceePubCloud
             throw new NotImplementedException();
         }
 
-
-        int GetBookmarks(int userID, int eBookID)
+        public void RegistereBook(System.Xml.XmlDocument bookinfo)
         {
-            
+            throw new NotImplementedException();
         }
-
-        [OperationContract]
-        int GetFavorites(int userID, int eBookID);
-
-        [OperationContract]
-        int GeteBookIDbyTitle(string title);
-
-        [OperationContract]
-        int GeteBookIDbyAuthor(string author);
     }
 }
