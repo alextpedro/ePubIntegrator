@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ePub updated="12/12/2014 22:12:38">
+  <user username="user123">
+    <ebook hash="">
+      <titles>
+        <title>Title 1</title>
+        <title>Title 2</title>
+      </titles>
+      <authors>
+        <author>Author 1</author>
+        <author>Author 2</author>
+      </authors>
+      <publishers>
+        <publisher>Publisher 1</publisher>
+        <publisher>Publisher 2</publisher>
+      </publishers>
+      <favourite updated="12/12/2014 22:12:38" global="False">
+        <chapter>Chapter 1</chapter>
+        <chapter>Chapter 2</chapter>
+      </favourite>
+      <bookmark updated="12/12/2014 22:12:38" global="true">
+        <chapter>Chapter 1</chapter>
+        <chapter>Chapter 2</chapter>
+      </bookmark>
+    </ebook>
+  </user>
+</ePub>

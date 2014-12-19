@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config lastuser="goorum">
+  <user username="user123">
+    <server>192.168.1.1</server>
+    <lastlogin>16/12/2014 00:31:54</lastlogin>
+    <bookpath>C:\Users\Go0rum\Documents\Books</bookpath>
+    <lastbook>
+    </lastbook>
+    <lastchapter>
+    </lastchapter>
+  </user>
+  <user username="user1234">
+    <server>192.168.1.1</server>
+    <lastlogin>19/12/2014 13:45:00</lastlogin>
+    <bookpath>C:\Users\Go0rum\Documents\Books</bookpath>
+  </user>
+  <user username="pires">
+    <server>192.168.1.1</server>
+    <lastlogin>19/12/2014 13:45:48</lastlogin>
+  </user>
+  <user username="pires2">
+    <server>192.168.1.1</server>
+    <lastlogin>19/12/2014 13:58:00</lastlogin>
+  </user>
+  <user username="goorum">
+    <server>192.168.1.1</server>
+    <lastlogin>19/12/2014 14:11:19</lastlogin>
+    <bookpath>C:\Users\Go0rum\Desktop</bookpath>
+  </user>
+</config>
