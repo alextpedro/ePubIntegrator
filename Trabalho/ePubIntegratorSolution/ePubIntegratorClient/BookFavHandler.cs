@@ -9,12 +9,10 @@ namespace ePubIntegratorClient
 {
     public class BookFavHandler
     {
-
         private String _xmlPath;
         private XmlDocument _xmldoc;
         private const string FILE = "/bookfav.xml";
         private const string ROOTNODE = "/ePub/";
-
 
         public BookFavHandler(String xmlPath)
         {
@@ -22,7 +20,6 @@ namespace ePubIntegratorClient
             _xmldoc = new XmlDocument();
             _xmldoc.Load(_xmlPath);
         }
-
 
         public void updateFavorite(String user, Book book, Boolean favorite)
         {
@@ -90,8 +87,7 @@ namespace ePubIntegratorClient
             if (_xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']") != null) return true;
             else return false;
         }
-
-
+        
         //Cria um utilizador user no XML asseguir ao ePub
         private void createUser(String user)
         {

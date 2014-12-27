@@ -60,10 +60,19 @@
   </user>
   <user username="goorum">
     <ebook hash="-939113191">
-      <favourite updated="19/12/2014 14:11:30" global="True" />
+      <favourite updated="19/12/2014 17:45:31" global="True" />
     </ebook>
     <ebook hash="-1351160594">
-      <favourite updated="19/12/2014 16:37:47" global="True" />
+      <favourite updated="19/12/2014 17:43:47" global="True" />
+    </ebook>
+    <ebook hash="1280866419">
+      <favourite updated="19/12/2014 17:43:51" global="False" />
+    </ebook>
+    <ebook hash="-579620749">
+      <favourite updated="19/12/2014 17:46:19" global="False" />
+    </ebook>
+    <ebook hash="-269754146">
+      <favourite updated="19/12/2014 17:45:27" global="False" />
     </ebook>
   </user>
 </ePub>
