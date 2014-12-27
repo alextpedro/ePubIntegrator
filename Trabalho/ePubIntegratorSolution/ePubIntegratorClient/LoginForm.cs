@@ -53,13 +53,13 @@ namespace ePubIntegratorClient
             //xmlDoc.Save(xmlPath);
 
             //Login teste
-<<<<<<< HEAD
+//<<<<<<< HEAD
             //ConfigHandler ch = new ConfigHandler(textBoxLogin.Text, textBoxServer.Text);
 
-=======
+//=======
             ConfigHandler ch = new ConfigHandler(rootPath);
             ch.loginUser(textBoxLogin.Text, textBoxServer.Text);
->>>>>>> 3a921ef120977851ef6218bc51ba37c972c0e187
+//>>>>>>> 3a921ef120977851ef6218bc51ba37c972c0e187
 
             ///////////
 

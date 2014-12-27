@@ -56,6 +56,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBookPath = new System.Windows.Forms.TextBox();
             this.buttonBookPath = new System.Windows.Forms.Button();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +86,7 @@
             // buttonStats
             // 
             this.buttonStats.Image = ((System.Drawing.Image)(resources.GetObject("buttonStats.Image")));
-            this.buttonStats.Location = new System.Drawing.Point(496, 9);
+            this.buttonStats.Location = new System.Drawing.Point(490, 8);
             this.buttonStats.Name = "buttonStats";
             this.buttonStats.Size = new System.Drawing.Size(40, 40);
             this.buttonStats.TabIndex = 5;
@@ -90,7 +95,7 @@
             // listBooks
             // 
             this.listBooks.FormattingEnabled = true;
-            this.listBooks.Location = new System.Drawing.Point(6, 51);
+            this.listBooks.Location = new System.Drawing.Point(6, 80);
             this.listBooks.Name = "listBooks";
             this.listBooks.Size = new System.Drawing.Size(205, 225);
             this.listBooks.TabIndex = 6;
@@ -99,6 +104,9 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.radioButton3);
+            this.panel1.Controls.Add(this.radioButton2);
+            this.panel1.Controls.Add(this.radioButton1);
             this.panel1.Controls.Add(this.checkBoxBkmrk);
             this.panel1.Controls.Add(this.checkBoxFav);
             this.panel1.Controls.Add(this.buttonRefresh);
@@ -109,9 +117,10 @@
             this.panel1.Controls.Add(this.textBoxBookPath);
             this.panel1.Controls.Add(this.buttonBookPath);
             this.panel1.Controls.Add(this.listBooks);
-            this.panel1.Location = new System.Drawing.Point(15, 58);
+            this.panel1.Controls.Add(this.shapeContainer1);
+            this.panel1.Location = new System.Drawing.Point(2, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(521, 286);
+            this.panel1.Size = new System.Drawing.Size(534, 315);
             this.panel1.TabIndex = 7;
             // 
             // checkBoxBkmrk
@@ -119,18 +128,19 @@
             this.checkBoxBkmrk.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkBoxBkmrk.AutoSize = true;
             this.checkBoxBkmrk.Image = ((System.Drawing.Image)(resources.GetObject("checkBoxBkmrk.Image")));
-            this.checkBoxBkmrk.Location = new System.Drawing.Point(357, 5);
+            this.checkBoxBkmrk.Location = new System.Drawing.Point(375, 5);
             this.checkBoxBkmrk.Name = "checkBoxBkmrk";
             this.checkBoxBkmrk.Size = new System.Drawing.Size(38, 38);
             this.checkBoxBkmrk.TabIndex = 14;
             this.checkBoxBkmrk.UseVisualStyleBackColor = true;
+            this.checkBoxBkmrk.CheckedChanged += new System.EventHandler(this.checkBoxBkmrk_CheckedChanged);
             // 
             // checkBoxFav
             // 
             this.checkBoxFav.Appearance = System.Windows.Forms.Appearance.Button;
             this.checkBoxFav.AutoSize = true;
             this.checkBoxFav.Image = ((System.Drawing.Image)(resources.GetObject("checkBoxFav.Image")));
-            this.checkBoxFav.Location = new System.Drawing.Point(313, 5);
+            this.checkBoxFav.Location = new System.Drawing.Point(331, 5);
             this.checkBoxFav.Name = "checkBoxFav";
             this.checkBoxFav.Size = new System.Drawing.Size(38, 38);
             this.checkBoxFav.TabIndex = 13;
@@ -150,7 +160,7 @@
             // buttonChapters
             // 
             this.buttonChapters.Image = ((System.Drawing.Image)(resources.GetObject("buttonChapters.Image")));
-            this.buttonChapters.Location = new System.Drawing.Point(265, 3);
+            this.buttonChapters.Location = new System.Drawing.Point(283, 3);
             this.buttonChapters.Name = "buttonChapters";
             this.buttonChapters.Size = new System.Drawing.Size(42, 42);
             this.buttonChapters.TabIndex = 4;
@@ -173,9 +183,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.labelTitle);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(217, 51);
+            this.panel2.Location = new System.Drawing.Point(235, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 225);
+            this.panel2.Size = new System.Drawing.Size(291, 254);
             this.panel2.TabIndex = 9;
             // 
             // labelDesc
@@ -298,7 +308,7 @@
             // buttonRead
             // 
             this.buttonRead.Image = ((System.Drawing.Image)(resources.GetObject("buttonRead.Image")));
-            this.buttonRead.Location = new System.Drawing.Point(217, 3);
+            this.buttonRead.Location = new System.Drawing.Point(235, 3);
             this.buttonRead.Name = "buttonRead";
             this.buttonRead.Size = new System.Drawing.Size(42, 42);
             this.buttonRead.TabIndex = 3;
@@ -332,11 +342,66 @@
             this.buttonBookPath.UseVisualStyleBackColor = true;
             this.buttonBookPath.Click += new System.EventHandler(this.buttonBookPath_Click);
             // 
+            // radioButton1
+            // 
+            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(6, 51);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(28, 23);
+            this.radioButton1.TabIndex = 15;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "All";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(62, 51);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(66, 23);
+            this.radioButton2.TabIndex = 16;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Favourites";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(134, 51);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(77, 23);
+            this.radioButton3.TabIndex = 17;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Bookmarked";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // shapeContainer1
+            // 
+            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
+            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
+            this.shapeContainer1.Name = "shapeContainer1";
+            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
+            this.lineShape1});
+            this.shapeContainer1.Size = new System.Drawing.Size(530, 311);
+            this.shapeContainer1.TabIndex = 18;
+            this.shapeContainer1.TabStop = false;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 222;
+            this.lineShape1.X2 = 222;
+            this.lineShape1.Y1 = 4;
+            this.lineShape1.Y2 = 303;
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 357);
+            this.ClientSize = new System.Drawing.Size(538, 372);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonStats);
             this.Controls.Add(this.labelUser);
@@ -382,5 +447,10 @@
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.CheckBox checkBoxFav;
         private System.Windows.Forms.CheckBox checkBoxBkmrk;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
 }

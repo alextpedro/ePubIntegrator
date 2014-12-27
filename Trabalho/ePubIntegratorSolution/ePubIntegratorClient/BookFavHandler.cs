@@ -13,6 +13,8 @@ namespace ePubIntegratorClient
         private XmlDocument _xmldoc;
         private const string FILE = "/bookfav.xml";
         private const string ROOTNODE = "/ePub/";
+        private const string FAV = "favourite";
+        private const string BMRK = "bookmark";
 
         public BookFavHandler(String xmlPath)
         {
@@ -21,7 +23,7 @@ namespace ePubIntegratorClient
             _xmldoc.Load(_xmlPath);
         }
 
-        public void updateFavorite(String user, Book book, Boolean favorite)
+        public void updateFavBmrk(String user, Book book, Boolean value, String nodeName)
         {
             //verificar data antes do update
             DateTime timeNow = System.DateTime.Now; //recolher data do momento
@@ -30,36 +32,37 @@ namespace ePubIntegratorClient
             {
                 if (!(isUserValid(user))) createUser(user); //se o utilizador não existir criar novo user no XML.
                 if (!(isBookListed(user, book))) createBook(user, book); //se o livro não existir criar novo
-                if (!(bookHasFavNode(user, book))) createFavNode(user, book); //se não existir favorito no livro do utilizador criar novo
+                if (!(bookHasFavBmrkNode(user, book, nodeName))) createFavBmrkNode(user, book, nodeName); //se não existir favorito/bookmark no livro do utilizador criar novo
 
-                String xpathstr = ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/favourite";
+                String xpathstr = ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/"+nodeName;
 
                 _xmldoc.SelectSingleNode(xpathstr).Attributes[0].Value = DateTime.Now.ToString();
-                _xmldoc.SelectSingleNode(xpathstr).Attributes[1].Value = favorite.ToString();
+                _xmldoc.SelectSingleNode(xpathstr).Attributes[1].Value = value.ToString();
 
-                System.Diagnostics.Debug.WriteLine("[DEBUG] An update called to favourites...");
+                System.Diagnostics.Debug.WriteLine("[DEBUG] A "+nodeName+" update called on bookfav.xml");
                 saveXML();
             }
         }
 
-        private void createFavNode(string user, Book book)
+        //verifica no utilizador e no livro se o node existe
+        private bool bookHasFavBmrkNode(string user, Book book, String nodeName)
         {
-            XmlNode favouriteNode = _xmldoc.CreateElement("favourite");
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/"+nodeName+"[@global]") != null) return true;
+            else return false;
+        }
+
+        //cria um node no xml com o nome passado por parâmetro, adiciona tempo de update e o global
+        private void createFavBmrkNode(string user, Book book, String nodeName)
+        {
+            XmlNode node = _xmldoc.CreateElement(nodeName);
             XmlAttribute attUpdated = _xmldoc.CreateAttribute("updated");
             XmlAttribute attGlobal = _xmldoc.CreateAttribute("global");
             attUpdated.Value = DateTime.Now.ToString();
             attGlobal.Value = "False";
-            favouriteNode.Attributes.Append(attUpdated);
-            favouriteNode.Attributes.Append(attGlobal);
-            _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']").AppendChild(favouriteNode);
+            node.Attributes.Append(attUpdated);
+            node.Attributes.Append(attGlobal);
+            _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']").AppendChild(node);
             saveXML();
-        }
-
-        //verifica se existe o node para os favoritos
-        private bool bookHasFavNode(string user, Book book)
-        {
-            if (_xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/favourite[@global]") != null) return true;
-            else return false;
         }
 
         //cria um livro com a sua hash associada no utilizador dado
@@ -106,17 +109,30 @@ namespace ePubIntegratorClient
             _xmldoc.Save(_xmlPath);
         }
 
-        internal bool getFavValue(string user, Book book)
+        //retorna ou o favorito ou o bookmark de acordo com o ultimo parâmetro
+        private bool getFavBmrkValue(string user, Book book, String value)
         {
             try
-            {
-                String xpathstr = ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/favourite";
+            {            
+                String xpathstr = ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']/"+value;
                 return Convert.ToBoolean(_xmldoc.SelectSingleNode(xpathstr).Attributes[1].Value);
             }
             catch (Exception)
             {
                 return false;
             }
+        }
+
+        //chama getFavBmrkValue para obter bookmark
+        public bool getBmrkValue(string user, Book book)
+        {
+            return getFavBmrkValue(user, book, BMRK);
+        }
+
+        //chama getFavBmrkValue para obter vavorito
+        public bool getFavValue(string user, Book book)
+        {
+            return getFavBmrkValue(user, book, FAV);
         }
     }
 }

@@ -15,7 +15,6 @@ namespace ePubIntegratorClient
         private const string FILE = "/userconfig.xml";
         private const string ROOTNODE = "/config";
 
-
         public ConfigHandler(String xmlPath)
         {
             _xmlPath = xmlPath + FILE;
@@ -59,8 +58,6 @@ namespace ePubIntegratorClient
             return info;
         }
 
-
-
         //Verifica se o utilizador ja está registado no XML
         private Boolean isUserValid(String user)
         {
@@ -85,8 +82,6 @@ namespace ePubIntegratorClient
                 return "";
             }
         }
-
-
 
         internal void setBookPath(string user, string path)
         {

@@ -16,6 +16,9 @@ namespace ePubIntegratorClient
 {
     public partial class ClientForm : Form
     {
+        private const string FAV = "favourite";
+        private const string BMRK = "bookmark";
+
         List<Epub> bookList;
         Book selectedBook;
         Epub selectedEpub;
@@ -50,6 +53,7 @@ namespace ePubIntegratorClient
             selectedEpub = bookList[listBooks.SelectedIndex];
             selectedBook = new Book(selectedEpub);
             checkBoxFav.Checked = bfHandler.getFavValue(user, selectedBook);
+            checkBoxBkmrk.Checked = bfHandler.getBmrkValue(user, selectedBook);
 
             labelTitle.Text = selectedBook.Title;
             labelPublisher.Text = selectedBook.Publisher;
@@ -88,16 +92,18 @@ namespace ePubIntegratorClient
             {
                 epubList = null;
             }
+            int idx = 0;
             try
             {
                 if (epubList != null)
                 {
                     bookList = new List<Epub>();
-
+                    
                     foreach (string epubfile in epubList)
                     {
                         bookList.Add(new Epub(epubfile));
                         listBooks.Items.Add(new Epub(epubfile).Title[0]);
+                        idx++;
                     }
                     
                 }
@@ -105,7 +111,13 @@ namespace ePubIntegratorClient
             catch (Exception ex)
             {
                 //DEU ERRO A LER ALGUM LIVRO ESTUPIDO
+                MessageBox.Show("An error ocurred on book:\n"+epubList[idx]+
+                    "\nPlease remove or fix selected book. Book list will now turn up blank. Sorry for the inconvenience.",
+                    "Error loading books!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                clearBooks();
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
+                return;
             }
             if (listBooks.Items.Count != 0)
             {
@@ -113,6 +125,7 @@ namespace ePubIntegratorClient
                 buttonRead.Enabled = true;
                 buttonChapters.Enabled = true;
                 checkBoxFav.Enabled = true;
+                checkBoxBkmrk.Enabled = true;
             }
         }
 
@@ -135,7 +148,12 @@ namespace ePubIntegratorClient
 
         private void checkBoxFav_CheckedChanged(object sender, EventArgs e)
         {
-            bfHandler.updateFavorite(user, selectedBook, checkBoxFav.Checked);
+            bfHandler.updateFavBmrk(user, selectedBook, checkBoxFav.Checked, FAV);
+        }
+
+        private void checkBoxBkmrk_CheckedChanged(object sender, EventArgs e)
+        {
+            bfHandler.updateFavBmrk(user, selectedBook, checkBoxBkmrk.Checked, BMRK);
         }
     }
 }

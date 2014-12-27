@@ -23,55 +23,34 @@
         <chapter>Chapter 2</chapter>
       </bookmark>
     </ebook>
-    <ebook hash="-1351160594">
-      <favourite updated="15/12/2014 23:32:04" global="False" />
-    </ebook>
-    <ebook hash="-269754146">
-      <favourite updated="19/12/2014 16:26:23" global="False" />
-    </ebook>
-    <ebook hash="-939113191">
-      <favourite updated="19/12/2014 13:46:37" global="True" />
-    </ebook>
-    <ebook hash="1430659934">
-      <favourite updated="19/12/2014 16:25:28" global="False" />
-    </ebook>
-    <ebook hash="-579620749">
-      <favourite updated="19/12/2014 13:46:39" global="False" />
-    </ebook>
-    <ebook hash="1136980949">
-      <favourite updated="16/12/2014 00:23:34" global="False" />
-    </ebook>
-    <ebook hash="-854820960">
-      <favourite updated="19/12/2014 16:26:27" global="False" />
-  </user>
-  <user username="pires">
-    <ebook hash="-1351160594">
-      <favourite updated="19/12/2014 13:45:52" global="True" />
-    </ebook>
-    <ebook hash="-269754146">
-      <favourite updated="19/12/2014 13:46:01" global="True" />
-    </ebook>
-  </user>
-  <user username="pires2">
-    <ebook hash="-1351160594">
-      <favourite updated="19/12/2014 14:04:14" global="True" />
-    </ebook>
   </user>
   <user username="goorum">
     <ebook hash="-939113191">
-      <favourite updated="19/12/2014 17:45:31" global="True" />
+      <favourite updated="27/12/2014 19:09:37" global="True" />
+      <bookmark updated="27/12/2014 19:09:37" global="True" />
     </ebook>
     <ebook hash="-1351160594">
-      <favourite updated="19/12/2014 17:43:47" global="True" />
+      <favourite updated="27/12/2014 19:09:35" global="True" />
+      <bookmark updated="27/12/2014 19:09:35" global="False" />
     </ebook>
     <ebook hash="1280866419">
       <favourite updated="19/12/2014 17:43:51" global="False" />
     </ebook>
     <ebook hash="-579620749">
-      <favourite updated="19/12/2014 17:46:19" global="False" />
+      <favourite updated="27/12/2014 19:09:39" global="False" />
+      <bookmark updated="27/12/2014 19:09:39" global="False" />
     </ebook>
     <ebook hash="-269754146">
-      <favourite updated="19/12/2014 17:45:27" global="False" />
+      <favourite updated="27/12/2014 19:09:36" global="False" />
+      <bookmark updated="27/12/2014 19:09:36" global="True" />
+    </ebook>
+    <ebook hash="-854820960">
+      <favourite updated="27/12/2014 19:03:43" global="False" />
+      <bookmark updated="27/12/2014 19:09:36" global="False" />
+    </ebook>
+    <ebook hash="1430659934">
+      <favourite updated="27/12/2014 19:09:33" global="False" />
+      <bookmark updated="27/12/2014 19:09:33" global="False" />
     </ebook>
   </user>
 </ePub>
