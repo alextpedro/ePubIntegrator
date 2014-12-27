@@ -26,16 +26,19 @@ namespace ServiceePubCloud
         [OperationContract]
         void AddUserStatistics(int user, XmlDocument statistics);
 
-        //TODO: Database only available to webservice, needs to receive fields.
+        //Receives a bookinfo xml and registers the book in the database
         [OperationContract]
         void RegistereBook(XmlDocument bookinfo);
 
+        //Receives an XML document with info pertaining to a new user
         [OperationContract]
-        void RegisterUser(string username, string password);
+        void RegisterUser(XmlDocument newUserInfo);
 
+        //Adds a new bookmark to a book
         [OperationContract]
         void AddBookmark(int ebookID, int chapterID);
 
+        //Adds a new favorite to a book. 
         [OperationContract]
         void AddFavorite(int ebookID, int chapterID);
         

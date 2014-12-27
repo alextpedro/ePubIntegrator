@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="d8c45be9b78f4ae5abee5c70c73b3ab8" Name="Diagram1" ZoomLevel="94" >
+        <EntityTypeShape EntityType="ServiceePubModel.User" Width="1.5" PointX="2.75" PointY="0.625" />
+        <EntityTypeShape EntityType="ServiceePubModel.Login" Width="1.5" PointX="5.625" PointY="0.625" />
+        <AssociationConnector Association="ServiceePubModel.UserLogin" />
+        <EntityTypeShape EntityType="ServiceePubModel.eBook" Width="1.5" PointX="6.125" PointY="3.375" />
+        <EntityTypeShape EntityType="ServiceePubModel.Bookmark" Width="1.5" PointX="3.125" PointY="3.5" />
+        <AssociationConnector Association="ServiceePubModel.BookmarkeBook" />
+        <EntityTypeShape EntityType="ServiceePubModel.Chapter" Width="1.5" PointX="8.875" PointY="0.625" />
+        <AssociationConnector Association="ServiceePubModel.ChaptereBook" />
+        <EntityTypeShape EntityType="ServiceePubModel.Favorite" Width="1.5" PointX="3.125" PointY="6.25" />
+        <AssociationConnector Association="ServiceePubModel.BookmarkChapter" />
+        <AssociationConnector Association="ServiceePubModel.UserBookmark" />
+        <AssociationConnector Association="ServiceePubModel.FavoriteeBook" />
+        <AssociationConnector Association="ServiceePubModel.FavoriteChapter" />
+        <EntityTypeShape EntityType="ServiceePubModel.eBookTitles" Width="1.5" PointX="11.25" PointY="3.75" />
+        <AssociationConnector Association="ServiceePubModel.eBookeBookTitles" />
+        <EntityTypeShape EntityType="ServiceePubModel.eBookAuthors" Width="1.5" PointX="11.25" PointY="5.375" />
+        <AssociationConnector Association="ServiceePubModel.eBookeBookAuthors" />
+        <EntityTypeShape EntityType="ServiceePubModel.eBookPublisher" Width="1.5" PointX="11.25" PointY="7" />
+        <AssociationConnector Association="ServiceePubModel.eBookPublishereBook" />
+        <EntityTypeShape EntityType="ServiceePubModel.Statistics" Width="1.5" PointX="0.5" PointY="3.625" />
+        <AssociationConnector Association="ServiceePubModel.StatisticsUser" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
