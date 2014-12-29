@@ -25,7 +25,7 @@ namespace ePubIntegratorClient
         {
             InitializeComponent();
             
-            ch = new ConfigHandler(rootPath);
+            ch = new ConfigHandler();
             
             xmlDoc = new XmlDocument();
             xmlPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())) + "/config.xml";
@@ -46,23 +46,8 @@ namespace ePubIntegratorClient
         {
             //verificar login e pw com o webservice, se falhar entrar offline
 
-            //Obter ultimas configurações introduzidas
-            //xmlDoc.SelectSingleNode("/config/lastlogin").InnerText = textBoxLogin.Text;
-            //xmlDoc.SelectSingleNode("/config/lastserver").InnerText = textBoxServer.Text;
-            //xmlDoc.SelectSingleNode("/config/lasttime").InnerText = DateTime.Now.ToString();
-            //xmlDoc.Save(xmlPath);
-
-            //Login teste
-//<<<<<<< HEAD
-            //ConfigHandler ch = new ConfigHandler(textBoxLogin.Text, textBoxServer.Text);
-
-//=======
-            ConfigHandler ch = new ConfigHandler(rootPath);
+            ConfigHandler ch = new ConfigHandler();
             ch.loginUser(textBoxLogin.Text, textBoxServer.Text);
-//>>>>>>> 3a921ef120977851ef6218bc51ba37c972c0e187
-
-            ///////////
-
 
             ClientForm clientForm = new ClientForm(textBoxLogin.Text);
             //Esconde o formulario de login

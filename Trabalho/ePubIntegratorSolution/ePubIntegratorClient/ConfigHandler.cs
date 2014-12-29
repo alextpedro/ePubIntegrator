@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,9 +16,10 @@ namespace ePubIntegratorClient
         private const string FILE = "/userconfig.xml";
         private const string ROOTNODE = "/config";
 
-        public ConfigHandler(String xmlPath)
+        public ConfigHandler()
         {
-            _xmlPath = xmlPath + FILE;
+            String path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
+            _xmlPath = path + FILE;
             _xmldoc = new XmlDocument();
             _xmldoc.Load(_xmlPath);
         }

@@ -23,8 +23,8 @@ namespace ePubIntegratorClient
         Book selectedBook;
         Epub selectedEpub;
         String user;
-        BookFavHandler bfHandler = new BookFavHandler(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
-        ConfigHandler configHandler = new ConfigHandler(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory())));
+        BookFavHandler bfHandler = new BookFavHandler();
+        ConfigHandler configHandler = new ConfigHandler();
 
         public ClientForm(String user)
         {
@@ -44,8 +44,7 @@ namespace ePubIntegratorClient
                 textBoxBookPath.Text = folderBrowserDialog1.SelectedPath;
                 configHandler.setBookPath(user, folderBrowserDialog1.SelectedPath);
                 reloadBooks();
-            }
-            
+            } 
         }
 
         private void listBooks_SelectedIndexChanged(object sender, EventArgs e)
@@ -138,7 +137,7 @@ namespace ePubIntegratorClient
 
         private void buttonChapters_Click(object sender, EventArgs e)
         {
-            ChapterForm chapterForm = new ChapterForm(selectedEpub);
+            ChapterForm chapterForm = new ChapterForm(user, selectedEpub);
             chapterForm.ShowDialog();
         }
 

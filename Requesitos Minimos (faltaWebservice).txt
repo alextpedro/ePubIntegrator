@@ -13,7 +13,7 @@ Mark [ ] as [x] when completed! :D
 [ ] > Guardar título, autor, publisher (ebooks.xml)
 [ ] > Indicar ultimo livro e capítulo consultados
     > Registar bookmarks para:
-[ ]	- livro
+[X]	- livro
 [ ]	- capítulo
     > Registar favorito para:
 [X]	- livro
@@ -25,7 +25,7 @@ Mark [ ] as [x] when completed! :D
 [X]	- livro inteiro, pagina a pagina
 [X]	- capítulo
 [ ] > Enviar bookmarks/favoritos (bookfav.xml) e receber dados estatísticos (statistics.xml) do webService em XML
-[ ] > Consultar bookmarks e favoritos
+[X] > Consultar bookmarks e favoritos
 [ ] > Consultar dados estatísticos
 [ ]	- dd/mm/aa em que a aplicação foi mais acedida
 [ ]	- ebooks/capítulos mais consultados
