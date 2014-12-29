@@ -119,6 +119,11 @@ namespace ePubIntegratorClient
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
                 return;
             }
+            enableButtons();
+        }
+
+        private void enableButtons()
+        {
             if (listBooks.Items.Count != 0)
             {
                 listBooks.SelectedIndex = 0; //Seleciona o primeiro livro
@@ -126,6 +131,8 @@ namespace ePubIntegratorClient
                 buttonChapters.Enabled = true;
                 checkBoxFav.Enabled = true;
                 checkBoxBkmrk.Enabled = true;
+                checkBoxFav.Checked = bfHandler.getFavValue(user, selectedBook);
+                checkBoxBkmrk.Checked = bfHandler.getBmrkValue(user, selectedBook);
             }
         }
 
@@ -154,6 +161,50 @@ namespace ePubIntegratorClient
         private void checkBoxBkmrk_CheckedChanged(object sender, EventArgs e)
         {
             bfHandler.updateFavBmrk(user, selectedBook, checkBoxBkmrk.Checked, BMRK);
+        }
+
+        private void radioButtonAll_CheckedChanged(object sender, EventArgs e)
+        {
+            reloadBooks();
+        }
+
+        //filtra a lista por favoritos ou bookmarks (favoritos = true, bookmarks = false)
+        private void filter(Boolean isfavourite)
+        {
+            reloadBooks();
+            clearBooks();
+            List<Epub> newBookList = new List<Epub>();
+            foreach (Epub epub in bookList)
+            {
+                Book book = new Book(epub);
+                Boolean value = false;
+                if (isfavourite)
+                {
+                    value = bfHandler.getFavValue(user, book);
+                }
+                else
+                {
+                    value = bfHandler.getBmrkValue(user, book);
+                }
+                
+                if (value)
+                {
+                    newBookList.Add(epub);
+                    listBooks.Items.Add(epub.Title[0]);
+                }
+            }
+            bookList = newBookList;
+            enableButtons();
+        }
+
+        private void radioButtonFav_CheckedChanged(object sender, EventArgs e)
+        {
+            filter(true);
+        }
+
+        private void radioButtonBmrk_CheckedChanged(object sender, EventArgs e)
+        {
+            filter(false);
         }
     }
 }

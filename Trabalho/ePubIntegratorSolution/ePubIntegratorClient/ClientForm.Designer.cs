@@ -34,6 +34,9 @@
             this.buttonStats = new System.Windows.Forms.Button();
             this.listBooks = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.radioButtonBmrk = new System.Windows.Forms.RadioButton();
+            this.radioButtonFav = new System.Windows.Forms.RadioButton();
+            this.radioButtonAll = new System.Windows.Forms.RadioButton();
             this.checkBoxBkmrk = new System.Windows.Forms.CheckBox();
             this.checkBoxFav = new System.Windows.Forms.CheckBox();
             this.buttonRefresh = new System.Windows.Forms.Button();
@@ -56,9 +59,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxBookPath = new System.Windows.Forms.TextBox();
             this.buttonBookPath = new System.Windows.Forms.Button();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.panel1.SuspendLayout();
@@ -104,9 +104,9 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
+            this.panel1.Controls.Add(this.radioButtonBmrk);
+            this.panel1.Controls.Add(this.radioButtonFav);
+            this.panel1.Controls.Add(this.radioButtonAll);
             this.panel1.Controls.Add(this.checkBoxBkmrk);
             this.panel1.Controls.Add(this.checkBoxFav);
             this.panel1.Controls.Add(this.buttonRefresh);
@@ -122,6 +122,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(534, 315);
             this.panel1.TabIndex = 7;
+            // 
+            // radioButtonBmrk
+            // 
+            this.radioButtonBmrk.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonBmrk.AutoSize = true;
+            this.radioButtonBmrk.Location = new System.Drawing.Point(134, 51);
+            this.radioButtonBmrk.Name = "radioButtonBmrk";
+            this.radioButtonBmrk.Size = new System.Drawing.Size(77, 23);
+            this.radioButtonBmrk.TabIndex = 17;
+            this.radioButtonBmrk.TabStop = true;
+            this.radioButtonBmrk.Text = "Bookmarked";
+            this.radioButtonBmrk.UseVisualStyleBackColor = true;
+            this.radioButtonBmrk.CheckedChanged += new System.EventHandler(this.radioButtonBmrk_CheckedChanged);
+            // 
+            // radioButtonFav
+            // 
+            this.radioButtonFav.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonFav.AutoSize = true;
+            this.radioButtonFav.Location = new System.Drawing.Point(62, 51);
+            this.radioButtonFav.Name = "radioButtonFav";
+            this.radioButtonFav.Size = new System.Drawing.Size(66, 23);
+            this.radioButtonFav.TabIndex = 16;
+            this.radioButtonFav.TabStop = true;
+            this.radioButtonFav.Text = "Favourites";
+            this.radioButtonFav.UseVisualStyleBackColor = true;
+            this.radioButtonFav.CheckedChanged += new System.EventHandler(this.radioButtonFav_CheckedChanged);
+            // 
+            // radioButtonAll
+            // 
+            this.radioButtonAll.Appearance = System.Windows.Forms.Appearance.Button;
+            this.radioButtonAll.AutoSize = true;
+            this.radioButtonAll.Checked = true;
+            this.radioButtonAll.Location = new System.Drawing.Point(6, 51);
+            this.radioButtonAll.Name = "radioButtonAll";
+            this.radioButtonAll.Size = new System.Drawing.Size(28, 23);
+            this.radioButtonAll.TabIndex = 15;
+            this.radioButtonAll.TabStop = true;
+            this.radioButtonAll.Text = "All";
+            this.radioButtonAll.UseVisualStyleBackColor = true;
+            this.radioButtonAll.CheckedChanged += new System.EventHandler(this.radioButtonAll_CheckedChanged);
             // 
             // checkBoxBkmrk
             // 
@@ -342,42 +382,6 @@
             this.buttonBookPath.UseVisualStyleBackColor = true;
             this.buttonBookPath.Click += new System.EventHandler(this.buttonBookPath_Click);
             // 
-            // radioButton1
-            // 
-            this.radioButton1.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 51);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(28, 23);
-            this.radioButton1.TabIndex = 15;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "All";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(62, 51);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(66, 23);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Favourites";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(134, 51);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(77, 23);
-            this.radioButton3.TabIndex = 17;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Bookmarked";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
             // shapeContainer1
             // 
             this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
@@ -447,9 +451,9 @@
         private System.Windows.Forms.Button buttonRefresh;
         private System.Windows.Forms.CheckBox checkBoxFav;
         private System.Windows.Forms.CheckBox checkBoxBkmrk;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButtonBmrk;
+        private System.Windows.Forms.RadioButton radioButtonFav;
+        private System.Windows.Forms.RadioButton radioButtonAll;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
     }
