@@ -205,5 +205,11 @@ namespace ePubIntegratorClient
         {
             filter(false);
         }
+
+        private void buttonFacebook_Click(object sender, EventArgs e)
+        {
+            FacebookForm faceForm = new FacebookForm();
+            faceForm.ShowDialog();
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ePubIntegratorClient
 {
-    partial class ReadForm
+    partial class FacebookForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReadForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FacebookForm));
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
             // 
@@ -38,19 +38,19 @@
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(706, 395);
+            this.webBrowser1.Size = new System.Drawing.Size(546, 318);
             this.webBrowser1.TabIndex = 0;
             // 
-            // ReadForm
+            // FacebookForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(706, 395);
+            this.ClientSize = new System.Drawing.Size(546, 318);
             this.Controls.Add(this.webBrowser1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "ReadForm";
-            this.Text = "Reading: Unknown";
-            this.Load += new System.EventHandler(this.ReadForm_Load);
+            this.Name = "FacebookForm";
+            this.Text = "Post on Facebook";
+            this.Load += new System.EventHandler(this.FacebookForm_Load);
             this.ResumeLayout(false);
 
         }

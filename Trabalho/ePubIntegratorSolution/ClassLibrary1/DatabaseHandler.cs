@@ -56,7 +56,6 @@ namespace ePubCloudDatabaseLibrary
 
 		public static void RegistereBook(Epub neweBook)
 		{
-			//throw new NotImplementedException();
 			eBook ebook = new eBook();
 			ebook.Language = neweBook.Language.ToString(); //Maybe the database needs to handle multiple languages?
 			ebook.Category = neweBook.Subject.ToString(); //Maybe several categories
