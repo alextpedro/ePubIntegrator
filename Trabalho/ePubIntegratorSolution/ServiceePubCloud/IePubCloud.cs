@@ -41,6 +41,9 @@ namespace ServiceePubCloud
         //Adds a new favorite to a book. 
         [OperationContract]
         void AddFavorite(int ebookID, int chapterID);
+
+        [OperationContract]
+        Boolean VerifyLogin(string username, string password);
         
     }
 

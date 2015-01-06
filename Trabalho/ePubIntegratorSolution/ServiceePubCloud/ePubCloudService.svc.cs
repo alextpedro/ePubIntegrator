@@ -28,6 +28,10 @@ namespace ServiceePubCloud
             DatabaseHandler.GetUserStatistics(userID);
         }
 
+        public Boolean VerifyLogin(string username, string password) {
+            return DatabaseHandler.ValidateLogin(string username, string password);
+        }
+
         public System.Xml.XmlDocument GetGlobalStatistics()
         {
             throw new NotImplementedException();
@@ -64,6 +68,17 @@ namespace ServiceePubCloud
         }
 
         public System.Xml.XmlDocument GetFavorites(int userID, int eBookID)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public void RegistereBook(XmlDocument bookinfo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void RegisterUser(XmlDocument newUserInfo)
         {
             throw new NotImplementedException();
         }
