@@ -26,14 +26,28 @@
   </user>
   <user username="goorum">
     <ebook hash="-1351160594">
-      <favourite updated="29/12/2014 20:39:41" global="True">
+      <favourite updated="06/01/2015 20:04:26" global="True">
         <chapter>Chapter 1</chapter>
         <chapter>Chapter 3</chapter>
       </favourite>
-      <bookmark updated="29/12/2014 15:46:35" global="False">
+      <bookmark updated="29/12/2014 20:44:17" global="False">
         <chapter>Chapter 1</chapter>
         <chapter>Chapter 2</chapter>
       </bookmark>
+    </ebook>
+    <ebook hash="-269754146">
+      <favourite updated="06/01/2015 17:44:11" global="False" />
+    </ebook>
+    <ebook hash="-939113191">
+      <favourite updated="06/01/2015 17:44:13" global="True" />
+      <bookmark updated="06/01/2015 17:44:13" global="True" />
+    </ebook>
+    <ebook hash="-854820960">
+      <favourite updated="29/12/2014 20:43:15" global="False" />
+    </ebook>
+    <ebook hash="-579620749">
+      <favourite updated="06/01/2015 17:44:14" global="False" />
+      <bookmark updated="06/01/2015 17:44:14" global="False" />
     </ebook>
   </user>
 </ePub>

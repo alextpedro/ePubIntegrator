@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientForm));
-            this.label1 = new System.Windows.Forms.Label();
             this.labelUser = new System.Windows.Forms.Label();
             this.buttonStats = new System.Windows.Forms.Button();
             this.listBooks = new System.Windows.Forms.ListBox();
@@ -61,25 +60,18 @@
             this.buttonBookPath = new System.Windows.Forms.Button();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.buttonFacebook = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User:";
-            // 
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(50, 9);
+            this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUser.Location = new System.Drawing.Point(6, 17);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(102, 13);
+            this.labelUser.Size = new System.Drawing.Size(171, 20);
             this.labelUser.TabIndex = 1;
             this.labelUser.Text = "loading user name...";
             // 
@@ -401,15 +393,26 @@
             this.lineShape1.Y1 = 4;
             this.lineShape1.Y2 = 303;
             // 
+            // buttonFacebook
+            // 
+            this.buttonFacebook.Image = ((System.Drawing.Image)(resources.GetObject("buttonFacebook.Image")));
+            this.buttonFacebook.Location = new System.Drawing.Point(442, 8);
+            this.buttonFacebook.Name = "buttonFacebook";
+            this.buttonFacebook.Size = new System.Drawing.Size(42, 42);
+            this.buttonFacebook.TabIndex = 19;
+            this.buttonFacebook.UseVisualStyleBackColor = true;
+            this.buttonFacebook.Click += new System.EventHandler(this.buttonFacebook_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 372);
+            this.Controls.Add(this.buttonFacebook);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonStats);
             this.Controls.Add(this.labelUser);
-            this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ClientForm";
             this.Text = "ePubIntegrator";
@@ -424,7 +427,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Button buttonStats;
         private System.Windows.Forms.ListBox listBooks;
@@ -456,5 +458,6 @@
         private System.Windows.Forms.RadioButton radioButtonAll;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Button buttonFacebook;
     }
 }
