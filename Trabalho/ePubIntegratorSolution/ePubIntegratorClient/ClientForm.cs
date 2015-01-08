@@ -25,12 +25,15 @@ namespace ePubIntegratorClient
         String user;
         BookFavHandler bfHandler = new BookFavHandler();
         ConfigHandler configHandler = new ConfigHandler();
+        Boolean offline;
 
-        public ClientForm(String user)
+        public ClientForm(String user, Boolean offline)
         {
             InitializeComponent();
             this.user = user;
+            this.offline = offline;
             labelUser.Text = user;
+            if (offline) buttonStats.Enabled = false;
             textBoxBookPath.Text = configHandler.getUserBookPath(user);
             reloadBooks();
         }
@@ -91,6 +94,7 @@ namespace ePubIntegratorClient
             {
                 epubList = null;
             }
+
             int idx = 0;
             try
             {
@@ -210,6 +214,11 @@ namespace ePubIntegratorClient
         {
             FacebookForm faceForm = new FacebookForm();
             faceForm.ShowDialog();
+        }
+
+        private void ClientForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -91,7 +91,6 @@
             // 
             // buttonGoBmrk
             // 
-            this.buttonGoBmrk.Enabled = false;
             this.buttonGoBmrk.Location = new System.Drawing.Point(95, 14);
             this.buttonGoBmrk.Name = "buttonGoBmrk";
             this.buttonGoBmrk.Size = new System.Drawing.Size(95, 23);
@@ -104,7 +103,6 @@
             // 
             this.radioButtonBmrk.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonBmrk.AutoSize = true;
-            this.radioButtonBmrk.Enabled = false;
             this.radioButtonBmrk.Location = new System.Drawing.Point(113, 50);
             this.radioButtonBmrk.Name = "radioButtonBmrk";
             this.radioButtonBmrk.Size = new System.Drawing.Size(77, 23);
@@ -117,7 +115,6 @@
             // 
             this.radioButtonFav.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonFav.AutoSize = true;
-            this.radioButtonFav.Enabled = false;
             this.radioButtonFav.Location = new System.Drawing.Point(41, 50);
             this.radioButtonFav.Name = "radioButtonFav";
             this.radioButtonFav.Size = new System.Drawing.Size(66, 23);
@@ -131,7 +128,6 @@
             this.radioButtonAll.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioButtonAll.AutoSize = true;
             this.radioButtonAll.Checked = true;
-            this.radioButtonAll.Enabled = false;
             this.radioButtonAll.Location = new System.Drawing.Point(7, 50);
             this.radioButtonAll.Name = "radioButtonAll";
             this.radioButtonAll.Size = new System.Drawing.Size(28, 23);

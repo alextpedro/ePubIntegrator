@@ -42,14 +42,44 @@ namespace ePubIntegratorClient
             button1.TabIndex = 0;
         }
 
+        private Boolean tryLogin()
+        {
+            string user = textBoxLogin.Text;
+            string password = textBoxPassword.Text;
+            string server = textBoxServer.Text;
+
+            // [TODO] servercheck aqui
+            // pingar server aqui
+            // if/else se estiver online/offline
+            // return VerifyLogin(user, password) no webservice
+
+            return false;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             //verificar login e pw com o webservice, se falhar entrar offline
+            Boolean offline;
+
+            if (tryLogin())
+            {
+                // login bem sucedido
+                offline = false;
+            }
+            else
+            {
+                // modo offline
+                offline = true;
+                MessageBox.Show("Server with ip " + textBoxServer.Text + " not responding." +
+                "\nSystem will enter offline.",
+                "Offline mode",
+                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            }
 
             ConfigHandler ch = new ConfigHandler();
             ch.loginUser(textBoxLogin.Text, textBoxServer.Text);
 
-            ClientForm clientForm = new ClientForm(textBoxLogin.Text);
+            ClientForm clientForm = new ClientForm(textBoxLogin.Text, offline);
             //Esconde o formulario de login
                 this.Hide();
             //Invoca o novo formulario

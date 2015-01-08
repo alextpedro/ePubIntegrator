@@ -22,6 +22,8 @@ namespace ePubIntegratorClient
         String user;
         BookFavHandler bfHandler = new BookFavHandler();
         List<String> chapters = new List<string>();
+        List<int> chapterIdx = new List<int>();
+        int bookmarkIndex;
 
         public ChapterForm(String user, Epub epub)
         {
@@ -34,28 +36,49 @@ namespace ePubIntegratorClient
 
         private void loadContents()
         {
-            navPoints = _epub.TOC;
 
+            listBox.Items.Clear();
+            chapters.Clear();
+            chapterIdx.Clear();
+
+            navPoints = _epub.TOC;
+            int chIdx = 0;
             if (navPoints.Count != 0) 
             {
                 tocAvailable = true;
+                
                 foreach (NavPoint item in navPoints)
                 {
                     listBox.Items.Add(item.Title);
+                    chapterIdx.Add(chIdx);
                     chapters.Add(item.Title);
+                    chIdx++;
                 }
             }
             else //se não existirem navPoints
             {
                 tocAvailable = false;
-                int chIdx = 0;
+                int chNameIdx = 0;
                 foreach (DictionaryEntry item in _epub.Content)
                 {
-                    chIdx++;
-                    String ch = "Chapter " + chIdx;
+                    chNameIdx++;
+                    String ch = "Chapter " + chNameIdx;
                     listBox.Items.Add(ch);
+                    chapterIdx.Add(chIdx);
                     chapters.Add(ch);
+                    chIdx++;
                 }
+            }
+        }
+
+        private void repopulateLists(List<string> chapters, List<int> chapterIdx)
+        {
+            this.chapters = chapters;
+            this.chapterIdx = chapterIdx;
+            listBox.Items.Clear();
+            foreach (String chapter in this.chapters)
+            {
+                listBox.Items.Add(chapter);
             }
         }
 
@@ -63,8 +86,8 @@ namespace ePubIntegratorClient
         {
             //escrever conteudo do capítulo no webBrowserObject
             String htmlText;
-            if (tocAvailable) htmlText = navPoints[listBox.SelectedIndex].ContentData.Content;
-            else htmlText = ((ContentData)_epub.Content[listBox.SelectedIndex]).Content;
+            if (tocAvailable) htmlText = navPoints[chapterIdx[listBox.SelectedIndex]].ContentData.Content;
+            else htmlText = ((ContentData)_epub.Content[chapterIdx[listBox.SelectedIndex]]).Content;
             webBrowser1.DocumentText = htmlText;
             
             //carregar favoritos/bookmarks
@@ -75,32 +98,70 @@ namespace ePubIntegratorClient
 
         private void checkBoxFav_Click(object sender, EventArgs e)
         {
-            bfHandler.updateChapterNode(user, book, "favourite", chapters[listBox.SelectedIndex], checkBoxFav.Checked);
+            bfHandler.updateChapterNode(user, book, "favourite", chapters[chapterIdx[listBox.SelectedIndex]], checkBoxFav.Checked);
+        }
+
+        private void filter(Boolean favourite)
+        {
+            loadContents();
+            List<String> newChapters = new List<string>();
+            List<int> newChapterIdx = new List<int>();
+            int counter = 0;
+            foreach (string chapter in chapters)
+            {
+                if (favourite)
+                {
+                    if (bfHandler.getFavChapterValue(user, book, chapter))
+                    {
+                        newChapters.Add(chapter);
+                        newChapterIdx.Add(chapterIdx[counter]);
+                    }
+                }
+                else
+                {
+                    if (bfHandler.getBmrkChapterValue(user, book, chapter))
+                    {
+                        newChapters.Add(chapter);
+                        newChapterIdx.Add(chapterIdx[counter]);
+                    }
+                }
+                counter++;
+            } repopulateLists(newChapters, newChapterIdx);
         }
 
         private void radioButtonFav_CheckedChanged(object sender, EventArgs e)
         {
-
+            filter(true);
         }
 
         private void radioButtonBmrk_CheckedChanged(object sender, EventArgs e)
         {
-
+            filter(false);
         }
 
         private void buttonGoBmrk_Click(object sender, EventArgs e)
         {
-
+            int idx = 0;
+            List<int> bookmarks = new List<int>();
+            foreach (string chapter in chapters)
+            {
+                if (bfHandler.getBmrkChapterValue(user, book, chapter))
+                {
+                    bookmarks.Add(idx);
+                }
+                idx++;
+            }
+            bookmarkIndex = bookmarks[idx];
         }
 
         private void radioButtonAll_CheckedChanged(object sender, EventArgs e)
         {
-
+            loadContents();
         }
 
         private void checkBoxBkmrk_Click(object sender, EventArgs e)
         {
-            bfHandler.updateChapterNode(user, book, "bookmark", chapters[listBox.SelectedIndex], checkBoxBkmrk.Checked);
+            bfHandler.updateChapterNode(user, book, "bookmark", chapters[chapterIdx[listBox.SelectedIndex]], checkBoxBkmrk.Checked);
         }
     }
 }
