@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ServiceePubCloud" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:1133/ePubCloudService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:1133/ePubCloudService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:1133/ePubCloudService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IePubCloud_GetUserStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_GetUserStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_GetGlobalStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_GetGlobalStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGlobalStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_AddUserStatistics_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserStatistics" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_AddUserStatistics_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddUserStatisticsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_RegistereBook_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegistereBook" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_RegistereBook_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegistereBookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_RegisterUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUser" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_RegisterUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_AddBookmark_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookmark" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_AddBookmark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBookmarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_AddFavorite_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFavorite" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_AddFavorite_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFavoriteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_VerifyLogin_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyLogin" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_VerifyLogin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerifyLoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IePubCloud">
+    <wsdl:operation name="GetUserStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/GetUserStatistics" message="tns:IePubCloud_GetUserStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/GetUserStatisticsResponse" message="tns:IePubCloud_GetUserStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/GetGlobalStatistics" message="tns:IePubCloud_GetGlobalStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/GetGlobalStatisticsResponse" message="tns:IePubCloud_GetGlobalStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserStatistics">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/AddUserStatistics" message="tns:IePubCloud_AddUserStatistics_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/AddUserStatisticsResponse" message="tns:IePubCloud_AddUserStatistics_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistereBook">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/RegistereBook" message="tns:IePubCloud_RegistereBook_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/RegistereBookResponse" message="tns:IePubCloud_RegistereBook_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/RegisterUser" message="tns:IePubCloud_RegisterUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/RegisterUserResponse" message="tns:IePubCloud_RegisterUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBookmark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/AddBookmark" message="tns:IePubCloud_AddBookmark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/AddBookmarkResponse" message="tns:IePubCloud_AddBookmark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFavorite">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/AddFavorite" message="tns:IePubCloud_AddFavorite_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/AddFavoriteResponse" message="tns:IePubCloud_AddFavorite_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/VerifyLogin" message="tns:IePubCloud_VerifyLogin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/VerifyLoginResponse" message="tns:IePubCloud_VerifyLogin_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IePubCloud" type="tns:IePubCloud">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserStatistics">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/GetUserStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatistics">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/GetGlobalStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserStatistics">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/AddUserStatistics" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistereBook">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/RegistereBook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterUser">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/RegisterUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBookmark">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/AddBookmark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFavorite">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/AddFavorite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogin">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/VerifyLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServiceePubCloud">
+    <wsdl:port name="BasicHttpBinding_IePubCloud" binding="tns:BasicHttpBinding_IePubCloud">
+      <soap:address location="http://localhost:1133/ePubCloudService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

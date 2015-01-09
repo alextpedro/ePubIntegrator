@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
-  <lastserver>192.168.1.1</lastserver>
+  <lastserver>http://localhost:1133/ePubCloudService.svc</lastserver>
   <lastlogin>user123</lastlogin>
   <lasttime>19/12/2014 16:07:15</lasttime>
 </config>
