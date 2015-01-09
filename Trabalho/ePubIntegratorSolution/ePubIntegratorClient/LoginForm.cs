@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.IO;
+using ePubIntegratorClient.ServiceReference1;
+using System.ServiceModel;
 
 namespace ePubIntegratorClient
 {
@@ -21,6 +23,7 @@ namespace ePubIntegratorClient
         private String xmlPath;
         private String rootPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
         ConfigHandler ch;
+        ServiceReference1.IePubCloudClient webservice;
 
         public LoginForm()
         {
@@ -49,12 +52,14 @@ namespace ePubIntegratorClient
             string password = textBoxPassword.Text;
             string server = textBoxServer.Text;
 
+            webservice = new IePubCloudClient();
+            webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
+            return webservice.VerifyLogin(textBoxLogin.Text, textBoxPassword.Text);
+            
             // [TODO] servercheck aqui
             // pingar server aqui
             // if/else se estiver online/offline
             // return VerifyLogin(user, password) no webservice
-
-            return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,7 +69,6 @@ namespace ePubIntegratorClient
 
             if (tryLogin())
             {
-                //ServiceePubCloud server = new ServiceePubCloud();
                 // login bem sucedido
                 offline = false;
             }
@@ -93,6 +97,13 @@ namespace ePubIntegratorClient
         private void LoginForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            webservice = new IePubCloudClient();
+            webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
+            webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
         }
     }
 }

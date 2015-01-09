@@ -23,7 +23,7 @@
     <lastlogin>19/12/2014 13:58:00</lastlogin>
   </user>
   <user username="goorum">
-    <server>192.168.1.1</server>
+    <server>http://localhost:1133/ePubCloudService.svc</server>
     <lastlogin>19/12/2014 14:11:19</lastlogin>
     <bookpath>C:\Users\Go0rum\Documents\Books</bookpath>
   </user>

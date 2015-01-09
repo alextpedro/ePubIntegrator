@@ -32,7 +32,7 @@ namespace ServiceePubCloud
 
         //Receives an XML document with info pertaining to a new user
         [OperationContract]
-        void RegisterUser(XmlDocument newUserInfo);
+        void RegisterUser(string username, string password, string email, string address, DateTime birthdate);
 
         //Adds a new bookmark to a book
         [OperationContract]

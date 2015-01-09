@@ -45,7 +45,7 @@ namespace ePubCloudDatabaseLibrary
 			catch (Exception ex)
 			{
 
-				throw ex;
+                System.Diagnostics.Debug.WriteLine(ex.Message);
 			}
 		}
 

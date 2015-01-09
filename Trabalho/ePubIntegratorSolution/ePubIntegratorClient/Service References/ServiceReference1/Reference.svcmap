@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d826539-affc-442f-9c28-03a5ec0c71ea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1133/ePubCloudService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ePubCloudService.xsd" MetadataType="Schema" ID="7959757e-8271-4962-b1f7-346b79504b5e" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ePubCloudService1.xsd" MetadataType="Schema" ID="30c0cbef-e6a0-4d40-aeb7-629c7585636b" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ePubCloudService2.xsd" MetadataType="Schema" ID="244a27b9-ef23-4a4f-8fc7-61f622f0fb8f" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ePubCloudService.disco" MetadataType="Disco" ID="9679b73a-22cf-43f1-ad0a-77bb0820963b" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?disco" />
+    <MetadataFile FileName="ServiceePubCloud.wsdl" MetadataType="Wsdl" ID="597ba27e-98c8-4474-bea9-7e7d73ff1afe" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
