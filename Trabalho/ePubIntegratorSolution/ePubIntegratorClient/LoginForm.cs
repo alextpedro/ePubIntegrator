@@ -1,4 +1,5 @@
 ﻿using ePubIntegratorClient;
+using ServiceePubCloud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,6 +64,7 @@ namespace ePubIntegratorClient
 
             if (tryLogin())
             {
+                //ServiceePubCloud server = new ServiceePubCloud();
                 // login bem sucedido
                 offline = false;
             }
