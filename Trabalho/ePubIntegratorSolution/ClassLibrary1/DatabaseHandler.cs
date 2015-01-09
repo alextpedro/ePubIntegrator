@@ -63,7 +63,7 @@ namespace ePubCloudDatabaseLibrary
 			stats.AppendChild(root);
 
 			//Search database for user statistics 
-			int numberofFavorites = context.Statis
+            //int numberofFavorites = context.StatisticsSet;
 
 			//Write statistics to document
 

@@ -18,7 +18,6 @@ namespace ePubIntegratorClient
 {
     public partial class LoginForm : Form
     {
-
         private XmlDocument xmlDoc;
         private String xmlPath;
         private String rootPath = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
@@ -55,22 +54,27 @@ namespace ePubIntegratorClient
             webservice = new IePubCloudClient();
             try
             {
-                webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
-                return webservice.VerifyLogin(textBoxLogin.Text, textBoxPassword.Text);
+                webservice.Endpoint.Address = new EndpointAddress(server);
+                return webservice.VerifyLogin(user, password);
             }
             catch (EndpointNotFoundException)
             {
-                MessageBox.Show("Server with address " + textBoxServer.Text + " not responding.",
+                MessageBox.Show("Server with address " + server + " not responding.",
                 "Server offline",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             }
             catch (UriFormatException)
             {
-                MessageBox.Show("Server address: " + textBoxServer.Text + " invalid.",
+                MessageBox.Show("Server address: " + server + " invalid.",
                 "Invalid server address",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message,
+                "Unknown Server Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+            }
             return false;
         }
 
@@ -97,7 +101,8 @@ namespace ePubIntegratorClient
             ConfigHandler ch = new ConfigHandler();
             ch.loginUser(textBoxLogin.Text, textBoxServer.Text);
 
-            ClientForm clientForm = new ClientForm(textBoxLogin.Text, offline);
+            //Cria o formulário
+                ClientForm clientForm = new ClientForm(textBoxLogin.Text, offline);
             //Esconde o formulario de login
                 this.Hide();
             //Invoca o novo formulario
@@ -116,9 +121,9 @@ namespace ePubIntegratorClient
             webservice = new IePubCloudClient();
             webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
             webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
+            
             Boolean success = false;
             //success = webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
-            
             string message;
             if (success) message = "successful";
             else message = "unsuccessful";
@@ -127,12 +132,6 @@ namespace ePubIntegratorClient
                 " registration " + message,
                 "User Registration",
                 MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-        }
-
-
-        private void checkWebService()
-        {
-
         }
     }
 }
