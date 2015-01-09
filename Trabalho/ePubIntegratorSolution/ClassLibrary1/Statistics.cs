@@ -15,6 +15,8 @@ namespace ePubCloudDatabaseLibrary
     public partial class Statistics
     {
         public int Id { get; set; }
+        public string NumberofFavorites { get; set; }
+        public string NumberofBookmarks { get; set; }
     
         public virtual User User { get; set; }
     }

@@ -16,7 +16,7 @@ namespace ServiceePubCloud
     {
         //Returns XML Document with saved user statistics.
         [OperationContract]
-        XmlDocument GetUserStatistics(int userID);
+        XmlDocument GetUserStatistics(string username);
 
         ////Returns XML Document with all statistics.
         [OperationContract]
@@ -28,11 +28,11 @@ namespace ServiceePubCloud
 
         //Receives a bookinfo xml and registers the book in the database
         [OperationContract]
-        void RegistereBook(XmlDocument bookinfo);
+        void RegistereBook(Epub newEpub);
 
         //Receives an XML document with info pertaining to a new user
         [OperationContract]
-        void RegisterUser(XmlDocument newUserInfo);
+        void RegisterUser(string username, string password, string email, string address, DateTime birthdate);
 
         //Adds a new bookmark to a book
         [OperationContract]

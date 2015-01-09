@@ -19,7 +19,7 @@ namespace ePubCloudDatabaseLibrary
         public string Chapter { get; set; }
     
         public virtual eBook eBook { get; set; }
-        public virtual Chapter Chapter1 { get; set; }
+        public virtual Chapter ChapterMark { get; set; }
         public virtual User User { get; set; }
     }
 }

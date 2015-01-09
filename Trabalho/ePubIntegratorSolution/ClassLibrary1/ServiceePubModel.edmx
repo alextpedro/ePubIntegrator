@@ -144,6 +144,8 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumberofFavorites" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumberofBookmarks" Type="nvarchar(max)" Nullable="false" />
     <Property Name="User_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="UserLogin">
@@ -393,7 +395,7 @@
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.BookmarkeBook" FromRole="Bookmark" ToRole="eBook" />
           <Property Type="String" Name="Book" Nullable="false" />
           <Property Type="String" Name="Chapter" Nullable="false" />
-          <NavigationProperty Name="Chapter1" Relationship="ServiceePubModel.BookmarkChapter" FromRole="Bookmark" ToRole="Chapter" />
+          <NavigationProperty Name="ChapterMark" Relationship="ServiceePubModel.BookmarkChapter" FromRole="Bookmark" ToRole="Chapter" />
           <NavigationProperty Name="User" Relationship="ServiceePubModel.UserBookmark" FromRole="Bookmark" ToRole="User" />
         </EntityType>
         <Association Name="BookmarkeBook">
@@ -422,7 +424,7 @@
           <Property Type="String" Name="Book" Nullable="false" />
           <Property Type="String" Name="Chapter" Nullable="false" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.FavoriteeBook" FromRole="Favorite" ToRole="eBook" />
-          <NavigationProperty Name="Chapter1" Relationship="ServiceePubModel.FavoriteChapter" FromRole="Favorite" ToRole="Chapter" />
+          <NavigationProperty Name="ChapterMark" Relationship="ServiceePubModel.FavoriteChapter" FromRole="Favorite" ToRole="Chapter" />
         </EntityType>
         <Association Name="BookmarkChapter">
           <End Type="ServiceePubModel.Bookmark" Role="Bookmark" Multiplicity="0..1" />
@@ -482,6 +484,8 @@
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="User" Relationship="ServiceePubModel.StatisticsUser" FromRole="Statistics" ToRole="User" />
+          <Property Type="String" Name="NumberofFavorites" Nullable="false" />
+          <Property Type="String" Name="NumberofBookmarks" Nullable="false" />
         </EntityType>
         <Association Name="StatisticsUser">
           <End Type="ServiceePubModel.Statistics" Role="Statistics" Multiplicity="1" />
@@ -575,6 +579,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.Statistics)">
         <MappingFragment StoreEntitySet="StatisticsSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="NumberofFavorites" ColumnName="NumberofFavorites" />
+          <ScalarProperty Name="NumberofBookmarks" ColumnName="NumberofBookmarks" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
