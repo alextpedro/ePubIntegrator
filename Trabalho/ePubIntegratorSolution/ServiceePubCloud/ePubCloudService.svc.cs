@@ -15,15 +15,16 @@ namespace ServiceePubCloud
     public class ServiceePubCloud : IePubCloud
     {
 
-        public System.Xml.XmlDocument GetUserStatistics(int userID)
+        public System.Xml.XmlDocument GetUserStatistics(string username)
         {
             //TODO: All of it.
             //Create new XML document
             XmlDocument statistics = new XmlDocument();
 
             //Access the database
+
             //TMP DO CHANGE
-            return DatabaseHandler.GetUserStatistics(userID);
+            return statistics;
         }
 
         public Boolean VerifyLogin(string username, string password) {
@@ -35,7 +36,7 @@ namespace ServiceePubCloud
             throw new NotImplementedException();
         }
 
-        public void AddUserStatistics(int user, System.Xml.XmlDocument statistics)
+        public void AddUserStatistics(int user, XmlDocument statistics)
         {
             throw new NotImplementedException();
         }

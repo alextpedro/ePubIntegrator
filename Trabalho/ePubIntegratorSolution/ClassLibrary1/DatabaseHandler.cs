@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using eBdb.EpubReader;
 using System.Xml;
 
+
 namespace ePubCloudDatabaseLibrary
 {
 	public static class DatabaseHandler
@@ -44,15 +45,31 @@ namespace ePubCloudDatabaseLibrary
 			}
 			catch (Exception ex)
 			{
-
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+				System.Diagnostics.Debug.WriteLine(ex.Message);
+				throw ex;
 			}
 		}
 
 
-		public static XmlDocument GetUserStatistics(int userID)
+		public static XmlDocument GetUserStatistics(string username)
 		{
-            return new XmlDocument();
+			//Create a document
+			XmlDocument stats = new XmlDocument();
+			XmlDeclaration decl = stats.CreateXmlDeclaration("1.0", null, null);
+			stats.AppendChild(decl);
+
+			//Create nodes of document <-- Decide on document structure
+			XmlElement root = stats.CreateElement("statistics");
+			stats.AppendChild(root);
+
+			//Search database for user statistics 
+			int numberofFavorites = context.Statis
+
+			//Write statistics to document
+
+			//return document
+			return stats;
+
 		}
 
 		public static void RegistereBook(Epub neweBook)

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/09/2015 14:08:34
+-- Date Created: 01/09/2015 15:26:14
 -- Generated from EDMX file: C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
 -- --------------------------------------------------
 
@@ -171,6 +171,8 @@ GO
 -- Creating table 'StatisticsSet'
 CREATE TABLE [dbo].[StatisticsSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
+    [NumberofFavorites] nvarchar(max)  NOT NULL,
+    [NumberofBookmarks] nvarchar(max)  NOT NULL,
     [User_Id] int  NOT NULL
 );
 GO
