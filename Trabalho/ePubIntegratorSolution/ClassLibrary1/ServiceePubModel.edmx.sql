@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 12/19/2014 16:04:39
--- Generated from EDMX file: C:\Users\2131314\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
+-- Date Created: 01/09/2015 13:41:31
+-- Generated from EDMX file: C:\Users\Go0rum\Documents\GitHub\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [ePubIntegratorDB];
+USE [ePubIntegratorDatabase];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -47,6 +47,9 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_eBookPublishereBook]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[eBookPublisherSet] DROP CONSTRAINT [FK_eBookPublishereBook];
 GO
+IF OBJECT_ID(N'[dbo].[FK_StatisticsUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[StatisticsSet] DROP CONSTRAINT [FK_StatisticsUser];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -79,6 +82,9 @@ GO
 IF OBJECT_ID(N'[dbo].[eBookPublisherSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[eBookPublisherSet];
 GO
+IF OBJECT_ID(N'[dbo].[StatisticsSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[StatisticsSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -105,7 +111,6 @@ GO
 CREATE TABLE [dbo].[eBookSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Language] nvarchar(max)  NOT NULL,
-    [Author] nvarchar(max)  NOT NULL,
     [Category] nvarchar(max)  NOT NULL,
     [Bookmark_Id] int  NULL,
     [Favorite_Id] int  NULL
@@ -149,7 +154,7 @@ GO
 
 -- Creating table 'eBookAuthorsSet'
 CREATE TABLE [dbo].[eBookAuthorsSet] (
-    [Name] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
     [Id] int  NOT NULL,
     [eBook_Id] int  NOT NULL
 );
@@ -157,7 +162,7 @@ GO
 
 -- Creating table 'eBookPublisherSet'
 CREATE TABLE [dbo].[eBookPublisherSet] (
-    [Name] int IDENTITY(1,1) NOT NULL,
+    [Name] nvarchar(max)  NOT NULL,
     [Id] int  NOT NULL,
     [eBook_Id] int  NOT NULL
 );

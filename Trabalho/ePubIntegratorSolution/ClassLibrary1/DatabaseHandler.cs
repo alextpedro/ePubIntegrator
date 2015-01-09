@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using eBdb.EpubReader;
+using System.Xml;
 
 namespace ePubCloudDatabaseLibrary
 {
@@ -49,9 +50,9 @@ namespace ePubCloudDatabaseLibrary
 		}
 
 
-		public static void GetUserStatistics(int userID)
+		public static XmlDocument GetUserStatistics(int userID)
 		{
-			throw new NotImplementedException();
+            return new XmlDocument();
 		}
 
 		public static void RegistereBook(Epub neweBook)

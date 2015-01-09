@@ -1,11 +1,11 @@
-﻿using System;
+﻿using ePubCloudDatabaseLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-using ePubCloudDatabaseLibrary;
 using System.Xml;
 
 namespace ServiceePubCloud
@@ -17,19 +17,17 @@ namespace ServiceePubCloud
 
         public System.Xml.XmlDocument GetUserStatistics(int userID)
         {
-            //Remove this once done. It causes the warnings.
-            throw new NotImplementedException();
-
             //TODO: All of it.
             //Create new XML document
             XmlDocument statistics = new XmlDocument();
 
             //Access the database
-            DatabaseHandler.GetUserStatistics(userID);
+            //TMP DO CHANGE
+            return DatabaseHandler.GetUserStatistics(userID);
         }
 
         public Boolean VerifyLogin(string username, string password) {
-            return DatabaseHandler.ValidateLogin(string username, string password);
+            return DatabaseHandler.ValidateLogin(username, password);
         }
 
         public System.Xml.XmlDocument GetGlobalStatistics()

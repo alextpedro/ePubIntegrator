@@ -84,7 +84,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Author" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Bookmark_Id" Type="int" Nullable="true" />
     <Property Name="Favorite_Id" Type="int" Nullable="true" />
@@ -128,7 +127,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Name" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="eBook_Id" Type="int" Nullable="false" />
   </EntityType>
@@ -136,7 +135,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Name" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
     <Property Name="eBook_Id" Type="int" Nullable="false" />
   </EntityType>
