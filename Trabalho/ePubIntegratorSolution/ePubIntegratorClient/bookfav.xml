@@ -26,9 +26,8 @@
   </user>
   <user username="goorum">
     <ebook hash="-1351160594">
-      <favourite updated="08/01/2015 17:20:29" global="True">
+      <favourite updated="09/01/2015 13:25:08" global="True">
         <chapter>Chapter 3</chapter>
-        <chapter>Chapter 11</chapter>
       </favourite>
       <bookmark updated="08/01/2015 15:04:30" global="False">
         <chapter>Chapter 6</chapter>
@@ -55,7 +54,7 @@
       <bookmark updated="08/01/2015 14:59:02" global="False" />
     </ebook>
     <ebook hash="1136980949">
-      <favourite updated="08/01/2015 14:59:00" global="False" />
+      <favourite updated="09/01/2015 13:18:57" global="False" />
     </ebook>
   </user>
 </ePub>

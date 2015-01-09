@@ -147,6 +147,10 @@
       <Project>{6b00fe33-2bd6-485f-b5cd-14fcef20a5aa}</Project>
       <Name>ClassLibraryePub</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServiceePubCloud\ServiceePubCloud.csproj">
+      <Project>{c7276289-b8a3-4944-b271-79e71c321b13}</Project>
+      <Name>ServiceePubCloud</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

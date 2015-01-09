@@ -14,7 +14,6 @@ namespace ePubIntegratorClient
 {
     public partial class ChapterForm : Form
     {
-
         List<NavPoint> navPoints;
         Boolean tocAvailable;
         Epub _epub;
