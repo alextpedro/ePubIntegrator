@@ -27,4 +27,8 @@
     <lastlogin>19/12/2014 14:11:19</lastlogin>
     <bookpath>C:\Users\Go0rum\Documents\Books</bookpath>
   </user>
+  <user username="user">
+    <server>http://localhost:1133/ePubCloudService.svc</server>
+    <lastlogin>09/01/2015 17:50:26</lastlogin>
+  </user>
 </config>

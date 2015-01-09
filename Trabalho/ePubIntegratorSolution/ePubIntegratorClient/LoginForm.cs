@@ -53,13 +53,25 @@ namespace ePubIntegratorClient
             string server = textBoxServer.Text;
 
             webservice = new IePubCloudClient();
-            webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
-            return webservice.VerifyLogin(textBoxLogin.Text, textBoxPassword.Text);
-            
-            // [TODO] servercheck aqui
-            // pingar server aqui
-            // if/else se estiver online/offline
-            // return VerifyLogin(user, password) no webservice
+            try
+            {
+                webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
+                return webservice.VerifyLogin(textBoxLogin.Text, textBoxPassword.Text);
+            }
+            catch (EndpointNotFoundException)
+            {
+                MessageBox.Show("Server with address " + textBoxServer.Text + " not responding.",
+                "Server offline",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            }
+            catch (UriFormatException)
+            {
+                MessageBox.Show("Server address: " + textBoxServer.Text + " invalid.",
+                "Invalid server address",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1);
+            }
+
+            return false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,7 +88,7 @@ namespace ePubIntegratorClient
             {
                 // modo offline
                 offline = true;
-                MessageBox.Show("Server with ip " + textBoxServer.Text + " not responding." +
+                MessageBox.Show("Login failed on: " + textBoxServer.Text +
                 "\nSystem will enter offline.",
                 "Offline mode",
                 MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
@@ -104,6 +116,23 @@ namespace ePubIntegratorClient
             webservice = new IePubCloudClient();
             webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
             webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
+            Boolean success = false;
+            //success = webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
+            
+            string message;
+            if (success) message = "successful";
+            else message = "unsuccessful";
+
+            MessageBox.Show("User " + textBoxLogin.Text +
+                " registration " + message,
+                "User Registration",
+                MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+
+
+        private void checkWebService()
+        {
+
         }
     }
 }
