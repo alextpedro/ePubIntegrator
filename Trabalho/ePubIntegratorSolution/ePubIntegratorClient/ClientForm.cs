@@ -236,7 +236,7 @@ namespace ePubIntegratorClient
 
         private void buttonExcel_Click(object sender, EventArgs e)
         {
-            ExcelSaveForm esf = new ExcelSaveForm();
+            ExcelSaveForm esf = new ExcelSaveForm(user);
             esf.ShowDialog();
         }
 

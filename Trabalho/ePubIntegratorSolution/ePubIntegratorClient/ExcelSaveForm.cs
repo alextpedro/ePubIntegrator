@@ -12,9 +12,12 @@ namespace ePubIntegratorClient
 {
     public partial class ExcelSaveForm : Form
     {
-        public ExcelSaveForm()
+        string user;
+
+        public ExcelSaveForm(string user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void buttonPath_Click(object sender, EventArgs e)
@@ -29,8 +32,9 @@ namespace ePubIntegratorClient
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            ExcelHandler eh = new ExcelHandler();
+            ExcelHandler eh = new ExcelHandler(user);
             eh.saveExcelAs(textBoxPath.Text, textBoxName.Text);
+            this.Close();
         }
     }
 }

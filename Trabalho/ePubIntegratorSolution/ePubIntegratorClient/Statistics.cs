@@ -38,30 +38,24 @@ namespace ePubIntegratorClient
 
         internal void startReading(DateTime dateTime)
         {
-
+            startRead = dateTime;
         }
 
         internal void stopReading(DateTime dateTime)
         {
-            ;
+            stopRead = dateTime;
+            double time = calcTime();
+            string xmlTime = ch.getReadTime(user);
+            if (xmlTime == "") xmlTime = "0";
+            double oldTime = Convert.ToDouble(xmlTime);
+            ch.setReadtime((oldTime + time).ToString(), user);
         }
 
-        private string calcTime()
+        private double calcTime()
         {
-            return null;
-            //const int SECOND = 1;
-            //const int MINUTE = 60 * SECOND;
-            //const int HOUR = 60 * MINUTE;
-
-            //var timeSpan = new TimeSpan(DateTime.UtcNow.Ticks - yourDate.Ticks);
-            //double delta = Math.Abs(timeSpan.TotalSeconds);
-
-            //if (delta < 0)return "not yet";
-            //if (delta < 1 * MINUTE)return timeSpan.Seconds == 1 ? "one second ago" : timeSpan.Seconds + " seconds ago";
-            //if (delta < 2 * MINUTE)return "a minute ago";
-            //if (delta < 45 * MINUTE)return timeSpan.Minutes + " minutes ago";
-            //if (delta < 90 * MINUTE)return "an hour ago";
-            //if (delta < 24 * HOUR)return timeSpan.Hours + " hours ago";
+            var timeSpan = new TimeSpan(startRead.Ticks - stopRead.Ticks);
+            double seconds = Math.Abs(timeSpan.TotalSeconds);
+            return seconds;
         }
 
         public String getLoginCount()
@@ -76,7 +70,15 @@ namespace ePubIntegratorClient
 
         public String getReadtimes()
         {
-            return ch.getReadTime(user);
+            const int MINUTE = 60;
+            const int HOUR = 60 * MINUTE;
+            double dbl = Convert.ToDouble(ch.getReadTime(user));
+            int seconds = Convert.ToInt32(dbl);
+            
+            if (seconds < MINUTE) return seconds+" seconds";
+            if (seconds >= MINUTE && seconds < HOUR) return seconds / MINUTE + " minutes";
+            if (seconds >= HOUR) return seconds / MINUTE / HOUR + " hours";
+            else return "Unknown";
         }
 
         public String getFavourites()
