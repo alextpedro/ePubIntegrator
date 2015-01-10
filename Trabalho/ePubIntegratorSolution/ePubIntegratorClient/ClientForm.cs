@@ -33,6 +33,8 @@ namespace ePubIntegratorClient
             this.user = user;
             this.offline = offline;
             labelUser.Text = user;
+            labelBook.Text = "Last Book: "+configHandler.getLastBook(user);
+            labelChapter.Text = "Last Chapter: " + configHandler.getLastChapter(user);
             if (offline) buttonStats.Enabled = false;
             textBoxBookPath.Text = configHandler.getUserBookPath(user);
             reloadBooks();
@@ -147,7 +149,7 @@ namespace ePubIntegratorClient
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
-            ReadForm readForm = new ReadForm(selectedEpub);
+            ReadForm readForm = new ReadForm(user, selectedEpub);
             readForm.ShowDialog();
         }
 

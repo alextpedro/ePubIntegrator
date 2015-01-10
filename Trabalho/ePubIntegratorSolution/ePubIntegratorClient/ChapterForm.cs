@@ -83,6 +83,9 @@ namespace ePubIntegratorClient
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            ConfigHandler ch = new ConfigHandler();
+            ch.setLastBook(book.Title, listBox.SelectedItem.ToString(), user);
+
             //escrever conteudo do capítulo no webBrowserObject
             String htmlText;
             if (tocAvailable) htmlText = navPoints[chapterIdx[listBox.SelectedIndex]].ContentData.Content;
@@ -161,6 +164,11 @@ namespace ePubIntegratorClient
         private void checkBoxBkmrk_Click(object sender, EventArgs e)
         {
             bfHandler.updateChapterNode(user, book, "bookmark", chapters[chapterIdx[listBox.SelectedIndex]], checkBoxBkmrk.Checked);
+        }
+
+        private void ChapterForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

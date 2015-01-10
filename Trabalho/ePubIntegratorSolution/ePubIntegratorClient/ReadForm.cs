@@ -15,8 +15,10 @@ namespace ePubIntegratorClient
 {
     public partial class ReadForm : Form
     {
-        public ReadForm(Epub epub)
+        string user;
+        public ReadForm(string user, Epub epub)
         {
+            this.user = user;
             InitializeComponent();
             openBookAsHTML(epub);
         }
@@ -27,6 +29,11 @@ namespace ePubIntegratorClient
             this.Text = "Reading: " + book.Title;
             string htmlText = epub.GetContentAsHtml();
             webBrowser1.DocumentText = htmlText;
+
+            ConfigHandler ch = new ConfigHandler();
+            string chapter = "";
+            ch.setLastBook(book.Title, chapter, user);
+
         }
 
         private void ReadForm_Load(object sender, EventArgs e)

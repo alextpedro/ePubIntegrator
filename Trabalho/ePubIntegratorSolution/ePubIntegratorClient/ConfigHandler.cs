@@ -13,7 +13,7 @@ namespace ePubIntegratorClient
 
         private String _xmlPath;
         private XmlDocument _xmldoc;
-        private const string FILE = "/userconfig.xml";
+        private const string FILE = "/epubConfigurations.xml";
         private const string ROOTNODE = "/config";
 
         public ConfigHandler()
@@ -28,6 +28,8 @@ namespace ePubIntegratorClient
         {
             if (!(isUserValid(user))) createUser(user, server); //se o utilizador não existir criar novo user no XML.
             _xmldoc.SelectSingleNode(ROOTNODE + "[@lastuser]").Attributes[0].Value = user;
+            _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/server").InnerText = server;
+            _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastlogin").InnerText = DateTime.Now.ToString();
             saveXML();
         }
 
@@ -95,6 +97,52 @@ namespace ePubIntegratorClient
                 saveXML();
             } else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/bookpath").InnerText = path;
             saveXML();
+        }
+
+        internal void setLastBook(string book, string chapter, string user)
+        {
+            //save last book
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastbook") == null)
+            {
+                XmlNode lastbook = _xmldoc.CreateElement("lastbook");
+                lastbook.InnerText = book;
+                _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']").AppendChild(lastbook);
+            }
+            else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastbook").InnerText = book;
+            
+            //save last chapter
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastchapter") == null)
+            {
+                XmlNode lastchapter = _xmldoc.CreateElement("lastchapter");
+                lastchapter.InnerText = chapter;
+                _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']").AppendChild(lastchapter);
+            }
+            else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastchapter").InnerText = chapter;
+            saveXML();
+        }
+
+        public String getLastBook(string user)
+        {
+            try
+            {
+                return _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastbook").InnerText;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
+        }
+
+        public String getLastChapter(string user)
+        {
+            try
+            {
+                return _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastchapter").InnerText;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
         }
     }
 }

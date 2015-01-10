@@ -61,6 +61,8 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.buttonFacebook = new System.Windows.Forms.Button();
+            this.labelBook = new System.Windows.Forms.Label();
+            this.labelChapter = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +71,7 @@
             // 
             this.labelUser.AutoSize = true;
             this.labelUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelUser.Location = new System.Drawing.Point(6, 17);
+            this.labelUser.Location = new System.Drawing.Point(6, 2);
             this.labelUser.Name = "labelUser";
             this.labelUser.Size = new System.Drawing.Size(171, 20);
             this.labelUser.TabIndex = 1;
@@ -403,11 +405,33 @@
             this.buttonFacebook.UseVisualStyleBackColor = true;
             this.buttonFacebook.Click += new System.EventHandler(this.buttonFacebook_Click);
             // 
+            // labelBook
+            // 
+            this.labelBook.AutoSize = true;
+            this.labelBook.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBook.Location = new System.Drawing.Point(7, 22);
+            this.labelBook.Name = "labelBook";
+            this.labelBook.Size = new System.Drawing.Size(84, 13);
+            this.labelBook.TabIndex = 20;
+            this.labelBook.Text = "Last Book: ...";
+            // 
+            // labelChapter
+            // 
+            this.labelChapter.AutoSize = true;
+            this.labelChapter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChapter.Location = new System.Drawing.Point(7, 35);
+            this.labelChapter.Name = "labelChapter";
+            this.labelChapter.Size = new System.Drawing.Size(99, 13);
+            this.labelChapter.TabIndex = 20;
+            this.labelChapter.Text = "Last Chapter: ...";
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 372);
+            this.Controls.Add(this.labelChapter);
+            this.Controls.Add(this.labelBook);
             this.Controls.Add(this.buttonFacebook);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonStats);
@@ -460,5 +484,7 @@
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Button buttonFacebook;
+        private System.Windows.Forms.Label labelBook;
+        private System.Windows.Forms.Label labelChapter;
     }
 }
