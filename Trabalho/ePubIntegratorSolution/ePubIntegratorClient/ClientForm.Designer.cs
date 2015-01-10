@@ -86,6 +86,7 @@
             this.buttonStats.Size = new System.Drawing.Size(40, 42);
             this.buttonStats.TabIndex = 5;
             this.buttonStats.UseVisualStyleBackColor = true;
+            this.buttonStats.Click += new System.EventHandler(this.buttonStats_Click);
             // 
             // listBooks
             // 

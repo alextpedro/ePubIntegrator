@@ -193,6 +193,30 @@ namespace ePubIntegratorClient
             return value;
         }
 
+        public int getFavourites(string user)
+        {
+            int favNum = 0;
+            String xpathstr = ROOTNODE + "user[@username='" + user + "']/ebook/" + "favourite";
+            XmlNodeList nodeList = _xmldoc.SelectNodes(xpathstr);
+            foreach (XmlNode node in nodeList)
+            {
+                if (node.Attributes[1].Value == "True") favNum++;
+            }
+            return favNum;
+        }
+
+        public int getBookmarks(string user)
+        {
+            int bmrkNum = 0;
+            String xpathstr = ROOTNODE + "user[@username='" + user + "']/ebook/" + "bookmark";
+            XmlNodeList nodeList = _xmldoc.SelectNodes(xpathstr);
+            foreach (XmlNode node in nodeList)
+            {
+                if (node.Attributes[1].Value == "True") bmrkNum++;
+            }
+            return bmrkNum;
+        }
+
         public bool getFavChapterValue(string user, Book book, string chapter)
         {
             return getChapterValue(user, book, FAV, chapter);

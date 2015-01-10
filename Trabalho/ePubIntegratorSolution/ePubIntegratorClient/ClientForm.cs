@@ -26,16 +26,21 @@ namespace ePubIntegratorClient
         BookFavHandler bfHandler = new BookFavHandler();
         ConfigHandler configHandler = new ConfigHandler();
         Boolean offline;
+        Statistics statistics;
 
         public ClientForm(String user, Boolean offline)
         {
+            statistics = new Statistics(user);
             InitializeComponent();
             this.user = user;
             this.offline = offline;
             labelUser.Text = user;
             labelBook.Text = "Last Book: "+configHandler.getLastBook(user);
             labelChapter.Text = "Last Chapter: " + configHandler.getLastChapter(user);
-            if (offline) buttonStats.Enabled = false;
+
+            statistics.countLogin();
+
+            //if (offline) buttonStats.Enabled = false;
             textBoxBookPath.Text = configHandler.getUserBookPath(user);
             reloadBooks();
         }
@@ -110,6 +115,8 @@ namespace ePubIntegratorClient
                         listBooks.Items.Add(new Epub(epubfile).Title[0]);
                         idx++;
                     }
+
+                    statistics.bookCount(idx);
                     
                 }
             }
@@ -143,14 +150,18 @@ namespace ePubIntegratorClient
 
         private void buttonChapters_Click(object sender, EventArgs e)
         {
+            statistics.startReading(DateTime.Now);
             ChapterForm chapterForm = new ChapterForm(user, selectedEpub);
             chapterForm.ShowDialog();
+            statistics.stopReading(DateTime.Now);
         }
 
         private void buttonRead_Click(object sender, EventArgs e)
         {
+            statistics.startReading(DateTime.Now);
             ReadForm readForm = new ReadForm(user, selectedEpub);
             readForm.ShowDialog();
+            statistics.stopReading(DateTime.Now);
         }
 
         private void buttonRefresh_Click_1(object sender, EventArgs e)
@@ -227,6 +238,12 @@ namespace ePubIntegratorClient
         {
             ExcelSaveForm esf = new ExcelSaveForm();
             esf.ShowDialog();
+        }
+
+        private void buttonStats_Click(object sender, EventArgs e)
+        {
+            StatisticsForm sf = new StatisticsForm(user);
+            sf.ShowDialog();
         }
     }
 }

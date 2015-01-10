@@ -99,50 +99,100 @@ namespace ePubIntegratorClient
             saveXML();
         }
 
-        internal void setLastBook(string book, string chapter, string user)
+        // escreve o valor no node do respectivo user
+        private void setUserNode(string nodename, string value, string user)
         {
-            //save last book
-            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastbook") == null)
+            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/"+nodename) == null)
             {
-                XmlNode lastbook = _xmldoc.CreateElement("lastbook");
-                lastbook.InnerText = book;
-                _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']").AppendChild(lastbook);
+                XmlNode node = _xmldoc.CreateElement(nodename);
+                node.InnerText = value;
+                _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']").AppendChild(node);
             }
-            else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastbook").InnerText = book;
-            
-            //save last chapter
-            if (_xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastchapter") == null)
-            {
-                XmlNode lastchapter = _xmldoc.CreateElement("lastchapter");
-                lastchapter.InnerText = chapter;
-                _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']").AppendChild(lastchapter);
-            }
-            else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastchapter").InnerText = chapter;
+            else _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/"+nodename).InnerText = value;
             saveXML();
+        }
+
+        public void setLastBook(string book, string user)
+        {
+            setUserNode("lastbook", book, user);
+        }
+
+        public void setLastChapter(string chapter, string user)
+        {
+            setUserNode("lastchapter", chapter, user);
+        }
+
+        public void setLoginCount(string value, string user)
+        {
+            setUserNode("logincount", value, user);
+        }
+
+        public void setBooks(string value, string user)
+        {
+            setUserNode("books", value, user);
+        }
+
+        public void setFavourites(string value, string user)
+        {
+            setUserNode("favourites", value, user);
+        }
+
+        public void setBookmarks(string value, string user)
+        {
+            setUserNode("bookmarks", value, user);
+        }
+
+        public void setReadtime(string time, string user)
+        {
+            setUserNode("readtime", time, user);
+        }
+
+        // retorna o valor do node no respectivo user
+        private string getUserNode(string user, string nodename)
+        {
+            try
+            {
+                return _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/"+nodename).InnerText;
+            }
+            catch (Exception)
+            {
+                return "";
+            }
         }
 
         public String getLastBook(string user)
         {
-            try
-            {
-                return _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastbook").InnerText;
-            }
-            catch (Exception)
-            {
-                return "";
-            }
+            return getUserNode(user, "lastbook");
         }
 
         public String getLastChapter(string user)
         {
-            try
-            {
-                return _xmldoc.SelectSingleNode(ROOTNODE + "/user[@username='" + user + "']/lastchapter").InnerText;
-            }
-            catch (Exception)
-            {
-                return "";
-            }
+            return getUserNode(user, "lastchapter");
+        }
+
+        public String getLoginCount(string user)
+        {
+            return getUserNode(user, "logincount");
+        }
+
+        public String getBooks(string user)
+        {
+            return getUserNode(user, "books");
+        }
+
+        public String getFavourites(string user)
+        {
+            return getUserNode(user, "favourites");
+        }
+
+        public String getBookmarks(string user)
+        {
+            return getUserNode(user, "bookmarks");
+        }
+
+        public String getReadTime(string user)
+        {
+            return getUserNode(user, "readtime");
         }
     }
 }

@@ -22,6 +22,7 @@ namespace ePubIntegratorClient
         BookFavHandler bfHandler = new BookFavHandler();
         List<String> chapters = new List<string>();
         List<int> chapterIdx = new List<int>();
+        ConfigHandler ch = new ConfigHandler();
         int bookmarkIndex;
 
         public ChapterForm(String user, Epub epub)
@@ -31,6 +32,7 @@ namespace ePubIntegratorClient
             book = new Book(epub);
             InitializeComponent();
             loadContents();
+            ch.setLastBook(book.Title, user);
         }
 
         private void loadContents()
@@ -83,8 +85,8 @@ namespace ePubIntegratorClient
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ConfigHandler ch = new ConfigHandler();
-            ch.setLastBook(book.Title, listBox.SelectedItem.ToString(), user);
+            
+            ch.setLastChapter(listBox.SelectedItem.ToString(), user);
 
             //escrever conteudo do capítulo no webBrowserObject
             String htmlText;

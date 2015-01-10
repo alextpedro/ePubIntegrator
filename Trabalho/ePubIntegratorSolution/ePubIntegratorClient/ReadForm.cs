@@ -31,9 +31,7 @@ namespace ePubIntegratorClient
             webBrowser1.DocumentText = htmlText;
 
             ConfigHandler ch = new ConfigHandler();
-            string chapter = "";
-            ch.setLastBook(book.Title, chapter, user);
-
+            ch.setLastChapter(book.Title, user);
         }
 
         private void ReadForm_Load(object sender, EventArgs e)
