@@ -26,10 +26,10 @@
   </user>
   <user username="goorum">
     <ebook hash="-1351160594">
-      <favourite updated="10/01/2015 15:49:12" global="True">
+      <favourite updated="10/01/2015 17:17:33" global="True">
         <chapter>Chapter 3</chapter>
       </favourite>
-      <bookmark updated="08/01/2015 15:04:30" global="False">
+      <bookmark updated="10/01/2015 16:23:19" global="False">
         <chapter>Chapter 6</chapter>
         <chapter>Chapter 9</chapter>
       </bookmark>
@@ -39,7 +39,7 @@
     </ebook>
     <ebook hash="-939113191">
       <favourite updated="10/01/2015 15:39:00" global="True" />
-      <bookmark updated="10/01/2015 15:39:00" global="True" />
+      <bookmark updated="10/01/2015 16:23:19" global="True" />
     </ebook>
     <ebook hash="-854820960">
       <favourite updated="08/01/2015 15:00:10" global="False" />

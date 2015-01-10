@@ -6,18 +6,18 @@ Mark [ ] as [x] when completed! :D
 ///////////////////////////
 [ ] > Login
 [ ] > Registar Utilizador no webService
-[X] > Permitir modificar: (config.xml)
+[X] > Permitir modificar: (epubConfigurations.xml)
 [X]	- Localização dos livros
 [X]	- Localização URL do webservice
-[X] > Data do ultimo login (config.xml)
-[ ] > Guardar título, autor, publisher (ebooks.xml)
-[ ] > Indicar ultimo livro e capítulo consultados
+[X] > Data do ultimo login (epubConfigurations.xml)
+[ ] > Guardar título, autor, publisher (bookfav.xml)
+[X] > Indicar ultimo livro e capítulo consultados
     > Registar bookmarks para:
 [X]	- livro
-[ ]	- capítulo
+[X]	- capítulo
     > Registar favorito para:
 [X]	- livro
-[ ]	- capítulo
+[X]	- capítulo
 [ ] > Validar XMLs com ficheiros Schema XSD
 [X] > Mostrar ebooks depois de iniciar login
 [X] > Mostrar dados do ebook (título, autor, editora ,(etc)) antes de visualizar
@@ -36,7 +36,7 @@ Mark [ ] as [x] when completed! :D
 [ ] > EXTRAS (exemplos)
 [ ]	- Definir notas para os livros
 [ ]	- Pesquisa
-[ ]	- Integrar com redes sociais
+[X]	- Integrar com redes sociais
 
 //////////////////////////////////
 //ServiceePubCloud (WebService)//

@@ -49,6 +49,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ReadForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reading: Unknown";
             this.Load += new System.EventHandler(this.ReadForm_Load);
             this.ResumeLayout(false);

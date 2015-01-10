@@ -115,7 +115,7 @@ namespace ePubIntegratorClient
             }
             catch (Exception ex)
             {
-                //DEU ERRO A LER ALGUM LIVRO ESTUPIDO
+                //DEU ERRO A LER ALGUM LIVRO
                 MessageBox.Show("An error ocurred on book:\n"+epubList[idx]+
                     "\nPlease remove or fix selected book. Book list will now turn up blank. Sorry for the inconvenience.",
                     "Error loading books!",
@@ -221,6 +221,12 @@ namespace ePubIntegratorClient
         private void ClientForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonExcel_Click(object sender, EventArgs e)
+        {
+            ExcelSaveForm esf = new ExcelSaveForm();
+            esf.ShowDialog();
         }
     }
 }

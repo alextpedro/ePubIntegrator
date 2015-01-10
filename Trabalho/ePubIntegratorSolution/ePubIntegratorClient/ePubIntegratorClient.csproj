@@ -38,6 +38,9 @@
     <Reference Include="Ionic.Zip">
       <HintPath>.\Ionic.Zip.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -68,6 +71,13 @@
       <DependentUpon>ClientForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ConfigHandler.cs" />
+    <Compile Include="ExcelHandler.cs" />
+    <Compile Include="ExcelSaveForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelSaveForm.Designer.cs">
+      <DependentUpon>ExcelSaveForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FacebookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +114,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelSaveForm.resx">
+      <DependentUpon>ExcelSaveForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FacebookForm.resx">
       <DependentUpon>FacebookForm.cs</DependentUpon>

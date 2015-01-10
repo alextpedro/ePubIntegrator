@@ -63,6 +63,7 @@
             this.buttonFacebook = new System.Windows.Forms.Button();
             this.labelBook = new System.Windows.Forms.Label();
             this.labelChapter = new System.Windows.Forms.Label();
+            this.buttonExcel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -80,9 +81,9 @@
             // buttonStats
             // 
             this.buttonStats.Image = ((System.Drawing.Image)(resources.GetObject("buttonStats.Image")));
-            this.buttonStats.Location = new System.Drawing.Point(490, 8);
+            this.buttonStats.Location = new System.Drawing.Point(558, 7);
             this.buttonStats.Name = "buttonStats";
-            this.buttonStats.Size = new System.Drawing.Size(40, 40);
+            this.buttonStats.Size = new System.Drawing.Size(40, 42);
             this.buttonStats.TabIndex = 5;
             this.buttonStats.UseVisualStyleBackColor = true;
             // 
@@ -114,7 +115,7 @@
             this.panel1.Controls.Add(this.shapeContainer1);
             this.panel1.Location = new System.Drawing.Point(2, 55);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 315);
+            this.panel1.Size = new System.Drawing.Size(606, 315);
             this.panel1.TabIndex = 7;
             // 
             // radioButtonBmrk
@@ -219,7 +220,7 @@
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(235, 51);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 254);
+            this.panel2.Size = new System.Drawing.Size(364, 254);
             this.panel2.TabIndex = 9;
             // 
             // labelDesc
@@ -383,7 +384,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(530, 311);
+            this.shapeContainer1.Size = new System.Drawing.Size(602, 311);
             this.shapeContainer1.TabIndex = 18;
             this.shapeContainer1.TabStop = false;
             // 
@@ -398,7 +399,7 @@
             // buttonFacebook
             // 
             this.buttonFacebook.Image = ((System.Drawing.Image)(resources.GetObject("buttonFacebook.Image")));
-            this.buttonFacebook.Location = new System.Drawing.Point(442, 8);
+            this.buttonFacebook.Location = new System.Drawing.Point(510, 7);
             this.buttonFacebook.Name = "buttonFacebook";
             this.buttonFacebook.Size = new System.Drawing.Size(42, 42);
             this.buttonFacebook.TabIndex = 19;
@@ -425,11 +426,22 @@
             this.labelChapter.TabIndex = 20;
             this.labelChapter.Text = "Last Chapter: ...";
             // 
+            // buttonExcel
+            // 
+            this.buttonExcel.Image = ((System.Drawing.Image)(resources.GetObject("buttonExcel.Image")));
+            this.buttonExcel.Location = new System.Drawing.Point(462, 7);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(42, 42);
+            this.buttonExcel.TabIndex = 21;
+            this.buttonExcel.UseVisualStyleBackColor = true;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
+            // 
             // ClientForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 372);
+            this.ClientSize = new System.Drawing.Size(610, 372);
+            this.Controls.Add(this.buttonExcel);
             this.Controls.Add(this.labelChapter);
             this.Controls.Add(this.labelBook);
             this.Controls.Add(this.buttonFacebook);
@@ -439,6 +451,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ClientForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ePubIntegrator";
             this.Load += new System.EventHandler(this.ClientForm_Load);
             this.panel1.ResumeLayout(false);
@@ -486,5 +499,6 @@
         private System.Windows.Forms.Button buttonFacebook;
         private System.Windows.Forms.Label labelBook;
         private System.Windows.Forms.Label labelChapter;
+        private System.Windows.Forms.Button buttonExcel;
     }
 }

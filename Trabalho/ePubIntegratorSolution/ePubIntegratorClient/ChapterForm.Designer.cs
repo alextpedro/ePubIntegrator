@@ -188,6 +188,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ChapterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChapterForm";
             this.Load += new System.EventHandler(this.ChapterForm_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

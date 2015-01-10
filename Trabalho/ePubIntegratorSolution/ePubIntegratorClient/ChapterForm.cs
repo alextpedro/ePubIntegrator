@@ -143,17 +143,31 @@ namespace ePubIntegratorClient
 
         private void buttonGoBmrk_Click(object sender, EventArgs e)
         {
+            // ir para o primeiro bookmark
             int idx = 0;
-            List<int> bookmarks = new List<int>();
             foreach (string chapter in chapters)
             {
                 if (bfHandler.getBmrkChapterValue(user, book, chapter))
                 {
-                    bookmarks.Add(idx);
+                    listBox.SelectedIndex = idx;
+                    return;
                 }
                 idx++;
             }
-            bookmarkIndex = bookmarks[idx];
+
+            // alternar entre bookmarks (descontinuado :P)
+            //int idx = 0;
+            //List<int> bookmarks = new List<int>();
+            //foreach (string chapter in chapters)
+            //{
+            //    if (bfHandler.getBmrkChapterValue(user, book, chapter))
+            //    {
+            //        bookmarks.Add(idx);
+            //    }
+            //    idx++;
+            //}
+            //bookmarkIndex = idx;
+            //listBox.SelectedIndex = bookmarkIndex;
         }
 
         private void radioButtonAll_CheckedChanged(object sender, EventArgs e)
