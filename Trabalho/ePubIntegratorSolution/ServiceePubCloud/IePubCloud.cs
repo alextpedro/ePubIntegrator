@@ -22,7 +22,7 @@ namespace ServiceePubCloud
 
 		//Receives a user id and a XML Document with the user's statistics.
 		[OperationContract]
-		Boolean AddUserStatistics(int user, XmlDocument statistics);
+		Boolean AddUserStatistics(string username, XmlDocument statistics);
 
 		//Receives a bookinfo xml and registers the book in the database
 		[OperationContract]

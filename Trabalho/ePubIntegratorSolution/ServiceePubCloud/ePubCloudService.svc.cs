@@ -31,9 +31,13 @@ namespace ServiceePubCloud
 			return globalStats;
 		}
 
-		public void AddUserStatistics(int user, XmlDocument statistics)
+		public Boolean AddUserStatistics(string username, XmlDocument statistics)
 		{
-			throw new NotImplementedException();
+			if (DatabaseHandler.AddUserStatistics(username, statistics))
+			{
+				return true;
+			}
+			else return false;
 		}
 
 		public Boolean RegistereBook(string title, string author, string language, string category, string publisher)

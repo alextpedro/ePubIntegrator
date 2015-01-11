@@ -36,10 +36,11 @@ Mark [ ] as [x] when completed! :D
 //////////////////////////////////
 //ServiceePubCloud (WebService)//
 ////////////////////////////////
-[ ] > Registar Utilizadores
+[X] > Registar Utilizadores
     > Receber: (por cliente registado)
-[ ]	- dados estatísticos
+[X]	- dados estatísticos
 [ ] > Registar favoritos
 [ ] > Registar bookmarks
+[X] > Receber estatísticas globais
 
 !CONTINUA!

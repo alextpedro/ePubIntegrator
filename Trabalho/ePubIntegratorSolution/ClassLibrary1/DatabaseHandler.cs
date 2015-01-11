@@ -182,5 +182,34 @@ namespace ePubCloudDatabaseLibrary
 
 			return globalStats;
 		}
+
+		public static Boolean AddUserStatistics(string username, XmlDocument statistics)
+		{
+			//Find user through username
+			Login l = context.LoginSet.Where(i => i.Username == username).FirstOrDefault();
+			User user = l.User;
+
+			//Check if user has Statistics already
+			//If yes, replace with new ones
+			//If no, create new user statistics from file
+			Statistics userStats = context.StatisticsSet.Where(i => i.User == user).FirstOrDefault();
+			if (userStats != null)
+			{
+				userStats.NumberofFavorites = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfFavorites").InnerText);
+				userStats.NumberofBookmarks = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfBookmarks").InnerText);
+				return true;
+			}
+			else
+			{
+				Statistics newStats = new Statistics();
+				newStats.NumberofFavorites = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfFavorites").InnerText);
+				newStats.NumberofBookmarks = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfBookmarks").InnerText);
+				newStats.User = user;
+
+				context.StatisticsSet.Add(newStats);
+				context.SaveChanges();
+			}
+			return false;
+		}
 	}
 }
