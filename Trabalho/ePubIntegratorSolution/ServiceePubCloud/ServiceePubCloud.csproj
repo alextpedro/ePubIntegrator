@@ -94,7 +94,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="App_Data\App.Config" />
-    <None Include="Properties\PublishProfiles\ePubServiceTest.pubxml" />
+    <None Include="Properties\PublishProfiles\ServiceePubIntgrator.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

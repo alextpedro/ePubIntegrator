@@ -55,6 +55,12 @@
   <wsdl:message name="IePubCloud_VerifyLogin_OutputMessage">
     <wsdl:part name="parameters" element="tns:VerifyLoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IePubCloud_isWebServiceUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:isWebServiceUp" />
+  </wsdl:message>
+  <wsdl:message name="IePubCloud_isWebServiceUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isWebServiceUpResponse" />
+  </wsdl:message>
   <wsdl:portType name="IePubCloud">
     <wsdl:operation name="GetUserStatistics">
       <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/GetUserStatistics" message="tns:IePubCloud_GetUserStatistics_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="VerifyLogin">
       <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/VerifyLogin" message="tns:IePubCloud_VerifyLogin_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/VerifyLoginResponse" message="tns:IePubCloud_VerifyLogin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isWebServiceUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IePubCloud/isWebServiceUp" message="tns:IePubCloud_isWebServiceUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IePubCloud/isWebServiceUpResponse" message="tns:IePubCloud_isWebServiceUp_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IePubCloud" type="tns:IePubCloud">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="VerifyLogin">
       <soap:operation soapAction="http://tempuri.org/IePubCloud/VerifyLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isWebServiceUp">
+      <soap:operation soapAction="http://tempuri.org/IePubCloud/isWebServiceUp" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

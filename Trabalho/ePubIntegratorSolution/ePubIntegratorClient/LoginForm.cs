@@ -111,10 +111,8 @@ namespace ePubIntegratorClient
         {
             webservice = new IePubCloudClient();
             webservice.Endpoint.Address = new EndpointAddress(textBoxServer.Text);
-            webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
+            Boolean success = webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
             
-            Boolean success = false;
-            //success = webservice.RegisterUser(textBoxLogin.Text, textBoxPassword.Text, null, null, DateTime.Now);
             string message;
             if (success) message = "successful";
             else message = "unsuccessful";

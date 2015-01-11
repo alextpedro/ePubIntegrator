@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d826539-affc-442f-9c28-03a5ec0c71ea" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="b3e7cfc2-0129-4dbc-8980-72c5a00b753e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,11 +22,11 @@
     <MetadataSource Address="http://localhost:1133/ePubCloudService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ePubCloudService.xsd" MetadataType="Schema" ID="7959757e-8271-4962-b1f7-346b79504b5e" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd0" />
-    <MetadataFile FileName="ePubCloudService1.xsd" MetadataType="Schema" ID="30c0cbef-e6a0-4d40-aeb7-629c7585636b" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd1" />
-    <MetadataFile FileName="ePubCloudService2.xsd" MetadataType="Schema" ID="244a27b9-ef23-4a4f-8fc7-61f622f0fb8f" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd2" />
-    <MetadataFile FileName="ePubCloudService.disco" MetadataType="Disco" ID="9679b73a-22cf-43f1-ad0a-77bb0820963b" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?disco" />
-    <MetadataFile FileName="ServiceePubCloud.wsdl" MetadataType="Wsdl" ID="597ba27e-98c8-4474-bea9-7e7d73ff1afe" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?wsdl" />
+    <MetadataFile FileName="ePubCloudService.xsd" MetadataType="Schema" ID="b8627f3c-10c1-404d-9ca1-b5cbc24e21c9" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ePubCloudService1.xsd" MetadataType="Schema" ID="196213c2-682f-4707-af96-c71c9a9ca032" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ePubCloudService2.xsd" MetadataType="Schema" ID="85f1f0b9-7fe1-4e5c-b289-07ef3d38eb52" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ePubCloudService.disco" MetadataType="Disco" ID="2a8e7f2f-0ca0-46b6-a8a9-46164b3834fb" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?disco" />
+    <MetadataFile FileName="ServiceePubCloud.wsdl" MetadataType="Wsdl" ID="a9d84ef5-737e-4580-8bff-e9d5c24edbdf" SourceId="1" SourceUrl="http://localhost:1133/ePubCloudService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
