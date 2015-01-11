@@ -34,11 +34,11 @@ namespace ServiceePubCloud
 
 		//Adds a new bookmark to a book
 		[OperationContract]
-		Boolean AddBookmark(int ebookID, int chapterID);
+		Boolean AddBookmark(string ebookTitle, string chapterTitle);
 
 		//Adds a new favorite to a book. 
 		[OperationContract]
-		Boolean AddFavorite(int ebookID, int chapterID);
+		Boolean AddFavorite(string ebookTitle, string chapterTitle);
 
 		//Check if user login exists in database
 		[OperationContract]
@@ -47,14 +47,6 @@ namespace ServiceePubCloud
 		//Check if the webservice is online
 		[OperationContract]
 		Boolean isWebServiceUp();
-		
-	}
-
-
-	// Use a data contract as illustrated in the sample below to add composite types to service operations.
-	[DataContract]
-	public class CompositeType
-	{
 		
 	}
 }

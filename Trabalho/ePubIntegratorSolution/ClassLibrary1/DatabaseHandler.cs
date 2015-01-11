@@ -211,5 +211,51 @@ namespace ePubCloudDatabaseLibrary
 			}
 			return false;
 		}
+
+		public static bool AddBookmark(string ebookTitle, string chapterTitle)
+		{
+			//Find ebook through title
+			eBook ebook = context.eBookTitlesSet.Where(i => i.Title == ebookTitle).FirstOrDefault().eBook;
+
+			if (ebook != null)
+			{
+				Bookmark bookmark = new Bookmark();
+				bookmark.Book = ebookTitle;
+				bookmark.eBook = ebook;
+				bookmark.Chapter = chapterTitle;
+				bookmark.ChapterMark = context.ChapterSet.Where(i => i.Title == chapterTitle).FirstOrDefault();
+
+				ebook.Bookmark = bookmark;
+
+				context.BookmarkSet.Add(bookmark);
+				context.SaveChanges();
+
+				return true;
+			}
+			else return false;
+		}
+
+		public static bool AddFavorite(string ebookTitle, string chapterTitle)
+		{
+			//Find ebook through title
+			eBook ebook = context.eBookTitlesSet.Where(i => i.Title == ebookTitle).FirstOrDefault().eBook;
+
+			if (ebook != null)
+			{
+				Favorite fav = new Favorite();
+				fav.Book = ebookTitle;
+				fav.eBook = ebook;
+				fav.Chapter = chapterTitle;
+				fav.ChapterMark = context.ChapterSet.Where(i => i.Title == chapterTitle).FirstOrDefault();
+
+				ebook.Favorite = fav;
+
+				context.FavoriteSet.Add(fav);
+				context.SaveChanges();
+
+				return true;
+			}
+			else return false;
+		}
 	}
 }

@@ -55,43 +55,23 @@ namespace ServiceePubCloud
 				return false;
 		}
 
-		public void AddBookmark(int ebookID, int chapterID)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void AddFavorite(int ebookID, int chapterID)
-		{
-			throw new NotImplementedException();
-		}
-
-		public System.Xml.XmlDocument GetBookmarks(int userID, int eBookID)
-		{
-			throw new NotImplementedException();
-		}
-
-		public System.Xml.XmlDocument GetFavorites(int userID, int eBookID)
-		{
-			throw new NotImplementedException();
-		}
-
-
-		public void RegistereBook(XmlDocument bookinfo)
-		{
-			throw new NotImplementedException();
-		}
-
-		public void RegisterUser(XmlDocument newUserInfo)
-		{
-			throw new NotImplementedException();
-		}
-
 		public Boolean isWebServiceUp()
 		{
 			return true;
 		}
 
+		public Boolean AddBookmark(string ebookTitle, string chapterTitle)
+		{
+			if (DatabaseHandler.AddBookmark(ebookTitle, chapterTitle))
+				return true;
+			else return false;
+		}
 
-		
+		public Boolean AddFavorite(string ebookTitle, string chapterTitle)
+		{
+			if (DatabaseHandler.AddFavorite(ebookTitle, chapterTitle))
+				return true;
+			else return false;
+		}
 	}
 }
