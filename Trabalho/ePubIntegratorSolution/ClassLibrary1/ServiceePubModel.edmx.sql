@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, and Azure
 -- --------------------------------------------------
--- Date Created: 01/11/2015 05:53:22
+-- Date Created: 01/11/2015 18:59:15
 -- Generated from EDMX file: C:\Users\Draconicrose\Documents\Visual Studio 2012\Projects\ePubIntegrator\Trabalho\ePubIntegratorSolution\ClassLibrary1\ServiceePubModel.edmx
 -- --------------------------------------------------
 
@@ -17,9 +17,6 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_UserLogin]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[LoginSet] DROP CONSTRAINT [FK_UserLogin];
-GO
 IF OBJECT_ID(N'[dbo].[FK_BookmarkeBook]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[eBookSet] DROP CONSTRAINT [FK_BookmarkeBook];
 GO
@@ -49,6 +46,9 @@ IF OBJECT_ID(N'[dbo].[FK_eBookPublishereBook]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_StatisticsUser]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[StatisticsSet] DROP CONSTRAINT [FK_StatisticsUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_LoginUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[LoginSet] DROP CONSTRAINT [FK_LoginUser];
 GO
 
 -- --------------------------------------------------
@@ -92,7 +92,7 @@ GO
 
 -- Creating table 'UserSet'
 CREATE TABLE [dbo].[UserSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdUser] int IDENTITY(1,1) NOT NULL,
     [Email] nvarchar(max)  NULL,
     [DateOfBirth] datetime  NOT NULL,
     [Address] nvarchar(max)  NULL
@@ -101,44 +101,45 @@ GO
 
 -- Creating table 'LoginSet'
 CREATE TABLE [dbo].[LoginSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdLogin] int IDENTITY(1,1) NOT NULL,
     [Username] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL
+    [Password] nvarchar(max)  NOT NULL,
+    [User_IdUser] int  NOT NULL
 );
 GO
 
 -- Creating table 'eBookSet'
 CREATE TABLE [dbo].[eBookSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdeBook] int IDENTITY(1,1) NOT NULL,
     [Language] nvarchar(max)  NOT NULL,
     [Category] nvarchar(max)  NOT NULL,
-    [Bookmark_Id] int  NULL,
-    [Favorite_Id] int  NULL
+    [Bookmark_IdBookmark] int  NULL,
+    [Favorite_IdFavorite] int  NULL
 );
 GO
 
 -- Creating table 'BookmarkSet'
 CREATE TABLE [dbo].[BookmarkSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdBookmark] int IDENTITY(1,1) NOT NULL,
     [Book] nvarchar(max)  NOT NULL,
     [Chapter] nvarchar(max)  NOT NULL,
-    [User_Id] int  NOT NULL
+    [User_IdUser] int  NOT NULL
 );
 GO
 
 -- Creating table 'ChapterSet'
 CREATE TABLE [dbo].[ChapterSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdChapter] int IDENTITY(1,1) NOT NULL,
     [Title] nvarchar(max)  NOT NULL,
-    [eBook_Id] int  NOT NULL,
-    [Bookmark_Id] int  NULL,
-    [Favorite_Id] int  NULL
+    [eBook_IdeBook] int  NOT NULL,
+    [Bookmark_IdBookmark] int  NULL,
+    [Favorite_IdFavorite] int  NULL
 );
 GO
 
 -- Creating table 'FavoriteSet'
 CREATE TABLE [dbo].[FavoriteSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdFavorite] int IDENTITY(1,1) NOT NULL,
     [Book] nvarchar(max)  NOT NULL,
     [Chapter] nvarchar(max)  NOT NULL
 );
@@ -147,33 +148,33 @@ GO
 -- Creating table 'eBookTitlesSet'
 CREATE TABLE [dbo].[eBookTitlesSet] (
     [Title] nvarchar(max)  NOT NULL,
-    [Id] int  NOT NULL,
-    [eBook_Id] int  NOT NULL
+    [IdTitles] int IDENTITY(1,1) NOT NULL,
+    [eBook_IdeBook] int  NOT NULL
 );
 GO
 
 -- Creating table 'eBookAuthorsSet'
 CREATE TABLE [dbo].[eBookAuthorsSet] (
     [Name] nvarchar(max)  NOT NULL,
-    [Id] int  NOT NULL,
-    [eBook_Id] int  NOT NULL
+    [IdAuthors] int IDENTITY(1,1) NOT NULL,
+    [eBook_IdeBook] int  NOT NULL
 );
 GO
 
 -- Creating table 'eBookPublisherSet'
 CREATE TABLE [dbo].[eBookPublisherSet] (
     [Name] nvarchar(max)  NOT NULL,
-    [Id] int  NOT NULL,
-    [eBook_Id] int  NOT NULL
+    [IdPublisher] int IDENTITY(1,1) NOT NULL,
+    [eBook_IdeBook] int  NOT NULL
 );
 GO
 
 -- Creating table 'StatisticsSet'
 CREATE TABLE [dbo].[StatisticsSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
+    [IdStatistic] int IDENTITY(1,1) NOT NULL,
     [NumberofFavorites] nvarchar(max)  NOT NULL,
     [NumberofBookmarks] nvarchar(max)  NOT NULL,
-    [User_Id] int  NOT NULL
+    [User_IdUser] int  NOT NULL
 );
 GO
 
@@ -181,217 +182,222 @@ GO
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
 
--- Creating primary key on [Id] in table 'UserSet'
+-- Creating primary key on [IdUser] in table 'UserSet'
 ALTER TABLE [dbo].[UserSet]
 ADD CONSTRAINT [PK_UserSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdUser] ASC);
 GO
 
--- Creating primary key on [Id] in table 'LoginSet'
+-- Creating primary key on [IdLogin] in table 'LoginSet'
 ALTER TABLE [dbo].[LoginSet]
 ADD CONSTRAINT [PK_LoginSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdLogin] ASC);
 GO
 
--- Creating primary key on [Id] in table 'eBookSet'
+-- Creating primary key on [IdeBook] in table 'eBookSet'
 ALTER TABLE [dbo].[eBookSet]
 ADD CONSTRAINT [PK_eBookSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdeBook] ASC);
 GO
 
--- Creating primary key on [Id] in table 'BookmarkSet'
+-- Creating primary key on [IdBookmark] in table 'BookmarkSet'
 ALTER TABLE [dbo].[BookmarkSet]
 ADD CONSTRAINT [PK_BookmarkSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdBookmark] ASC);
 GO
 
--- Creating primary key on [Id] in table 'ChapterSet'
+-- Creating primary key on [IdChapter] in table 'ChapterSet'
 ALTER TABLE [dbo].[ChapterSet]
 ADD CONSTRAINT [PK_ChapterSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdChapter] ASC);
 GO
 
--- Creating primary key on [Id] in table 'FavoriteSet'
+-- Creating primary key on [IdFavorite] in table 'FavoriteSet'
 ALTER TABLE [dbo].[FavoriteSet]
 ADD CONSTRAINT [PK_FavoriteSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdFavorite] ASC);
 GO
 
--- Creating primary key on [Id] in table 'eBookTitlesSet'
+-- Creating primary key on [IdTitles] in table 'eBookTitlesSet'
 ALTER TABLE [dbo].[eBookTitlesSet]
 ADD CONSTRAINT [PK_eBookTitlesSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdTitles] ASC);
 GO
 
--- Creating primary key on [Id] in table 'eBookAuthorsSet'
+-- Creating primary key on [IdAuthors] in table 'eBookAuthorsSet'
 ALTER TABLE [dbo].[eBookAuthorsSet]
 ADD CONSTRAINT [PK_eBookAuthorsSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdAuthors] ASC);
 GO
 
--- Creating primary key on [Id] in table 'eBookPublisherSet'
+-- Creating primary key on [IdPublisher] in table 'eBookPublisherSet'
 ALTER TABLE [dbo].[eBookPublisherSet]
 ADD CONSTRAINT [PK_eBookPublisherSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdPublisher] ASC);
 GO
 
--- Creating primary key on [Id] in table 'StatisticsSet'
+-- Creating primary key on [IdStatistic] in table 'StatisticsSet'
 ALTER TABLE [dbo].[StatisticsSet]
 ADD CONSTRAINT [PK_StatisticsSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
+    PRIMARY KEY CLUSTERED ([IdStatistic] ASC);
 GO
 
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Id] in table 'LoginSet'
-ALTER TABLE [dbo].[LoginSet]
-ADD CONSTRAINT [FK_UserLogin]
-    FOREIGN KEY ([Id])
-    REFERENCES [dbo].[UserSet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating foreign key on [Bookmark_Id] in table 'eBookSet'
+-- Creating foreign key on [Bookmark_IdBookmark] in table 'eBookSet'
 ALTER TABLE [dbo].[eBookSet]
 ADD CONSTRAINT [FK_BookmarkeBook]
-    FOREIGN KEY ([Bookmark_Id])
+    FOREIGN KEY ([Bookmark_IdBookmark])
     REFERENCES [dbo].[BookmarkSet]
-        ([Id])
+        ([IdBookmark])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_BookmarkeBook'
 CREATE INDEX [IX_FK_BookmarkeBook]
 ON [dbo].[eBookSet]
-    ([Bookmark_Id]);
+    ([Bookmark_IdBookmark]);
 GO
 
--- Creating foreign key on [eBook_Id] in table 'ChapterSet'
+-- Creating foreign key on [eBook_IdeBook] in table 'ChapterSet'
 ALTER TABLE [dbo].[ChapterSet]
 ADD CONSTRAINT [FK_ChaptereBook]
-    FOREIGN KEY ([eBook_Id])
+    FOREIGN KEY ([eBook_IdeBook])
     REFERENCES [dbo].[eBookSet]
-        ([Id])
+        ([IdeBook])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_ChaptereBook'
 CREATE INDEX [IX_FK_ChaptereBook]
 ON [dbo].[ChapterSet]
-    ([eBook_Id]);
+    ([eBook_IdeBook]);
 GO
 
--- Creating foreign key on [Bookmark_Id] in table 'ChapterSet'
+-- Creating foreign key on [Bookmark_IdBookmark] in table 'ChapterSet'
 ALTER TABLE [dbo].[ChapterSet]
 ADD CONSTRAINT [FK_BookmarkChapter]
-    FOREIGN KEY ([Bookmark_Id])
+    FOREIGN KEY ([Bookmark_IdBookmark])
     REFERENCES [dbo].[BookmarkSet]
-        ([Id])
+        ([IdBookmark])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_BookmarkChapter'
 CREATE INDEX [IX_FK_BookmarkChapter]
 ON [dbo].[ChapterSet]
-    ([Bookmark_Id]);
+    ([Bookmark_IdBookmark]);
 GO
 
--- Creating foreign key on [User_Id] in table 'BookmarkSet'
+-- Creating foreign key on [User_IdUser] in table 'BookmarkSet'
 ALTER TABLE [dbo].[BookmarkSet]
 ADD CONSTRAINT [FK_UserBookmark]
-    FOREIGN KEY ([User_Id])
+    FOREIGN KEY ([User_IdUser])
     REFERENCES [dbo].[UserSet]
-        ([Id])
+        ([IdUser])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UserBookmark'
 CREATE INDEX [IX_FK_UserBookmark]
 ON [dbo].[BookmarkSet]
-    ([User_Id]);
+    ([User_IdUser]);
 GO
 
--- Creating foreign key on [Favorite_Id] in table 'eBookSet'
+-- Creating foreign key on [Favorite_IdFavorite] in table 'eBookSet'
 ALTER TABLE [dbo].[eBookSet]
 ADD CONSTRAINT [FK_FavoriteeBook]
-    FOREIGN KEY ([Favorite_Id])
+    FOREIGN KEY ([Favorite_IdFavorite])
     REFERENCES [dbo].[FavoriteSet]
-        ([Id])
+        ([IdFavorite])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_FavoriteeBook'
 CREATE INDEX [IX_FK_FavoriteeBook]
 ON [dbo].[eBookSet]
-    ([Favorite_Id]);
+    ([Favorite_IdFavorite]);
 GO
 
--- Creating foreign key on [Favorite_Id] in table 'ChapterSet'
+-- Creating foreign key on [Favorite_IdFavorite] in table 'ChapterSet'
 ALTER TABLE [dbo].[ChapterSet]
 ADD CONSTRAINT [FK_FavoriteChapter]
-    FOREIGN KEY ([Favorite_Id])
+    FOREIGN KEY ([Favorite_IdFavorite])
     REFERENCES [dbo].[FavoriteSet]
-        ([Id])
+        ([IdFavorite])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_FavoriteChapter'
 CREATE INDEX [IX_FK_FavoriteChapter]
 ON [dbo].[ChapterSet]
-    ([Favorite_Id]);
+    ([Favorite_IdFavorite]);
 GO
 
--- Creating foreign key on [eBook_Id] in table 'eBookTitlesSet'
+-- Creating foreign key on [eBook_IdeBook] in table 'eBookTitlesSet'
 ALTER TABLE [dbo].[eBookTitlesSet]
 ADD CONSTRAINT [FK_eBookeBookTitles]
-    FOREIGN KEY ([eBook_Id])
+    FOREIGN KEY ([eBook_IdeBook])
     REFERENCES [dbo].[eBookSet]
-        ([Id])
+        ([IdeBook])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_eBookeBookTitles'
 CREATE INDEX [IX_FK_eBookeBookTitles]
 ON [dbo].[eBookTitlesSet]
-    ([eBook_Id]);
+    ([eBook_IdeBook]);
 GO
 
--- Creating foreign key on [eBook_Id] in table 'eBookAuthorsSet'
+-- Creating foreign key on [eBook_IdeBook] in table 'eBookAuthorsSet'
 ALTER TABLE [dbo].[eBookAuthorsSet]
 ADD CONSTRAINT [FK_eBookeBookAuthors]
-    FOREIGN KEY ([eBook_Id])
+    FOREIGN KEY ([eBook_IdeBook])
     REFERENCES [dbo].[eBookSet]
-        ([Id])
+        ([IdeBook])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_eBookeBookAuthors'
 CREATE INDEX [IX_FK_eBookeBookAuthors]
 ON [dbo].[eBookAuthorsSet]
-    ([eBook_Id]);
+    ([eBook_IdeBook]);
 GO
 
--- Creating foreign key on [eBook_Id] in table 'eBookPublisherSet'
+-- Creating foreign key on [eBook_IdeBook] in table 'eBookPublisherSet'
 ALTER TABLE [dbo].[eBookPublisherSet]
 ADD CONSTRAINT [FK_eBookPublishereBook]
-    FOREIGN KEY ([eBook_Id])
+    FOREIGN KEY ([eBook_IdeBook])
     REFERENCES [dbo].[eBookSet]
-        ([Id])
+        ([IdeBook])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_eBookPublishereBook'
 CREATE INDEX [IX_FK_eBookPublishereBook]
 ON [dbo].[eBookPublisherSet]
-    ([eBook_Id]);
+    ([eBook_IdeBook]);
 GO
 
--- Creating foreign key on [User_Id] in table 'StatisticsSet'
+-- Creating foreign key on [User_IdUser] in table 'StatisticsSet'
 ALTER TABLE [dbo].[StatisticsSet]
 ADD CONSTRAINT [FK_StatisticsUser]
-    FOREIGN KEY ([User_Id])
+    FOREIGN KEY ([User_IdUser])
     REFERENCES [dbo].[UserSet]
-        ([Id])
+        ([IdUser])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_StatisticsUser'
 CREATE INDEX [IX_FK_StatisticsUser]
 ON [dbo].[StatisticsSet]
-    ([User_Id]);
+    ([User_IdUser]);
+GO
+
+-- Creating foreign key on [User_IdUser] in table 'LoginSet'
+ALTER TABLE [dbo].[LoginSet]
+ADD CONSTRAINT [FK_LoginUser]
+    FOREIGN KEY ([User_IdUser])
+    REFERENCES [dbo].[UserSet]
+        ([IdUser])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_LoginUser'
+CREATE INDEX [IX_FK_LoginUser]
+ON [dbo].[LoginSet]
+    ([User_IdUser]);
 GO
 
 -- --------------------------------------------------

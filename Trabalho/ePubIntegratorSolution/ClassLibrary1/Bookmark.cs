@@ -14,7 +14,7 @@ namespace ePubCloudDatabaseLibrary
     
     public partial class Bookmark
     {
-        public int Id { get; set; }
+        public int IdBookmark { get; set; }
         public string Book { get; set; }
         public string Chapter { get; set; }
     

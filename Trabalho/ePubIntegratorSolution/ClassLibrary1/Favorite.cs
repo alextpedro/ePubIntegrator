@@ -14,7 +14,7 @@ namespace ePubCloudDatabaseLibrary
     
     public partial class Favorite
     {
-        public int Id { get; set; }
+        public int IdFavorite { get; set; }
         public string Book { get; set; }
         public string Chapter { get; set; }
     

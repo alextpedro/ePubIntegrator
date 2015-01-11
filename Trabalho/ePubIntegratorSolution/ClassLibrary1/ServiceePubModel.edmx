@@ -16,10 +16,6 @@
     <EntitySet Name="eBookAuthorsSet" EntityType="ServiceePubModel.Store.eBookAuthorsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="eBookPublisherSet" EntityType="ServiceePubModel.Store.eBookPublisherSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="StatisticsSet" EntityType="ServiceePubModel.Store.StatisticsSet" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="UserLogin" Association="ServiceePubModel.Store.UserLogin">
-      <End Role="User" EntitySet="UserSet" />
-      <End Role="Login" EntitySet="LoginSet" />
-    </AssociationSet>
     <AssociationSet Name="BookmarkeBook" Association="ServiceePubModel.Store.BookmarkeBook">
       <End Role="Bookmark" EntitySet="BookmarkSet" />
       <End Role="eBook" EntitySet="eBookSet" />
@@ -60,115 +56,108 @@
       <End Role="Statistics" EntitySet="StatisticsSet" />
       <End Role="User" EntitySet="UserSet" />
     </AssociationSet>
+    <AssociationSet Name="LoginUser" Association="ServiceePubModel.Store.LoginUser">
+      <End Role="Login" EntitySet="LoginSet" />
+      <End Role="User" EntitySet="UserSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="UserSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdUser" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
     <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
     <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="LoginSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdLogin" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLogin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="User_IdUser" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="eBookSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdeBook" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdeBook" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Language" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Bookmark_Id" Type="int" Nullable="true" />
-    <Property Name="Favorite_Id" Type="int" Nullable="true" />
+    <Property Name="Bookmark_IdBookmark" Type="int" Nullable="true" />
+    <Property Name="Favorite_IdFavorite" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="BookmarkSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdBookmark" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdBookmark" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Book" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Chapter" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="User_IdUser" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ChapterSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdChapter" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdChapter" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Title" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="eBook_Id" Type="int" Nullable="false" />
-    <Property Name="Bookmark_Id" Type="int" Nullable="true" />
-    <Property Name="Favorite_Id" Type="int" Nullable="true" />
+    <Property Name="eBook_IdeBook" Type="int" Nullable="false" />
+    <Property Name="Bookmark_IdBookmark" Type="int" Nullable="true" />
+    <Property Name="Favorite_IdFavorite" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="FavoriteSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdFavorite" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdFavorite" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Book" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Chapter" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="eBookTitlesSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdTitles" />
     </Key>
     <Property Name="Title" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="eBook_Id" Type="int" Nullable="false" />
+    <Property Name="IdTitles" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eBook_IdeBook" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="eBookAuthorsSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdAuthors" />
     </Key>
     <Property Name="Name" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="eBook_Id" Type="int" Nullable="false" />
+    <Property Name="IdAuthors" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eBook_IdeBook" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="eBookPublisherSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdPublisher" />
     </Key>
     <Property Name="Name" Type="nvarchar(max)" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Id" Type="int" Nullable="false" />
-    <Property Name="eBook_Id" Type="int" Nullable="false" />
+    <Property Name="IdPublisher" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eBook_IdeBook" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="StatisticsSet">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="IdStatistic" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdStatistic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumberofFavorites" Type="nvarchar(max)" Nullable="false" />
     <Property Name="NumberofBookmarks" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="User_IdUser" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="UserLogin">
-    <End Role="User" Type="ServiceePubModel.Store.UserSet" Multiplicity="1" />
-    <End Role="Login" Type="ServiceePubModel.Store.LoginSet" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Login">
-        <PropertyRef Name="Id" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="BookmarkeBook">
     <End Role="Bookmark" Type="ServiceePubModel.Store.BookmarkSet" Multiplicity="0..1" />
     <End Role="eBook" Type="ServiceePubModel.Store.eBookSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Bookmark">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdBookmark" />
       </Principal>
       <Dependent Role="eBook">
-        <PropertyRef Name="Bookmark_Id" />
+        <PropertyRef Name="Bookmark_IdBookmark" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -177,10 +166,10 @@
     <End Role="eBook" Type="ServiceePubModel.Store.eBookSet" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="eBook">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdeBook" />
       </Principal>
       <Dependent Role="Chapter">
-        <PropertyRef Name="eBook_Id" />
+        <PropertyRef Name="eBook_IdeBook" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -189,10 +178,10 @@
     <End Role="Chapter" Type="ServiceePubModel.Store.ChapterSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Bookmark">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdBookmark" />
       </Principal>
       <Dependent Role="Chapter">
-        <PropertyRef Name="Bookmark_Id" />
+        <PropertyRef Name="Bookmark_IdBookmark" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -201,10 +190,10 @@
     <End Role="Bookmark" Type="ServiceePubModel.Store.BookmarkSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="User">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdUser" />
       </Principal>
       <Dependent Role="Bookmark">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="User_IdUser" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -213,10 +202,10 @@
     <End Role="eBook" Type="ServiceePubModel.Store.eBookSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Favorite">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdFavorite" />
       </Principal>
       <Dependent Role="eBook">
-        <PropertyRef Name="Favorite_Id" />
+        <PropertyRef Name="Favorite_IdFavorite" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -225,10 +214,10 @@
     <End Role="Chapter" Type="ServiceePubModel.Store.ChapterSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Favorite">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdFavorite" />
       </Principal>
       <Dependent Role="Chapter">
-        <PropertyRef Name="Favorite_Id" />
+        <PropertyRef Name="Favorite_IdFavorite" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -237,10 +226,10 @@
     <End Role="eBookTitles" Type="ServiceePubModel.Store.eBookTitlesSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="eBook">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdeBook" />
       </Principal>
       <Dependent Role="eBookTitles">
-        <PropertyRef Name="eBook_Id" />
+        <PropertyRef Name="eBook_IdeBook" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -249,10 +238,10 @@
     <End Role="eBookAuthors" Type="ServiceePubModel.Store.eBookAuthorsSet" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="eBook">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdeBook" />
       </Principal>
       <Dependent Role="eBookAuthors">
-        <PropertyRef Name="eBook_Id" />
+        <PropertyRef Name="eBook_IdeBook" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -261,10 +250,10 @@
     <End Role="eBook" Type="ServiceePubModel.Store.eBookSet" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="eBook">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdeBook" />
       </Principal>
       <Dependent Role="eBookPublisher">
-        <PropertyRef Name="eBook_Id" />
+        <PropertyRef Name="eBook_IdeBook" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -273,10 +262,22 @@
     <End Role="User" Type="ServiceePubModel.Store.UserSet" Multiplicity="1" />
     <ReferentialConstraint>
       <Principal Role="User">
-        <PropertyRef Name="Id" />
+        <PropertyRef Name="IdUser" />
       </Principal>
       <Dependent Role="Statistics">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="User_IdUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="LoginUser">
+    <End Role="Login" Type="ServiceePubModel.Store.LoginSet" Multiplicity="*" />
+    <End Role="User" Type="ServiceePubModel.Store.UserSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="IdUser" />
+      </Principal>
+      <Dependent Role="Login">
+        <PropertyRef Name="User_IdUser" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -287,10 +288,6 @@
         <EntityContainer Name="ServiceePubModelContainer" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="UserSet" EntityType="ServiceePubModel.User" />
           <EntitySet Name="LoginSet" EntityType="ServiceePubModel.Login" />
-          <AssociationSet Name="UserLogin" Association="ServiceePubModel.UserLogin">
-            <End Role="User" EntitySet="UserSet" />
-            <End Role="Login" EntitySet="LoginSet" />
-          </AssociationSet>
           <EntitySet Name="eBookSet" EntityType="ServiceePubModel.eBook" />
           <EntitySet Name="BookmarkSet" EntityType="ServiceePubModel.Bookmark" />
           <AssociationSet Name="BookmarkeBook" Association="ServiceePubModel.BookmarkeBook">
@@ -339,45 +336,37 @@
             <End Role="Statistics" EntitySet="StatisticsSet" />
             <End Role="User" EntitySet="UserSet" />
           </AssociationSet>
+          <AssociationSet Name="LoginUser" Association="ServiceePubModel.LoginUser">
+            <End Role="Login" EntitySet="LoginSet" />
+            <End Role="User" EntitySet="UserSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdUser" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <NavigationProperty Name="Login" Relationship="ServiceePubModel.UserLogin" FromRole="User" ToRole="Login" />
+          <Property Type="Int32" Name="IdUser" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.UserBookmark" FromRole="User" ToRole="Bookmark" />
           <Property Type="String" Name="Email" Nullable="true" />
           <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
           <Property Type="String" Name="Address" Nullable="true" />
           <NavigationProperty Name="Statistics" Relationship="ServiceePubModel.StatisticsUser" FromRole="User" ToRole="Statistics" />
+          <NavigationProperty Name="Login" Relationship="ServiceePubModel.LoginUser" FromRole="User" ToRole="Login" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdLogin" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdLogin" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Username" Nullable="false" />
           <Property Type="String" Name="Password" Nullable="false" />
-          <NavigationProperty Name="User" Relationship="ServiceePubModel.UserLogin" FromRole="Login" ToRole="User" />
+          <NavigationProperty Name="User" Relationship="ServiceePubModel.LoginUser" FromRole="Login" ToRole="User" />
         </EntityType>
-        <Association Name="UserLogin">
-          <End Type="ServiceePubModel.User" Role="User" Multiplicity="1" />
-          <End Type="ServiceePubModel.Login" Role="Login" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Login">
-              <PropertyRef Name="Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="eBook">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdeBook" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdeBook" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Language" Nullable="false" />
           <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.BookmarkeBook" FromRole="eBook" ToRole="Bookmark" />
           <NavigationProperty Name="Chapter" Relationship="ServiceePubModel.ChaptereBook" FromRole="eBook" ToRole="Chapter" />
@@ -389,9 +378,9 @@
         </EntityType>
         <EntityType Name="Bookmark">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdBookmark" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdBookmark" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.BookmarkeBook" FromRole="Bookmark" ToRole="eBook" />
           <Property Type="String" Name="Book" Nullable="false" />
           <Property Type="String" Name="Chapter" Nullable="false" />
@@ -404,9 +393,9 @@
         </Association>
         <EntityType Name="Chapter">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdChapter" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdChapter" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Title" Nullable="false" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.ChaptereBook" FromRole="Chapter" ToRole="eBook" />
           <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.BookmarkChapter" FromRole="Chapter" ToRole="Bookmark" />
@@ -418,9 +407,9 @@
         </Association>
         <EntityType Name="Favorite">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdFavorite" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdFavorite" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Book" Nullable="false" />
           <Property Type="String" Name="Chapter" Nullable="false" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.FavoriteeBook" FromRole="Favorite" ToRole="eBook" />
@@ -444,11 +433,11 @@
         </Association>
         <EntityType Name="eBookTitles">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdTitles" />
           </Key>
           <Property Type="String" Name="Title" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.eBookeBookTitles" FromRole="eBookTitles" ToRole="eBook" />
-          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdTitles" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="eBookeBookTitles">
           <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
@@ -456,11 +445,11 @@
         </Association>
         <EntityType Name="eBookAuthors">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdAuthors" />
           </Key>
           <Property Type="String" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.eBookeBookAuthors" FromRole="eBookAuthors" ToRole="eBook" />
-          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdAuthors" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="eBookeBookAuthors">
           <End Type="ServiceePubModel.eBook" Role="eBook" Multiplicity="1" />
@@ -468,10 +457,10 @@
         </Association>
         <EntityType Name="eBookPublisher">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdPublisher" />
           </Key>
           <Property Type="String" Name="Name" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="Int32" Name="IdPublisher" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="eBook" Relationship="ServiceePubModel.eBookPublishereBook" FromRole="eBookPublisher" ToRole="eBook" />
         </EntityType>
         <Association Name="eBookPublishereBook">
@@ -480,15 +469,19 @@
         </Association>
         <EntityType Name="Statistics">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdStatistic" />
           </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IdStatistic" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="User" Relationship="ServiceePubModel.StatisticsUser" FromRole="Statistics" ToRole="User" />
           <Property Type="String" Name="NumberofFavorites" Nullable="false" />
           <Property Type="String" Name="NumberofBookmarks" Nullable="false" />
         </EntityType>
         <Association Name="StatisticsUser">
           <End Type="ServiceePubModel.Statistics" Role="Statistics" Multiplicity="0..1" />
+          <End Type="ServiceePubModel.User" Role="User" Multiplicity="1" />
+        </Association>
+        <Association Name="LoginUser">
+          <End Type="ServiceePubModel.Login" Role="Login" Multiplicity="1" />
           <End Type="ServiceePubModel.User" Role="User" Multiplicity="1" />
         </Association>
       </Schema>
@@ -500,7 +493,7 @@
     <EntitySetMapping Name="UserSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.User)">
         <MappingFragment StoreEntitySet="UserSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
           <ScalarProperty Name="Address" ColumnName="Address" />
@@ -510,7 +503,7 @@
     <EntitySetMapping Name="LoginSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.Login)">
         <MappingFragment StoreEntitySet="LoginSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
@@ -519,7 +512,7 @@
     <EntitySetMapping Name="eBookSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.eBook)">
         <MappingFragment StoreEntitySet="eBookSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdeBook" ColumnName="IdeBook" />
           <ScalarProperty Name="Language" ColumnName="Language" />
           <ScalarProperty Name="Category" ColumnName="Category" />
         </MappingFragment>
@@ -528,7 +521,7 @@
     <EntitySetMapping Name="BookmarkSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.Bookmark)">
         <MappingFragment StoreEntitySet="BookmarkSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdBookmark" ColumnName="IdBookmark" />
           <ScalarProperty Name="Book" ColumnName="Book" />
           <ScalarProperty Name="Chapter" ColumnName="Chapter" />
         </MappingFragment>
@@ -537,7 +530,7 @@
     <EntitySetMapping Name="ChapterSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.Chapter)">
         <MappingFragment StoreEntitySet="ChapterSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdChapter" ColumnName="IdChapter" />
           <ScalarProperty Name="Title" ColumnName="Title" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -545,7 +538,7 @@
     <EntitySetMapping Name="FavoriteSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.Favorite)">
         <MappingFragment StoreEntitySet="FavoriteSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdFavorite" ColumnName="IdFavorite" />
           <ScalarProperty Name="Book" ColumnName="Book" />
           <ScalarProperty Name="Chapter" ColumnName="Chapter" />
         </MappingFragment>
@@ -554,7 +547,7 @@
     <EntitySetMapping Name="eBookTitlesSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.eBookTitles)">
         <MappingFragment StoreEntitySet="eBookTitlesSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdTitles" ColumnName="IdTitles" />
           <ScalarProperty Name="Title" ColumnName="Title" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -562,7 +555,7 @@
     <EntitySetMapping Name="eBookAuthorsSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.eBookAuthors)">
         <MappingFragment StoreEntitySet="eBookAuthorsSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdAuthors" ColumnName="IdAuthors" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -570,7 +563,7 @@
     <EntitySetMapping Name="eBookPublisherSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.eBookPublisher)">
         <MappingFragment StoreEntitySet="eBookPublisherSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdPublisher" ColumnName="IdPublisher" />
           <ScalarProperty Name="Name" ColumnName="Name" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -578,7 +571,7 @@
     <EntitySetMapping Name="StatisticsSet">
       <EntityTypeMapping TypeName="IsTypeOf(ServiceePubModel.Statistics)">
         <MappingFragment StoreEntitySet="StatisticsSet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdStatistic" ColumnName="IdStatistic" />
           <ScalarProperty Name="NumberofFavorites" ColumnName="NumberofFavorites" />
           <ScalarProperty Name="NumberofBookmarks" ColumnName="NumberofBookmarks" />
         </MappingFragment>
@@ -586,86 +579,94 @@
     </EntitySetMapping>
     <AssociationSetMapping Name="BookmarkeBook" TypeName="ServiceePubModel.BookmarkeBook" StoreEntitySet="eBookSet">
       <EndProperty Name="Bookmark">
-        <ScalarProperty Name="Id" ColumnName="Bookmark_Id" />
+        <ScalarProperty Name="IdBookmark" ColumnName="Bookmark_IdBookmark" />
       </EndProperty>
       <EndProperty Name="eBook">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdeBook" ColumnName="IdeBook" />
       </EndProperty>
-      <Condition ColumnName="Bookmark_Id" IsNull="false" />
+      <Condition ColumnName="Bookmark_IdBookmark" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="ChaptereBook" TypeName="ServiceePubModel.ChaptereBook" StoreEntitySet="ChapterSet">
       <EndProperty Name="eBook">
-        <ScalarProperty Name="Id" ColumnName="eBook_Id" />
+        <ScalarProperty Name="IdeBook" ColumnName="eBook_IdeBook" />
       </EndProperty>
       <EndProperty Name="Chapter">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdChapter" ColumnName="IdChapter" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="BookmarkChapter" TypeName="ServiceePubModel.BookmarkChapter" StoreEntitySet="ChapterSet">
       <EndProperty Name="Bookmark">
-        <ScalarProperty Name="Id" ColumnName="Bookmark_Id" />
+        <ScalarProperty Name="IdBookmark" ColumnName="Bookmark_IdBookmark" />
       </EndProperty>
       <EndProperty Name="Chapter">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdChapter" ColumnName="IdChapter" />
       </EndProperty>
-      <Condition ColumnName="Bookmark_Id" IsNull="false" />
+      <Condition ColumnName="Bookmark_IdBookmark" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="UserBookmark" TypeName="ServiceePubModel.UserBookmark" StoreEntitySet="BookmarkSet">
       <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
+        <ScalarProperty Name="IdUser" ColumnName="User_IdUser" />
       </EndProperty>
       <EndProperty Name="Bookmark">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdBookmark" ColumnName="IdBookmark" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="FavoriteeBook" TypeName="ServiceePubModel.FavoriteeBook" StoreEntitySet="eBookSet">
       <EndProperty Name="Favorite">
-        <ScalarProperty Name="Id" ColumnName="Favorite_Id" />
+        <ScalarProperty Name="IdFavorite" ColumnName="Favorite_IdFavorite" />
       </EndProperty>
       <EndProperty Name="eBook">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdeBook" ColumnName="IdeBook" />
       </EndProperty>
-      <Condition ColumnName="Favorite_Id" IsNull="false" />
+      <Condition ColumnName="Favorite_IdFavorite" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="FavoriteChapter" TypeName="ServiceePubModel.FavoriteChapter" StoreEntitySet="ChapterSet">
       <EndProperty Name="Favorite">
-        <ScalarProperty Name="Id" ColumnName="Favorite_Id" />
+        <ScalarProperty Name="IdFavorite" ColumnName="Favorite_IdFavorite" />
       </EndProperty>
       <EndProperty Name="Chapter">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdChapter" ColumnName="IdChapter" />
       </EndProperty>
-      <Condition ColumnName="Favorite_Id" IsNull="false" />
+      <Condition ColumnName="Favorite_IdFavorite" IsNull="false" />
     </AssociationSetMapping>
     <AssociationSetMapping Name="eBookeBookTitles" TypeName="ServiceePubModel.eBookeBookTitles" StoreEntitySet="eBookTitlesSet">
       <EndProperty Name="eBook">
-        <ScalarProperty Name="Id" ColumnName="eBook_Id" />
+        <ScalarProperty Name="IdeBook" ColumnName="eBook_IdeBook" />
       </EndProperty>
       <EndProperty Name="eBookTitles">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdTitles" ColumnName="IdTitles" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="eBookeBookAuthors" TypeName="ServiceePubModel.eBookeBookAuthors" StoreEntitySet="eBookAuthorsSet">
       <EndProperty Name="eBook">
-        <ScalarProperty Name="Id" ColumnName="eBook_Id" />
+        <ScalarProperty Name="IdeBook" ColumnName="eBook_IdeBook" />
       </EndProperty>
       <EndProperty Name="eBookAuthors">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdAuthors" ColumnName="IdAuthors" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="eBookPublishereBook" TypeName="ServiceePubModel.eBookPublishereBook" StoreEntitySet="eBookPublisherSet">
       <EndProperty Name="eBook">
-        <ScalarProperty Name="Id" ColumnName="eBook_Id" />
+        <ScalarProperty Name="IdeBook" ColumnName="eBook_IdeBook" />
       </EndProperty>
       <EndProperty Name="eBookPublisher">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdPublisher" ColumnName="IdPublisher" />
       </EndProperty>
     </AssociationSetMapping>
     <AssociationSetMapping Name="StatisticsUser" TypeName="ServiceePubModel.StatisticsUser" StoreEntitySet="StatisticsSet">
       <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
+        <ScalarProperty Name="IdUser" ColumnName="User_IdUser" />
       </EndProperty>
       <EndProperty Name="Statistics">
-        <ScalarProperty Name="Id" ColumnName="Id" />
+        <ScalarProperty Name="IdStatistic" ColumnName="IdStatistic" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="LoginUser" TypeName="ServiceePubModel.LoginUser" StoreEntitySet="LoginSet">
+      <EndProperty Name="User">
+        <ScalarProperty Name="IdUser" ColumnName="User_IdUser" />
+      </EndProperty>
+      <EndProperty Name="Login">
+        <ScalarProperty Name="IdLogin" ColumnName="IdLogin" />
       </EndProperty>
     </AssociationSetMapping>
   </EntityContainerMapping>

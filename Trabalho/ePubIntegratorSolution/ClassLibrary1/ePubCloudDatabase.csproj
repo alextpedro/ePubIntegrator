@@ -121,7 +121,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <DesignData Include="ServiceePubModel.edmx.sql" />
+    <Content Include="ServiceePubModel.edmx.sql" />
     <Content Include="ServiceePubModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ServiceePubModel.edmx</DependentUpon>

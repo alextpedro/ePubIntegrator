@@ -22,7 +22,7 @@ namespace ePubCloudDatabaseLibrary
             this.eBookPublisher = new HashSet<eBookPublisher>();
         }
     
-        public int Id { get; set; }
+        public int IdeBook { get; set; }
         public string Language { get; set; }
         public string Category { get; set; }
     

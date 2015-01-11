@@ -7,7 +7,6 @@
       <Diagram DiagramId="d8c45be9b78f4ae5abee5c70c73b3ab8" Name="Diagram1" ZoomLevel="94" >
         <EntityTypeShape EntityType="ServiceePubModel.User" Width="1.5" PointX="2.75" PointY="0.625" />
         <EntityTypeShape EntityType="ServiceePubModel.Login" Width="1.5" PointX="5.625" PointY="0.625" />
-        <AssociationConnector Association="ServiceePubModel.UserLogin" />
         <EntityTypeShape EntityType="ServiceePubModel.eBook" Width="1.5" PointX="6.125" PointY="3.375" />
         <EntityTypeShape EntityType="ServiceePubModel.Bookmark" Width="1.5" PointX="3.125" PointY="3.5" />
         <AssociationConnector Association="ServiceePubModel.BookmarkeBook" />
@@ -26,6 +25,7 @@
         <AssociationConnector Association="ServiceePubModel.eBookPublishereBook" />
         <EntityTypeShape EntityType="ServiceePubModel.Statistics" Width="1.5" PointX="0.5" PointY="3.625" />
         <AssociationConnector Association="ServiceePubModel.StatisticsUser" />
+        <AssociationConnector Association="ServiceePubModel.LoginUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
