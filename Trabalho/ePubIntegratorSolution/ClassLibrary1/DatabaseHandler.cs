@@ -149,5 +149,38 @@ namespace ePubCloudDatabaseLibrary
 				
 			return false;
 		}
+
+		public static XmlDocument getGlobalStats()
+		{
+			//Create document
+			XmlDocument globalStats = new XmlDocument();
+			XmlDeclaration decl = globalStats.CreateXmlDeclaration("1.0", null, null);
+			globalStats.AppendChild(decl);
+
+			XmlElement root = globalStats.CreateElement("statistics");
+			globalStats.AppendChild(root);
+
+			List<Statistics> listStats = context.StatisticsSet.ToList();
+			int globalNumOfFavs = 0;
+			int globalNumOfBookmarks = 0;
+
+			foreach (Statistics statistic in listStats)
+			{
+				globalNumOfFavs += statistic.NumberofFavorites;
+				globalNumOfBookmarks += statistic.NumberofBookmarks;
+			}
+
+			//Add stats to document
+			XmlElement numFavs = globalStats.CreateElement("numberOfFavorites");
+			numFavs.InnerText = globalNumOfFavs.ToString();
+
+			XmlElement numBookmarks = globalStats.CreateElement("numberOfBookmarks");
+			numBookmarks.InnerText = globalNumOfBookmarks.ToString();
+
+			root.AppendChild(numFavs);
+			root.AppendChild(numFavs);
+
+			return globalStats;
+		}
 	}
 }

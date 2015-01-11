@@ -17,14 +17,8 @@ namespace ServiceePubCloud
 
 		public System.Xml.XmlDocument GetUserStatistics(string username)
 		{
-			//TODO: All of it.
-			//Create new XML document
-			XmlDocument statistics = new XmlDocument();
-
-			//Access the database
-
-			//TMP DO CHANGE
-			return statistics;
+			XmlDocument userStats = DatabaseHandler.GetUserStatistics(username);
+			return userStats;
 		}
 
 		public Boolean VerifyLogin(string username, string password) {
@@ -33,7 +27,8 @@ namespace ServiceePubCloud
 
 		public System.Xml.XmlDocument GetGlobalStatistics()
 		{
-			throw new NotImplementedException();
+			XmlDocument globalStats = DatabaseHandler.getGlobalStats();
+			return globalStats;
 		}
 
 		public void AddUserStatistics(int user, XmlDocument statistics)
@@ -41,9 +36,11 @@ namespace ServiceePubCloud
 			throw new NotImplementedException();
 		}
 
-		public void RegistereBook(string title, string author, string language, string category)
+		public Boolean RegistereBook(string title, string author, string language, string category, string publisher)
 		{
-			DatabaseHandler.RegistereBook(title, author, language, category);
+			if (DatabaseHandler.RegistereBook(title, author, language, category, publisher))
+				return true;
+			else return false;
 		}
 
 		public Boolean RegisterUser(string username, string password, string email, string address, DateTime birthdate)

@@ -145,8 +145,8 @@
       <PropertyRef Name="IdStatistic" />
     </Key>
     <Property Name="IdStatistic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NumberofFavorites" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="NumberofBookmarks" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="NumberofFavorites" Type="int" Nullable="false" />
+    <Property Name="NumberofBookmarks" Type="int" Nullable="false" />
     <Property Name="User_IdUser" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="BookmarkeBook">
@@ -473,8 +473,8 @@
           </Key>
           <Property Type="Int32" Name="IdStatistic" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="User" Relationship="ServiceePubModel.StatisticsUser" FromRole="Statistics" ToRole="User" />
-          <Property Type="String" Name="NumberofFavorites" Nullable="false" />
-          <Property Type="String" Name="NumberofBookmarks" Nullable="false" />
+          <Property Type="Int32" Name="NumberofFavorites" Nullable="false" />
+          <Property Type="Int32" Name="NumberofBookmarks" Nullable="false" />
         </EntityType>
         <Association Name="StatisticsUser">
           <End Type="ServiceePubModel.Statistics" Role="Statistics" Multiplicity="0..1" />

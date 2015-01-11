@@ -22,11 +22,11 @@ namespace ServiceePubCloud
 
 		//Receives a user id and a XML Document with the user's statistics.
 		[OperationContract]
-		void AddUserStatistics(int user, XmlDocument statistics);
+		Boolean AddUserStatistics(int user, XmlDocument statistics);
 
 		//Receives a bookinfo xml and registers the book in the database
 		[OperationContract]
-		void RegistereBook(string title, string author, string language, string category);
+		Boolean RegistereBook(string title, string author, string language, string category);
 
 		//Receives an XML document with info pertaining to a new user
 		[OperationContract]
@@ -34,11 +34,11 @@ namespace ServiceePubCloud
 
 		//Adds a new bookmark to a book
 		[OperationContract]
-		void AddBookmark(int ebookID, int chapterID);
+		Boolean AddBookmark(int ebookID, int chapterID);
 
 		//Adds a new favorite to a book. 
 		[OperationContract]
-		void AddFavorite(int ebookID, int chapterID);
+		Boolean AddFavorite(int ebookID, int chapterID);
 
 		//Check if user login exists in database
 		[OperationContract]
