@@ -75,9 +75,9 @@ namespace ePubIntegratorClient
             double dbl = Convert.ToDouble(ch.getReadTime(user));
             int seconds = Convert.ToInt32(dbl);
             
-            if (seconds < MINUTE) return seconds+" seconds";
-            if (seconds >= MINUTE && seconds < HOUR) return seconds / MINUTE + " minutes";
-            if (seconds >= HOUR) return seconds / MINUTE / HOUR + " hours";
+            if (seconds < MINUTE) return seconds+"s";
+            if (seconds >= MINUTE && seconds < HOUR) return seconds / MINUTE + "m";
+            if (seconds >= HOUR) return seconds / MINUTE / HOUR + "h";
             else return "Unknown";
         }
 

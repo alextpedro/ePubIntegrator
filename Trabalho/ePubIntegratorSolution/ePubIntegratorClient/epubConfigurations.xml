@@ -24,11 +24,11 @@
   </user>
   <user username="goorum">
     <server>http://localhost:1133/ePubCloudService.svc</server>
-    <lastlogin>10/01/2015 23:54:41</lastlogin>
+    <lastlogin>11/01/2015 00:50:48</lastlogin>
     <bookpath>C:\Users\Go0rum\Documents\Books</bookpath>
     <lastbook>EPUB 3.0 Specification</lastbook>
     <lastchapter>EPUB 3.0 Specification</lastchapter>
-    <logincount>34</logincount>
+    <logincount>47</logincount>
     <books>11</books>
     <favourites>3</favourites>
     <bookmarks>1</bookmarks>

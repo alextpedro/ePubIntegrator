@@ -33,7 +33,7 @@ namespace ePubIntegratorClient
         private void buttonSave_Click(object sender, EventArgs e)
         {
             ExcelHandler eh = new ExcelHandler(user);
-            eh.saveExcelAs(textBoxPath.Text, textBoxName.Text);
+            if (textBoxPath.Text != "")eh.saveExcelAs(textBoxPath.Text, textBoxName.Text);
             this.Close();
         }
     }

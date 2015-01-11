@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatisticsForm));
             this.labelLogin = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelBookmarks = new System.Windows.Forms.Label();
+            this.labelFavourites = new System.Windows.Forms.Label();
+            this.labelUser = new System.Windows.Forms.Label();
             this.labelReadtime = new System.Windows.Forms.Label();
             this.labelBooks = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -39,10 +42,8 @@
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelUser = new System.Windows.Forms.Label();
-            this.labelFavourites = new System.Windows.Forms.Label();
-            this.labelBookmarks = new System.Windows.Forms.Label();
+            this.labelText = new System.Windows.Forms.Label();
+            this.labelAchievNum = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -82,6 +83,33 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Local Statistics";
+            // 
+            // labelBookmarks
+            // 
+            this.labelBookmarks.AutoSize = true;
+            this.labelBookmarks.Location = new System.Drawing.Point(6, 86);
+            this.labelBookmarks.Name = "labelBookmarks";
+            this.labelBookmarks.Size = new System.Drawing.Size(66, 13);
+            this.labelBookmarks.TabIndex = 5;
+            this.labelBookmarks.Text = "Bookmarks: ";
+            // 
+            // labelFavourites
+            // 
+            this.labelFavourites.AutoSize = true;
+            this.labelFavourites.Location = new System.Drawing.Point(6, 73);
+            this.labelFavourites.Name = "labelFavourites";
+            this.labelFavourites.Size = new System.Drawing.Size(62, 13);
+            this.labelFavourites.TabIndex = 4;
+            this.labelFavourites.Text = "Favourites: ";
+            // 
+            // labelUser
+            // 
+            this.labelUser.AutoSize = true;
+            this.labelUser.Location = new System.Drawing.Point(6, 21);
+            this.labelUser.Name = "labelUser";
+            this.labelUser.Size = new System.Drawing.Size(35, 13);
+            this.labelUser.TabIndex = 3;
+            this.labelUser.Text = "User: ";
             // 
             // labelReadtime
             // 
@@ -156,12 +184,13 @@
             // 
             // splitContainer3.Panel1
             // 
+            this.splitContainer3.Panel1.Controls.Add(this.labelAchievNum);
             this.splitContainer3.Panel1.Controls.Add(this.label2);
             this.splitContainer3.Panel1.Controls.Add(this.comboBox1);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.label3);
+            this.splitContainer3.Panel2.Controls.Add(this.labelText);
             this.splitContainer3.Size = new System.Drawing.Size(545, 105);
             this.splitContainer3.SplitterDistance = 32;
             this.splitContainer3.TabIndex = 3;
@@ -177,48 +206,32 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(95, 6);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(224, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label3
+            // labelText
             // 
-            this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(545, 69);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "\"I Haz Ribonz\": Have at least one bookmark. ";
+            this.labelText.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.labelText.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelText.Location = new System.Drawing.Point(0, 0);
+            this.labelText.Name = "labelText";
+            this.labelText.Size = new System.Drawing.Size(545, 69);
+            this.labelText.TabIndex = 2;
+            this.labelText.Text = "loading...";
             // 
-            // labelUser
+            // labelAchievNum
             // 
-            this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(6, 21);
-            this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(35, 13);
-            this.labelUser.TabIndex = 3;
-            this.labelUser.Text = "User: ";
-            // 
-            // labelFavourites
-            // 
-            this.labelFavourites.AutoSize = true;
-            this.labelFavourites.Location = new System.Drawing.Point(6, 73);
-            this.labelFavourites.Name = "labelFavourites";
-            this.labelFavourites.Size = new System.Drawing.Size(62, 13);
-            this.labelFavourites.TabIndex = 4;
-            this.labelFavourites.Text = "Favourites: ";
-            // 
-            // labelBookmarks
-            // 
-            this.labelBookmarks.AutoSize = true;
-            this.labelBookmarks.Location = new System.Drawing.Point(6, 86);
-            this.labelBookmarks.Name = "labelBookmarks";
-            this.labelBookmarks.Size = new System.Drawing.Size(66, 13);
-            this.labelBookmarks.TabIndex = 5;
-            this.labelBookmarks.Text = "Bookmarks: ";
+            this.labelAchievNum.AutoSize = true;
+            this.labelAchievNum.Location = new System.Drawing.Point(325, 9);
+            this.labelAchievNum.Name = "labelAchievNum";
+            this.labelAchievNum.Size = new System.Drawing.Size(13, 13);
+            this.labelAchievNum.TabIndex = 2;
+            this.labelAchievNum.Text = "5";
             // 
             // StatisticsForm
             // 
@@ -260,11 +273,12 @@
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelText;
         private System.Windows.Forms.Label labelReadtime;
         private System.Windows.Forms.Label labelBooks;
         private System.Windows.Forms.Label labelUser;
         private System.Windows.Forms.Label labelBookmarks;
         private System.Windows.Forms.Label labelFavourites;
+        private System.Windows.Forms.Label labelAchievNum;
     }
 }
