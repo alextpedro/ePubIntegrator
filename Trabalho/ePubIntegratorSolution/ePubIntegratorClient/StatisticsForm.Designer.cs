@@ -40,10 +40,10 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.labelAchievNum = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelText = new System.Windows.Forms.Label();
-            this.labelAchievNum = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -79,7 +79,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 299);
+            this.groupBox1.Size = new System.Drawing.Size(181, 107);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Local Statistics";
@@ -134,7 +134,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox2.Location = new System.Drawing.Point(0, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(360, 299);
+            this.groupBox2.Size = new System.Drawing.Size(360, 107);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Global Statistics";
@@ -152,7 +152,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupBox2);
-            this.splitContainer1.Size = new System.Drawing.Size(545, 299);
+            this.splitContainer1.Size = new System.Drawing.Size(545, 107);
             this.splitContainer1.SplitterDistance = 181;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -170,8 +170,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer2.Size = new System.Drawing.Size(545, 408);
-            this.splitContainer2.SplitterDistance = 299;
+            this.splitContainer2.Size = new System.Drawing.Size(545, 180);
+            this.splitContainer2.SplitterDistance = 107;
             this.splitContainer2.TabIndex = 4;
             // 
             // splitContainer3
@@ -191,9 +191,18 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.labelText);
-            this.splitContainer3.Size = new System.Drawing.Size(545, 105);
+            this.splitContainer3.Size = new System.Drawing.Size(545, 69);
             this.splitContainer3.SplitterDistance = 32;
             this.splitContainer3.TabIndex = 3;
+            // 
+            // labelAchievNum
+            // 
+            this.labelAchievNum.AutoSize = true;
+            this.labelAchievNum.Location = new System.Drawing.Point(325, 9);
+            this.labelAchievNum.Name = "labelAchievNum";
+            this.labelAchievNum.Size = new System.Drawing.Size(13, 13);
+            this.labelAchievNum.TabIndex = 2;
+            this.labelAchievNum.Text = "5";
             // 
             // label2
             // 
@@ -220,24 +229,15 @@
             this.labelText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelText.Location = new System.Drawing.Point(0, 0);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(545, 69);
+            this.labelText.Size = new System.Drawing.Size(545, 33);
             this.labelText.TabIndex = 2;
             this.labelText.Text = "loading...";
-            // 
-            // labelAchievNum
-            // 
-            this.labelAchievNum.AutoSize = true;
-            this.labelAchievNum.Location = new System.Drawing.Point(325, 9);
-            this.labelAchievNum.Name = "labelAchievNum";
-            this.labelAchievNum.Size = new System.Drawing.Size(13, 13);
-            this.labelAchievNum.TabIndex = 2;
-            this.labelAchievNum.Text = "5";
             // 
             // StatisticsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(545, 408);
+            this.ClientSize = new System.Drawing.Size(545, 180);
             this.Controls.Add(this.splitContainer2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StatisticsForm";

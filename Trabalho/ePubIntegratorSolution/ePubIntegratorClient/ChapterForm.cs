@@ -33,6 +33,7 @@ namespace ePubIntegratorClient
             InitializeComponent();
             loadContents();
             ch.setLastBook(book.Title, user);
+            listBox.SelectedIndex = 0;
         }
 
         private void loadContents()

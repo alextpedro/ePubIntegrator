@@ -43,6 +43,7 @@ namespace ePubIntegratorClient
 
         internal void stopReading(DateTime dateTime)
         {
+            ConfigHandler ch = new ConfigHandler();
             stopRead = dateTime;
             double time = calcTime();
             string xmlTime = ch.getReadTime(user);
