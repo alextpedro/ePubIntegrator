@@ -4,13 +4,13 @@ Mark [ ] as [x] when completed! :D
 /////////////////////////////
 //ePubIntegrator (cliente)//
 ///////////////////////////
-[ ] > Login
-[ ] > Registar Utilizador no webService
+[X] > Login
+[X] > Registar Utilizador no webService
 [X] > Permitir modificar: (epubConfigurations.xml)
 [X]	- Localização dos livros
 [X]	- Localização URL do webservice
 [X] > Data do ultimo login (epubConfigurations.xml)
-[ ] > Guardar título, autor, publisher (bookfav.xml)
+[X] > Guardar título, autor, subject(bookfav.xml)
 [X] > Indicar ultimo livro e capítulo consultados
     > Registar bookmarks para:
 [X]	- livro
@@ -26,16 +26,11 @@ Mark [ ] as [x] when completed! :D
 [X]	- capítulo
 [ ] > Enviar bookmarks/favoritos (bookfav.xml) e receber dados estatísticos (statistics.xml) do webService em XML
 [X] > Consultar bookmarks e favoritos
-[ ] > Consultar dados estatísticos
-[ ]	- dd/mm/aa em que a aplicação foi mais acedida
-[ ]	- ebooks/capítulos mais consultados
-[ ]	- ebooks com mais boormarks
-[ ]	- top 5 favoritos
-[ ] > Exportar para ficheiro Excel os dados estatísticos
+[X] > Consultar dados estatísticos
+[X] > Exportar para ficheiro Excel os dados estatísticos
 -------------------------------------------------------------
-[ ] > EXTRAS (exemplos)
-[ ]	- Definir notas para os livros
-[ ]	- Pesquisa
+[X] > EXTRAS (exemplos)
+[X]	- Achievements
 [X]	- Integrar com redes sociais
 
 //////////////////////////////////

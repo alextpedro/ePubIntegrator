@@ -1,63 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ePub updated="12/12/2014 22:12:38">
   <user username="user123">
-    <ebook hash="-1351160594">
-      <titles>
-        <title>Title 1</title>
-        <title>Title 2</title>
-      </titles>
-      <authors>
-        <author>Author 1</author>
-        <author>Author 2</author>
-      </authors>
-      <publishers>
-        <publisher>Publisher 1</publisher>
-        <publisher>Publisher 2</publisher>
-      </publishers>
-      <favourite updated="19/12/2014 16:26:30" global="False">
-        <chapter>Chapter 1</chapter>
-        <chapter>Chapter 2</chapter>
-      </favourite>
-      <bookmark updated="12/12/2014 22:12:38" global="True">
-        <chapter>Chapter 1</chapter>
-        <chapter>Chapter 2</chapter>
-      </bookmark>
-    </ebook>
   </user>
   <user username="goorum">
-    <ebook hash="-1351160594">
-      <favourite updated="11/01/2015 15:01:08" global="True">
-        <chapter>Chapter 3</chapter>
-      </favourite>
-      <bookmark updated="10/01/2015 16:23:19" global="False">
-        <chapter>Chapter 6</chapter>
-        <chapter>Chapter 9</chapter>
-      </bookmark>
-    </ebook>
-    <ebook hash="-269754146">
-      <favourite updated="11/01/2015 14:46:11" global="False" />
-    </ebook>
-    <ebook hash="-939113191">
-      <favourite updated="11/01/2015 15:02:09" global="True" />
-      <bookmark updated="11/01/2015 15:02:09" global="True" />
-    </ebook>
-    <ebook hash="-854820960">
-      <favourite updated="08/01/2015 15:00:10" global="False" />
-      <bookmark updated="08/01/2015 15:00:10" global="False" />
-    </ebook>
-    <ebook hash="-579620749">
-      <favourite updated="11/01/2015 15:04:33" global="False" />
-      <bookmark updated="11/01/2015 15:04:33" global="False" />
-    </ebook>
     <ebook hash="1430659934">
-      <favourite updated="11/01/2015 14:46:16" global="True" />
-      <bookmark updated="11/01/2015 14:24:01" global="False" />
-    </ebook>
-    <ebook hash="1136980949">
-      <favourite updated="09/01/2015 13:18:57" global="False" />
-    </ebook>
-    <ebook hash="658012255">
-      <favourite updated="11/01/2015 15:01:10" global="False" />
+      <title>Moby-Dick</title>
+      <author>Herman Melville</author>
+      <subject>Unknown</subject>
+      <favourite updated="11/01/2015 17:31:08" global="True" />
     </ebook>
   </user>
 </ePub>

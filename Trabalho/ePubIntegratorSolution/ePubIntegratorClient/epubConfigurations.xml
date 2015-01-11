@@ -24,15 +24,15 @@
   </user>
   <user username="goorum">
     <server>http://localhost:1133/ePubCloudService.svc</server>
-    <lastlogin>11/01/2015 15:01:08</lastlogin>
+    <lastlogin>11/01/2015 17:31:03</lastlogin>
     <bookpath>C:\Users\Go0rum\Documents\Books</bookpath>
-    <lastbook>The Maya Chronicles / Brinton's Library Of Aboriginal American Literature,  Number 1</lastbook>
-    <lastchapter>INTRODUCTION.</lastchapter>
-    <logincount>82</logincount>
+    <lastbook>Moby-Dick</lastbook>
+    <lastchapter>Chapter 18</lastchapter>
+    <logincount>90</logincount>
     <books>11</books>
-    <favourites>3</favourites>
-    <bookmarks>1</bookmarks>
-    <readtime>3212,762443</readtime>
+    <favourites>1</favourites>
+    <bookmarks>0</bookmarks>
+    <readtime>3245,3513534</readtime>
   </user>
   <user username="user">
     <server>http://localhost:1133/ePubCloudService.svc</server>

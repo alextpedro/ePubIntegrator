@@ -63,6 +63,17 @@ namespace ePubIntegratorClient
             attHash.Value = book.Hash.ToString();
             ebookNode.Attributes.Append(attHash);
             _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']").AppendChild(ebookNode);
+
+            XmlNode bookNode = _xmldoc.SelectSingleNode(ROOTNODE + "user[@username='" + user + "']/ebook[@hash='" + book.Hash + "']");
+            XmlNode titleNode = _xmldoc.CreateElement("title");
+            XmlNode authorNode = _xmldoc.CreateElement("author");
+            XmlNode subjectNode = _xmldoc.CreateElement("subject");
+            titleNode.InnerText = book.Title;
+            authorNode.InnerText = book.Creator;
+            subjectNode.InnerText = book.Subject;
+            bookNode.AppendChild(titleNode);
+            bookNode.AppendChild(authorNode);
+            bookNode.AppendChild(subjectNode);
             saveXML();
         }
 
