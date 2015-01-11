@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<config lastuser="test5">
+<config lastuser="alex">
   <user username="user123">
     <server>192.168.1.1</server>
     <lastlogin>16/12/2014 00:31:54</lastlogin>
@@ -44,5 +44,24 @@
     <favourites>0</favourites>
     <bookmarks>0</bookmarks>
     <logincount>1</logincount>
+  </user>
+  <user username="g00rum">
+    <server>http://localhost:1133/ePubCloudService.svc</server>
+    <lastlogin>11-01-2015 20:21:16</lastlogin>
+    <bookpath>C:\Users\Draconicrose\Documents\TestEbooks</bookpath>
+    <favourites>0</favourites>
+    <bookmarks>0</bookmarks>
+    <logincount>1</logincount>
+  </user>
+  <user username="alex">
+    <server>http://localhost:1133/ePubCloudService.svc</server>
+    <lastlogin>11-01-2015 20:21:43</lastlogin>
+    <favourites>1</favourites>
+    <bookmarks>1</bookmarks>
+    <logincount>1</logincount>
+    <books>4</books>
+    <lastbook>EPUB 3.0 Specification</lastbook>
+    <lastchapter>Chapter 5</lastchapter>
+    <readtime>17,77031</readtime>
   </user>
 </config>

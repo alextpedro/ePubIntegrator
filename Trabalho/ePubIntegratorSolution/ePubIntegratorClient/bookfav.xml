@@ -10,4 +10,13 @@
       <favourite updated="11/01/2015 17:31:08" global="True" />
     </ebook>
   </user>
+  <user username="alex">
+    <ebook hash="-1351160594">
+      <title>EPUB 3.0 Specification</title>
+      <author>EPUB 3 Working Group</author>
+      <subject>Unknown</subject>
+      <favourite updated="11-01-2015 20:22:38" global="True" />
+      <bookmark updated="11-01-2015 20:22:40" global="True" />
+    </ebook>
+  </user>
 </ePub>

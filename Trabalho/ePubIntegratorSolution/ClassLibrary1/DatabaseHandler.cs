@@ -66,57 +66,69 @@ namespace ePubCloudDatabaseLibrary
 			XmlDeclaration decl = stats.CreateXmlDeclaration("1.0", null, null);
 			stats.AppendChild(decl);
 
-			//Create nodes of document <-- Decide on document structure
+			//Create root of document
 			XmlElement root = stats.CreateElement("statistics");
 			stats.AppendChild(root);
 
 			//Search database for user statistics 
-			//int numberofFavorites = context.StatisticsSet;
+			User user = context.LoginSet.Where(i => i.Username == username).FirstOrDefault().User;
+			Statistics statsList = context.StatisticsSet.Where(i => i.User == user).FirstOrDefault();
 
 			//Write statistics to document
+			XmlElement numOfFavs = stats.CreateElement("numberOfFavorites");
+			numOfFavs.InnerText = statsList.NumberofFavorites.ToString();
+
+			XmlElement numOfBookmarks = stats.CreateElement("numberOfBookmarks");
+			numOfBookmarks.InnerText = statsList.NumberofBookmarks.ToString();
+
+			root.AppendChild(numOfFavs);
+			root.AppendChild(numOfBookmarks);
 
 			//return document
 			return stats;
 
 		}
 
-		public static void RegistereBook(string title, string author, string language, string category)
+		public static Boolean RegistereBook(string title, string author, string language, string category, string publisher)
 		{
-			//eBook ebook = new eBook();
-			//ebook.Language = neweBook.Language.ToString(); //Maybe the database needs to handle multiple languages?
-			//ebook.Category = neweBook.Subject.ToString(); //Maybe several categories
+			//Verify if similarly titled ebook already exists in database
+			eBookTitles b = context.eBookTitlesSet.Where(i => i.Title == title).FirstOrDefault();
 
-			//foreach (string title in neweBook.Title)
-			//{
-			//	eBookTitles newTitle = new eBookTitles();
-			//	newTitle.Title = title;
-			//	context.eBookTitlesSet.Add(newTitle);
+			if (b != null)
+			{
+				//Create new eBook
+				eBook neweBook = new eBook();
+				neweBook.Language = language;
+				neweBook.Category = category;
 
-			//	ebook.eBookTitles.Add(newTitle);
-			//}
+				//Create new Title, Author and Publisher lists
+				eBookTitles titleList = new eBookTitles();
+				titleList.Title = title;
+				titleList.eBook = neweBook;
+
+				eBookAuthors authorsList = new eBookAuthors();
+				authorsList.Name = author;
+				authorsList.eBook = neweBook;
+
+				eBookPublisher publisherList = new eBookPublisher();
+				publisherList.Name = publisher;
+				publisherList.eBook = neweBook;
+
+				//Add to database
+				context.eBookTitlesSet.Add(titleList);
+				context.eBookAuthorsSet.Add(authorsList);
+				context.eBookPublisherSet.Add(publisherList);
+				context.eBookSet.Add(neweBook);
+
+				context.SaveChanges();
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+
 			
-			//foreach (string author in neweBook.Contributer)
-			//{
-			//	eBookAuthors newAuthor = new eBookAuthors();
-			//	newAuthor.Name = author;
-			//	context.eBookAuthorsSet.Add(newAuthor);
-
-			//	ebook.eBookAuthors.Add(newAuthor);
-
-			//}
-
-			//foreach (string publisher in neweBook.Publisher)
-			//{
-			//	eBookPublisher newPublisher = new eBookPublisher();
-			//	newPublisher.Name = publisher;
-			//	context.eBookPublisherSet.Add(newPublisher);
-
-			//	ebook.eBookPublisher.Add(newPublisher);
-			//}
-
-
-			//context.eBookSet.Add(ebook);
-			//context.SaveChanges();
 		}
 
 		public static Boolean ValidateLogin(string username, string password) {
