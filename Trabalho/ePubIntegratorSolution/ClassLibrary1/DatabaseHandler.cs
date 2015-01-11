@@ -13,30 +13,38 @@ namespace ePubCloudDatabaseLibrary
 	{
 		static ServiceePubModelContainer context = new ServiceePubModelContainer();
 
-		public static void AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
+		public static Boolean AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
 		{
 
 			try
 			{
 				Login l = context.LoginSet.Where(i => i.Username == username).FirstOrDefault();
-				if (l == null)
+				if (l == null && username != null && password != null)
 				{
 					User newUser = new User();
 					newUser.Email = email;
 					newUser.Address = address;
 					newUser.DateOfBirth = birthdate;
-					
+					context.UserSet.Add(newUser);
 
 					Login newLogin = new Login();
 					newLogin.Username = username;
 					newLogin.Password = password;
 					newLogin.User = newUser;
-
 					newUser.Login = newLogin;
-
-					context.UserSet.Add(newUser);
 					context.LoginSet.Add(newLogin);
+
 					context.SaveChanges();
+
+					if (context.LoginSet.Where(i => i.Username == username).FirstOrDefault() != null)
+					{
+						return true;
+					}
+					else
+					{
+						return false;
+					}
+
 				}
 				else
 				{
@@ -46,7 +54,8 @@ namespace ePubCloudDatabaseLibrary
 			catch (Exception ex)
 			{
 				System.Diagnostics.Debug.WriteLine(ex.Message);
-				throw ex;
+				//throw ex;
+				return false; //REMOVE CUZ THIS MAKES NO SENSE
 			}
 		}
 
@@ -63,7 +72,7 @@ namespace ePubCloudDatabaseLibrary
 			stats.AppendChild(root);
 
 			//Search database for user statistics 
-            //int numberofFavorites = context.StatisticsSet;
+			//int numberofFavorites = context.StatisticsSet;
 
 			//Write statistics to document
 
@@ -72,43 +81,43 @@ namespace ePubCloudDatabaseLibrary
 
 		}
 
-		public static void RegistereBook(Epub neweBook)
+		public static void RegistereBook(string title, string author, string language, string category)
 		{
-			eBook ebook = new eBook();
-			ebook.Language = neweBook.Language.ToString(); //Maybe the database needs to handle multiple languages?
-			ebook.Category = neweBook.Subject.ToString(); //Maybe several categories
+			//eBook ebook = new eBook();
+			//ebook.Language = neweBook.Language.ToString(); //Maybe the database needs to handle multiple languages?
+			//ebook.Category = neweBook.Subject.ToString(); //Maybe several categories
 
-			foreach (string title in neweBook.Title)
-			{
-				eBookTitles newTitle = new eBookTitles();
-				newTitle.Title = title;
-				context.eBookTitlesSet.Add(newTitle);
+			//foreach (string title in neweBook.Title)
+			//{
+			//	eBookTitles newTitle = new eBookTitles();
+			//	newTitle.Title = title;
+			//	context.eBookTitlesSet.Add(newTitle);
 
-				ebook.eBookTitles.Add(newTitle);
-			}
+			//	ebook.eBookTitles.Add(newTitle);
+			//}
 			
-			foreach (string author in neweBook.Contributer)
-			{
-				eBookAuthors newAuthor = new eBookAuthors();
-				newAuthor.Name = author;
-				context.eBookAuthorsSet.Add(newAuthor);
+			//foreach (string author in neweBook.Contributer)
+			//{
+			//	eBookAuthors newAuthor = new eBookAuthors();
+			//	newAuthor.Name = author;
+			//	context.eBookAuthorsSet.Add(newAuthor);
 
-				ebook.eBookAuthors.Add(newAuthor);
+			//	ebook.eBookAuthors.Add(newAuthor);
 
-			}
+			//}
 
-			foreach (string publisher in neweBook.Publisher)
-			{
-				eBookPublisher newPublisher = new eBookPublisher();
-				newPublisher.Name = publisher;
-				context.eBookPublisherSet.Add(newPublisher);
+			//foreach (string publisher in neweBook.Publisher)
+			//{
+			//	eBookPublisher newPublisher = new eBookPublisher();
+			//	newPublisher.Name = publisher;
+			//	context.eBookPublisherSet.Add(newPublisher);
 
-				ebook.eBookPublisher.Add(newPublisher);
-			}
+			//	ebook.eBookPublisher.Add(newPublisher);
+			//}
 
 
-			context.eBookSet.Add(ebook);
-			context.SaveChanges();
+			//context.eBookSet.Add(ebook);
+			//context.SaveChanges();
 		}
 
 		public static Boolean ValidateLogin(string username, string password) {
