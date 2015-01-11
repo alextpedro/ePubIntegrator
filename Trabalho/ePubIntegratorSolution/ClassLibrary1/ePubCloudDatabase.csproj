@@ -114,7 +114,6 @@
       <DependentUpon>ServiceePubModel.edmx</DependentUpon>
       <LastGenOutput>ServiceePubModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ServiceePubModel.edmx.sql" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="ServiceePubModel.edmx.diagram">
@@ -122,6 +121,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <DesignData Include="ServiceePubModel.edmx.sql" />
     <Content Include="ServiceePubModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ServiceePubModel.edmx</DependentUpon>

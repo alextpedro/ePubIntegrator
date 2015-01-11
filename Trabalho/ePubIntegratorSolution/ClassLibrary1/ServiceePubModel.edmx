@@ -66,9 +66,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="true" />
     <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
-    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
   <EntityType Name="LoginSet">
     <Key>
@@ -347,9 +347,9 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Login" Relationship="ServiceePubModel.UserLogin" FromRole="User" ToRole="Login" />
           <NavigationProperty Name="Bookmark" Relationship="ServiceePubModel.UserBookmark" FromRole="User" ToRole="Bookmark" />
-          <Property Type="String" Name="Email" Nullable="false" />
+          <Property Type="String" Name="Email" Nullable="true" />
           <Property Type="DateTime" Name="DateOfBirth" Nullable="false" />
-          <Property Type="String" Name="Address" Nullable="false" />
+          <Property Type="String" Name="Address" Nullable="true" />
           <NavigationProperty Name="Statistics" Relationship="ServiceePubModel.StatisticsUser" FromRole="User" ToRole="Statistics" />
         </EntityType>
         <EntityType Name="Login">
@@ -488,7 +488,7 @@
           <Property Type="String" Name="NumberofBookmarks" Nullable="false" />
         </EntityType>
         <Association Name="StatisticsUser">
-          <End Type="ServiceePubModel.Statistics" Role="Statistics" Multiplicity="1" />
+          <End Type="ServiceePubModel.Statistics" Role="Statistics" Multiplicity="0..1" />
           <End Type="ServiceePubModel.User" Role="User" Multiplicity="1" />
         </Association>
       </Schema>
