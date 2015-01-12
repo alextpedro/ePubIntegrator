@@ -39,8 +39,8 @@ Mark [ ] as [x] when completed! :D
 [X] > Registar Utilizadores
     > Receber: (por cliente registado)
 [X]	- dados estatísticos
-[ ] > Registar favoritos
-[ ] > Registar bookmarks
+[X] > Registar favoritos
+[X] > Registar bookmarks
 [X] > Receber estatísticas globais
 
 !CONTINUA!

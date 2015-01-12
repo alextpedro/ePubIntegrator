@@ -177,6 +177,9 @@ namespace ePubCloudDatabaseLibrary
 			XmlElement numBookmarks = globalStats.CreateElement("numberOfBookmarks");
 			numBookmarks.InnerText = globalNumOfBookmarks.ToString();
 
+			XmlElement lastUseDate = globalStats.CreateElement("LastAppUseDate");
+			lastUseDate.InnerText = DateTime.Now.ToString();
+
 			root.AppendChild(numFavs);
 			root.AppendChild(numFavs);
 
@@ -197,6 +200,7 @@ namespace ePubCloudDatabaseLibrary
 			{
 				userStats.NumberofFavorites = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfFavorites").InnerText);
 				userStats.NumberofBookmarks = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfBookmarks").InnerText);
+				userStats.LastAppUseDate = Convert.ToDateTime(statistics.SelectSingleNode("statistics/LastAppUseDate").InnerText);
 				return true;
 			}
 			else
@@ -204,6 +208,7 @@ namespace ePubCloudDatabaseLibrary
 				Statistics newStats = new Statistics();
 				newStats.NumberofFavorites = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfFavorites").InnerText);
 				newStats.NumberofBookmarks = Convert.ToInt32(statistics.SelectSingleNode("statistics/numberOfBookmarks").InnerText);
+				userStats.LastAppUseDate = Convert.ToDateTime(statistics.SelectSingleNode("statistics/LastAppUseDate").InnerText);
 				newStats.User = user;
 
 				context.StatisticsSet.Add(newStats);

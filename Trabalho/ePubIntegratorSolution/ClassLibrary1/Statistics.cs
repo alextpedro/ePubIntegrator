@@ -17,6 +17,7 @@ namespace ePubCloudDatabaseLibrary
         public int IdStatistic { get; set; }
         public int NumberofFavorites { get; set; }
         public int NumberofBookmarks { get; set; }
+        public System.DateTime LastAppUseDate { get; set; }
     
         public virtual User User { get; set; }
     }
