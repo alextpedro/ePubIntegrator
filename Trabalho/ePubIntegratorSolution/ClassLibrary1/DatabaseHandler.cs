@@ -11,7 +11,7 @@ namespace ePubCloudDatabaseLibrary
 {
 	public static class DatabaseHandler
 	{
-		static ServiceePubModelContainer context = new ServiceePubModelContainer();
+		static ServiceePubModelContainer context = new ServiceePubModelContainer(); 
 
 		public static Boolean AddUserWLogin(string username, string password, string email, string address, DateTime birthdate)
 		{
@@ -177,8 +177,7 @@ namespace ePubCloudDatabaseLibrary
 			XmlElement numBookmarks = globalStats.CreateElement("numberOfBookmarks");
 			numBookmarks.InnerText = globalNumOfBookmarks.ToString();
 
-			XmlElement lastUseDate = globalStats.CreateElement("LastAppUseDate");
-			lastUseDate.InnerText = DateTime.Now.ToString();
+			//Most used date 
 
 			root.AppendChild(numFavs);
 			root.AppendChild(numFavs);

@@ -26,7 +26,7 @@ namespace ServiceePubCloud
 
 		//Receives a bookinfo xml and registers the book in the database
 		[OperationContract]
-		Boolean RegistereBook(string title, string author, string language, string category);
+		Boolean RegistereBook(string title, string author, string language, string category, string publisher);
 
 		//Receives an XML document with info pertaining to a new user
 		[OperationContract]

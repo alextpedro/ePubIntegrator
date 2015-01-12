@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<config lastuser="alex">
+<config lastuser="admin">
   <user username="user123">
     <server>192.168.1.1</server>
     <lastlogin>16/12/2014 00:31:54</lastlogin>
@@ -63,5 +63,23 @@
     <lastbook>EPUB 3.0 Specification</lastbook>
     <lastchapter>Chapter 5</lastchapter>
     <readtime>17,77031</readtime>
+  </user>
+  <user username="test1">
+    <server>http://localhost:1133/ePubCloudService.svc</server>
+    <lastlogin>12-01-2015 03:59:36</lastlogin>
+    <favourites>0</favourites>
+    <bookmarks>0</bookmarks>
+    <logincount>1</logincount>
+  </user>
+  <user username="admin">
+    <server>http://localhost:1133/ePubCloudService.svc</server>
+    <lastlogin>12-01-2015 04:00:21</lastlogin>
+    <favourites>0</favourites>
+    <bookmarks>0</bookmarks>
+    <logincount>1</logincount>
+    <books>4</books>
+    <lastbook>EPUB 3.0 Specification</lastbook>
+    <lastchapter>Chapter 1</lastchapter>
+    <readtime>2,9600041</readtime>
   </user>
 </config>
